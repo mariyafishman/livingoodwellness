@@ -2,7 +2,7 @@
   import './layout.css';
   import favicon from '#lib/assets/favicon.svg';
   import { ModeWatcher } from 'mode-watcher';
-  import { Toaster } from '#lib/components/ui/sonner/index.js';
+  import { Toaster } from '#lib/components/ui/sonner/index.ts';
   import Header from '#lib/components/header.svelte';
   import Footer from '#lib/components/footer.svelte';
 

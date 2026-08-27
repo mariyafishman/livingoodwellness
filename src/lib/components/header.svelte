@@ -1,14 +1,15 @@
 <script lang="ts">
-  import * as NavigationMenu from '#lib/components/ui/navigation-menu/index.js';
-  import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js';
-  import * as Popover from '#lib/components/ui/popover/index.js';
-  import * as ToggleGroup from '#lib/components/ui/toggle-group/index.js';
-  import { Button, buttonVariants } from '#lib/components/ui/button/index.js';
+  import * as NavigationMenu from '#lib/components/ui/navigation-menu/index.ts';
+  import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
+  import * as Popover from '#lib/components/ui/popover/index.ts';
+  import * as ToggleGroup from '#lib/components/ui/toggle-group/index.ts';
+  import { Button, buttonVariants } from '#lib/components/ui/button/index.ts';
   import { mode, userPrefersMode } from 'mode-watcher';
   import SunIcon from '@lucide/svelte/icons/sun';
   import MoonIcon from '@lucide/svelte/icons/moon';
   import MonitorIcon from '@lucide/svelte/icons/monitor';
   import Logo from '#lib/assets/logo.svelte';
+  import { site } from '#lib/config/site.ts';
 
   const navLinks = [
     {
@@ -32,7 +33,7 @@
   <div class="flex items-center gap-8">
     <a class="flex items-center gap-2 text-xl font-semibold" href="/">
       <Logo class="size-8" />
-      Livingood Wellness Center
+      {site.name}
     </a>
 
     <NavigationMenu.Root class="max-lg:hidden">
