@@ -8,6 +8,7 @@ Website for Livingood Wellness Center.
 - **[SvelteKit](https://svelte.dev/docs/kit)** (SvelteKit 3) - full-stack framework
 - **[Tailwind CSS](https://tailwindcss.com)** (Tailwind v4) - styling
 - **[shadcn-svelte](https://www.shadcn-svelte.com)** - UI components (built on [bits-ui](https://bits-ui.com))
+- **[Fontsource](https://fontsource.org)** - self-hosted fonts: Inter Variable (body) and Bricolage Grotesque Variable (display)
 - **[Cloudflare Workers](https://developers.cloudflare.com/workers/)** - deployment platform
 
 ## Developing
