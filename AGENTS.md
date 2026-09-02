@@ -48,6 +48,16 @@ Several parts of this stack evolve quickly and training data is often stale — 
 - Every color variable should be defined in both light and dark mode.
 - Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
 
+### Design direction
+
+- **Vibe:** "warm editorial". One experienced, unhurried practitioner in a calm home studio: cream paper, pine-green ink, a touch of clay, serif headlines, rounded photo tiles, lots of air. Not a spa chain, not a resort, not a clinic. Full notes and references in [DESIGN.md](DESIGN.md).
+- **Colors:** `primary` (pine) for headings accents, main buttons and the butterfly's upper wings; `sage`/`secondary` for soft tiles and bands; `clay` only for call/text actions, eyebrow labels and the butterfly's lower wings; `paper` for alternating section backgrounds. Body text is `foreground`, secondary text `muted-foreground`.
+- **Type:** Fraunces Variable for headings and prices, Inter Variable for everything else. Base font size is 17–18px; audience skews older, so keep body text ≥ `text-base`, buttons `size="lg"` for primary actions, tap targets ≥ 44px.
+- **Imagery:** Mariya's own photo on About and the home glimpse; one stock hero photo of hands-on therapeutic work until her photos arrive. No stones, orchids, robes or AI people. Photos in `rounded-3xl` tiles.
+- **Logo:** `src/lib/assets/logo.svelte` and `favicon.svg` are a **placeholder** butterfly (two colors, plain paths). Swap in her real mark by replacing those two files only.
+- **Do:** lead every page with a way to call/text and a way to book; keep information density low; use `container-page` for page width; make prices links.
+- **Don't:** add health-outcome claims, spa-luxury adjectives, hardcoded colors, or new fonts; don't shrink type to fit.
+
 ## Git Commits & Branches
 
 - Do **not** add the coding agent as a co-author on commits — no `Co-Authored-By` trailers, "Generated with" lines, or similar AI attribution in commit messages.
