@@ -17,6 +17,8 @@
 
 <Toaster richColors />
 
+<div class="grain" aria-hidden="true"></div>
+
 <div class="flex min-h-svh flex-col">
   <Header />
 
