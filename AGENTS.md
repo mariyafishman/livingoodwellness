@@ -42,7 +42,7 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 ## Design
 
-- UI is built with **shadcn-svelte**. Add components as needed.
+- UI is built with **shadcn-svelte**. Add components as needed. Feel free to edit the shadcn-svelte components to fit the design system since it is not a component library. It is how you build your component library.
 - All design tokens live in `src/routes/layout.css`.
 - Don't hardcode colors in components, use the theme variables instead and add new ones if needed.
 - Every color variable should be defined in both light and dark mode.
