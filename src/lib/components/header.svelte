@@ -8,7 +8,6 @@
   import SunIcon from '@lucide/svelte/icons/sun';
   import MoonIcon from '@lucide/svelte/icons/moon';
   import MonitorIcon from '@lucide/svelte/icons/monitor';
-  import PhoneIcon from '@lucide/svelte/icons/phone';
   import Logo from '#lib/assets/logo.svelte';
   import { site, isExternal } from '#lib/config/site.ts';
 
@@ -24,9 +23,9 @@
 </script>
 
 <header class="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur">
-  <div class="wrap flex h-18 items-center justify-between gap-4">
-    <a class="flex min-w-0 items-center gap-2.5 font-display text-xl font-bold tracking-tight" href="/">
-      <Logo class="size-9 shrink-0" />
+  <div class="wrap flex h-16 items-center justify-between gap-4">
+    <a class="flex min-w-0 items-center gap-2.5 font-display text-lg font-bold tracking-tight" href="/">
+      <Logo class="size-8 shrink-0" />
       <span class="truncate">
         <span class="sm:hidden">{site.shortName}</span>
         <span class="max-sm:hidden">{site.name}</span>
@@ -38,7 +37,6 @@
         <Button
           variant="ghost"
           {href}
-          class="text-base"
           aria-current={page.url.pathname.startsWith(href) ? 'page' : undefined}
         >
           {title}
@@ -47,12 +45,7 @@
     </nav>
 
     <div class="flex items-center gap-2">
-      <!-- The phone number stays visible on every screen size: many clients call. -->
-      <Button variant="outline" href={site.phoneHref} class="border-border max-sm:px-3">
-        <PhoneIcon data-icon="inline-start" />
-        <span class="max-sm:sr-only">{site.phone}</span>
-        <span class="tabular-nums sm:hidden">Call</span>
-      </Button>
+      <Button variant="secondary" href={site.bookingUrl} target={bookTarget} class="lg:hidden">Book</Button>
 
       <div class="flex items-center gap-2 max-lg:hidden">
         <Button variant="secondary" href={site.bookingUrl} target={bookTarget}>Book a session</Button>
@@ -113,7 +106,7 @@
             <nav class="flex flex-col" aria-label="Main">
               {#each navLinks as { title, href } (href)}
                 <a
-                  class="border-b border-border py-4 font-display text-4xl font-bold tracking-tight active:opacity-60"
+                  class="border-b border-border py-4 font-display text-3xl font-bold tracking-tight active:opacity-60"
                   {href}
                   onclick={() => (mobileMenuOpen = false)}
                 >
@@ -131,10 +124,6 @@
                 onclick={() => (mobileMenuOpen = false)}
               >
                 Book a session
-              </Button>
-              <Button variant="outline" size="lg" href={site.phoneHref}>
-                <PhoneIcon data-icon="inline-start" />
-                Call or text {site.phone}
               </Button>
 
               <ToggleGroup.Root

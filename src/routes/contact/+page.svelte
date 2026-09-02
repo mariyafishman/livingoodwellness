@@ -18,11 +18,11 @@
 
 <!-- Phone first -->
 <section class="bg-butter text-butter-foreground">
-  <div class="wrap flex flex-col gap-6 py-14 lg:py-20">
+  <div class="wrap flex flex-col gap-6 py-10 lg:py-16">
     <p class="label">Contact</p>
-    <h1 class="display text-[clamp(2.5rem,6vw,5rem)]">Call or text. That is the easiest.</h1>
+    <h1 class="display text-[clamp(1.875rem,4vw,3.25rem)]">Call or text. That is the easiest.</h1>
     <a
-      class="display inline-block text-[clamp(2.75rem,10vw,8rem)] tabular-nums underline-offset-[0.12em] hover:underline"
+      class="display inline-block text-[clamp(2.25rem,7vw,5rem)] tabular-nums underline-offset-[0.12em] hover:underline"
       href={site.phoneHref}>{site.phone}</a
     >
     <div class="flex flex-wrap gap-3">
@@ -46,11 +46,11 @@
 </section>
 
 <!-- Visit -->
-<section class="wrap grid gap-10 py-16 lg:grid-cols-12 lg:gap-16 lg:py-24">
+<section class="wrap grid gap-10 py-12 lg:grid-cols-12 lg:gap-16 lg:py-16">
   <div class="flex flex-col gap-10 lg:col-span-6">
     <div class="flex flex-col gap-3">
       <h2 class="label text-primary">Where</h2>
-      <p class="display text-3xl sm:text-4xl">
+      <p class="display text-2xl sm:text-3xl">
         {site.address.street}<br />{site.address.city}, {site.address.state} {site.address.zip}
       </p>
       <p class="text-lg/relaxed text-muted-foreground">
@@ -82,17 +82,17 @@
 
 <!-- Booking -->
 <section class="bg-pine text-pine-foreground">
-  <div class="wrap grid items-center gap-8 py-16 lg:grid-cols-12 lg:py-24">
+  <div class="wrap grid items-center gap-8 py-12 lg:grid-cols-12 lg:py-16">
     <div class="flex flex-col gap-4 lg:col-span-8">
       <p class="label text-butter">Booking</p>
       {#if online}
-        <h2 class="display text-[clamp(2.25rem,5.5vw,4.5rem)]">Book online, any time.</h2>
+        <h2 class="display text-[clamp(1.875rem,4vw,3.25rem)]">Book online, any time.</h2>
         <p class="max-w-xl text-lg/relaxed text-pine-foreground/85">
           Pick a session and a time on MassageBook. You will get a short intake form and a reminder before
           your visit.
         </p>
       {:else}
-        <h2 class="display text-[clamp(2.25rem,5.5vw,4.5rem)]">Online booking is coming soon.</h2>
+        <h2 class="display text-[clamp(1.875rem,4vw,3.25rem)]">Online booking is coming soon.</h2>
         <p class="max-w-xl text-lg/relaxed text-pine-foreground/85">
           Until then, call or text Mariya and she will find you a time.
         </p>

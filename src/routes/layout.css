@@ -19,10 +19,10 @@
 :root {
 	--pine: oklch(0.36 0.09 152);
 	--pine-foreground: oklch(0.985 0.012 95);
-	--leaf: oklch(0.72 0.18 142);
+	--leaf: oklch(0.87 0.1 140);
 	--leaf-foreground: oklch(0.22 0.04 150);
-	--butter: oklch(0.93 0.14 98);
-	--butter-foreground: oklch(0.24 0.05 80);
+	--butter: oklch(0.955 0.055 95);
+	--butter-foreground: oklch(0.26 0.05 80);
 	--apricot: oklch(0.8 0.13 55);
 	--apricot-foreground: oklch(0.3 0.07 45);
 
@@ -63,10 +63,10 @@
 .dark {
 	--pine: oklch(0.29 0.07 152);
 	--pine-foreground: oklch(0.965 0.015 95);
-	--leaf: oklch(0.7 0.17 142);
+	--leaf: oklch(0.8 0.1 140);
 	--leaf-foreground: oklch(0.2 0.04 150);
-	--butter: oklch(0.88 0.13 98);
-	--butter-foreground: oklch(0.24 0.05 80);
+	--butter: oklch(0.9 0.06 95);
+	--butter-foreground: oklch(0.26 0.05 80);
 	--apricot: oklch(0.76 0.13 55);
 	--apricot-foreground: oklch(0.24 0.06 45);
 
@@ -193,11 +193,11 @@
 		@apply border-border outline-ring/50;
 	}
 	html {
-		/* 1rem = 18px. Many of Mariya's clients are seniors. */
-		font-size: 112.5%;
 		@apply font-sans antialiased;
 	}
 	body {
+		/* 17px body text: many of Mariya's clients are seniors. UI chrome stays on the 16px rem scale. */
+		font-size: 1.0625rem;
 		@apply bg-background text-foreground;
 	}
 	h1,

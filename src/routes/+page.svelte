@@ -16,11 +16,11 @@
 
 <!-- Hero -->
 <section class="bg-pine text-pine-foreground">
-  <div class="wrap grid items-end gap-10 py-14 lg:grid-cols-12 lg:gap-8 lg:py-24">
+  <div class="wrap grid items-end gap-10 py-12 lg:grid-cols-12 lg:gap-8 lg:py-16">
     <div class="flex flex-col gap-7 lg:col-span-7">
       <p class="label text-butter">Massage therapy · Hudson, MA</p>
-      <h1 class="display text-[clamp(3.25rem,10vw,8rem)]">{site.tagline}</h1>
-      <p class="max-w-xl text-xl/relaxed text-pine-foreground/90 sm:text-2xl/relaxed">
+      <h1 class="display text-[clamp(2.75rem,6.5vw,5.5rem)]">{site.tagline}</h1>
+      <p class="max-w-xl text-lg/relaxed text-pine-foreground/90 sm:text-xl/relaxed">
         Over thirty years of hands-on care from one unhurried therapist, in a quiet home studio. For
         seniors, athletes, new parents, and anyone who hurts.
       </p>
@@ -32,26 +32,26 @@
       <div class="aspect-4/5">
         <Photo photo={photos.hero} eager position="50% 40%" />
       </div>
-      <Logo class="absolute -top-6 -left-4 size-24 text-butter drop-shadow-md sm:size-32 lg:-left-10" />
+      <Logo class="absolute -top-6 -left-4 size-20 text-butter drop-shadow-md sm:size-24 lg:-left-10" />
     </div>
   </div>
 </section>
 
 <!-- Who it's for -->
-<section class="wrap py-20 lg:py-28">
+<section class="wrap py-10 lg:py-16">
   <div class="flex flex-col gap-4">
     <p class="label text-primary">Who comes to see Mariya</p>
-    <h2 class="display max-w-3xl text-[clamp(2.25rem,5.5vw,4.5rem)]">Newborns to great-grandparents.</h2>
+    <h2 class="display max-w-3xl text-[clamp(1.875rem,4vw,3.25rem)]">Newborns to great-grandparents.</h2>
   </div>
 
-  <ul class="mt-12 grid border-t lg:grid-cols-2 lg:gap-x-12">
+  <ul class="mt-8 grid border-t lg:grid-cols-2 lg:gap-x-12">
     {#each audiences as who (who.title)}
       <li class="grid grid-cols-[auto_1fr] items-center gap-5 border-b py-6 sm:gap-8">
-        <div class="size-24 sm:size-32">
+        <div class="size-20 sm:size-24">
           <Photo photo={photos[who.photo]} shape="round" />
         </div>
         <div>
-          <h3 class="display text-3xl sm:text-4xl">{who.title}</h3>
+          <h3 class="display text-2xl sm:text-3xl">{who.title}</h3>
           <p class="mt-1.5 text-lg text-muted-foreground">{who.line}</p>
         </div>
       </li>
@@ -61,10 +61,10 @@
 
 <!-- Prices at a glance -->
 <section class="bg-butter text-butter-foreground">
-  <div class="wrap grid gap-10 py-16 lg:grid-cols-12 lg:py-24">
+  <div class="wrap grid gap-10 py-12 lg:grid-cols-12 lg:py-16">
     <div class="flex flex-col gap-4 lg:col-span-5">
       <p class="label">Prices</p>
-      <h2 class="display text-[clamp(2.25rem,5.5vw,4.5rem)]">Simple prices. No surprises.</h2>
+      <h2 class="display text-[clamp(1.875rem,4vw,3.25rem)]">Simple prices. No surprises.</h2>
       <p class="text-lg/relaxed text-butter-foreground/80">
         Six-session packages save {money(40)} to {money(80)}. Members get one 60-minute massage a month for
         {money(membership.price)}.
@@ -79,13 +79,13 @@
     <ul class="lg:col-span-6 lg:col-start-7">
       {#each sessions as s (s.minutes)}
         <li class="flex items-baseline justify-between gap-4 border-b border-butter-foreground/20 py-5">
-          <span class="font-display text-3xl font-bold sm:text-5xl">{s.minutes} min</span>
-          <span class="font-display text-3xl font-bold tabular-nums sm:text-5xl">{money(s.price)}</span>
+          <span class="font-display text-2xl font-bold sm:text-4xl">{s.minutes} min</span>
+          <span class="font-display text-2xl font-bold tabular-nums sm:text-4xl">{money(s.price)}</span>
         </li>
       {/each}
       <li class="flex items-baseline justify-between gap-4 py-5">
-        <span class="font-display text-3xl font-bold sm:text-5xl">Membership</span>
-        <span class="font-display text-3xl font-bold tabular-nums sm:text-5xl"
+        <span class="font-display text-2xl font-bold sm:text-4xl">Membership</span>
+        <span class="font-display text-2xl font-bold tabular-nums sm:text-4xl"
           >{money(membership.price)}<span class="text-xl font-semibold sm:text-2xl">/mo</span></span
         >
       </li>
@@ -94,7 +94,7 @@
 </section>
 
 <!-- Meet Mariya -->
-<section class="wrap grid items-center gap-10 py-20 lg:grid-cols-12 lg:gap-16 lg:py-28">
+<section class="wrap grid items-center gap-10 py-14 lg:grid-cols-12 lg:gap-16 lg:py-20">
   <div class="mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none">
     <div class="aspect-4/5">
       <Portrait />
@@ -102,13 +102,13 @@
   </div>
   <div class="flex flex-col gap-6 lg:col-span-7">
     <p class="label text-primary">Meet Mariya</p>
-    <h2 class="display text-[clamp(2.25rem,5.5vw,4.5rem)]">Thirty years in. Still loves it.</h2>
+    <h2 class="display text-[clamp(1.875rem,4vw,3.25rem)]">Thirty years in. Still loves it.</h2>
     <p class="max-w-xl text-lg/relaxed">
       Mariya Fishman trained at the Muscular Therapy Institute in Cambridge and has practiced massage
       therapy for over thirty years. Before that she was a mechanical engineer, which is probably why she
       likes figuring out what is actually going on in your back.
     </p>
-    <blockquote class="max-w-xl border-l-4 border-apricot pl-5 font-display text-2xl font-semibold">
+    <blockquote class="max-w-xl border-l-4 border-apricot pl-5 font-display text-xl font-semibold">
       “My husband asked if maybe it was time to retire. I said no. I love my work.”
     </blockquote>
     <div>
@@ -122,7 +122,7 @@
 
 <!-- Visit -->
 <section class="bg-leaf text-leaf-foreground">
-  <div class="wrap grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-3 lg:py-24">
+  <div class="wrap grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-3 lg:py-16">
     <div class="flex flex-col gap-3">
       <h2 class="label">Where</h2>
       <p class="font-display text-2xl font-bold">

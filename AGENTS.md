@@ -46,13 +46,13 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 Chosen 2026-09-02 after inspiration research (Savee: Swiss colour-block posters in green with orange and peach, bright green brand palettes, arch and doorway photo crops, friendly grotesk display type; Mobbin: founder sections, pricing rows, contact pages of small practices). The idea: **a sunny, hand-painted sign on a green door**. One warm, direct, funny practitioner, not a spa and not a clinic. Colour and big type carry the mood so the copy can stay short.
 
-- **Palette.** Deep pine green (`--pine`) and bright leaf green (`--leaf`) are the poster blocks; butter yellow (`--butter`) is the "book" colour and the price band; apricot (`--apricot`) is a small accent only (butterfly lower wings, bullets, quote rules). Light mode sits on a sunny warm white, not cream. Dark mode is deep green-black with the same butter and apricot. The shadcn tokens (`--primary`, `--secondary`, `--accent`) map onto these.
-- **Type.** `Bricolage Grotesque Variable` (optical-size axis) for display, big and tight (`.display` utility). `Inter Variable` for body at an **18px base** (`html { font-size: 112.5% }`). Small tracked uppercase labels (`.label`) introduce sections.
+- **Palette.** Deep pine green (`--pine`) and pale leaf green (`--leaf`) are the poster blocks; soft cream-yellow (`--butter`) is the "book" colour and the price band; apricot (`--apricot`) is a small accent only (butterfly lower wings, bullets, quote rules). Keep the light bands soft: Oleg rejected a saturated yellow and a bright green (2026-09-02). Dark mode is deep green-black with the same cream and apricot. The shadcn tokens (`--primary`, `--secondary`, `--accent`) map onto these.
+- **Type.** `Bricolage Grotesque Variable` (optical-size axis) for display, tight (`.display` utility). Headings top out around 5.5rem on the home hero and 3.25rem elsewhere; Oleg found the first pass too big, so don't scale up. `Inter Variable` for body at 17px (`body { font-size: 1.0625rem }`) on a 16px rem scale. Small tracked uppercase labels (`.label`) introduce sections.
 - **Layout.** Full-bleed colour bands stacked like posters: pine, warm white, butter, leaf. Inside each band an asymmetric 12-column grid (5/7 or 4/8). Lists are ledgers with hairline rules, not cards. No icon-in-a-circle grids, no uniform rounded tiles, no coloured CTA band with a faded logo.
 - **Photos.** Natural colour, cropped into the **arch** (`.arch` utility, a doorway shape) or a circle. The butterfly mark perches on the hero arch. Stock via `src/lib/config/photos.ts` until Mariya's own photos arrive.
 - **Marks.** Placeholder butterfly in `src/lib/assets/logo.svelte`: four petal wings, upper pair in `currentColor`, lower pair apricot, so it reads on every band. `favicon.svg` is the same mark on a green rounded square with fixed colours.
 - **Copy.** Short lines, plain words, a little humour, first person on About. Say who a session is for and what happens, never outcomes.
-- **Buttons.** Pills (`button.svelte`): `default` green, `secondary` butter for "Book", `outline` uses the current text colour so it works on any band. Tap targets are 44px+.
+- **Buttons.** Pills (`button.svelte`): `default` green, `secondary` cream for "Book" on dark or green bands, `outline` uses the current text colour so it works on any band. `book-cta.svelte` pairs "Book a session" with a "Contact" link to `/contact`; the phone number itself lives on the contact page and in the footer, not in the header (Oleg's call, 2026-09-02).
 
 ### Rules
 
@@ -62,7 +62,7 @@ Chosen 2026-09-02 after inspiration research (Savee: Swiss colour-block posters 
 - Don't hardcode colors in components, use the theme variables instead and add new ones if needed. The only exception is `src/lib/assets/favicon.svg`, which cannot read page tokens.
 - Every color variable should be defined in both light and dark mode.
 - Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
-- Body text is at least 18px, tap targets for call/text/book are large, and the phone number stays visible in the header on mobile (many clients are seniors who call).
+- Body text is at least 17px and tap targets for book/contact/call are at least 40px (many clients are seniors). The header carries only the nav, a Book button and the theme toggle.
 
 ### Content sources
 

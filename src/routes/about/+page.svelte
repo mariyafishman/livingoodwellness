@@ -19,7 +19,7 @@
 />
 
 <!-- Intro -->
-<section class="wrap grid items-center gap-10 py-14 lg:grid-cols-12 lg:gap-16 lg:py-24">
+<section class="wrap grid items-center gap-10 py-12 lg:grid-cols-12 lg:gap-16 lg:py-16">
   <div class="mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-none">
     <div class="aspect-4/5">
       <Portrait eager />
@@ -27,8 +27,8 @@
   </div>
   <div class="flex flex-col gap-6 lg:col-span-7">
     <p class="label text-primary">About</p>
-    <h1 class="display text-[clamp(3rem,9vw,7.5rem)]">Hi, I'm Mariya.</h1>
-    <p class="max-w-xl text-xl/relaxed sm:text-2xl/relaxed">
+    <h1 class="display text-[clamp(2.25rem,5vw,4rem)]">Hi, I'm Mariya.</h1>
+    <p class="max-w-xl text-lg/relaxed sm:text-xl/relaxed">
       I have been a massage therapist for more than thirty years. Before that I was a mechanical engineer,
       and before that I was a girl in Belarus who wanted to be a doctor.
     </p>
@@ -37,28 +37,28 @@
 
 <!-- Story -->
 <section class="bg-butter text-butter-foreground">
-  <div class="wrap grid gap-12 py-16 lg:grid-cols-12 lg:py-24">
-    <div class="flex flex-col gap-12 lg:col-span-7">
+  <div class="wrap grid gap-10 py-12 lg:grid-cols-12 lg:py-16">
+    <div class="flex flex-col gap-10 lg:col-span-7">
       <div class="flex flex-col gap-3">
-        <h2 class="display text-3xl sm:text-4xl">The work I was meant to do</h2>
+        <h2 class="display text-2xl sm:text-3xl">The work I was meant to do</h2>
         <p class="max-w-prose text-lg/relaxed">
           When I came to America I trained at the Muscular Therapy Institute in Cambridge and found it:
           helping people feel at home in their bodies.
         </p>
       </div>
       <div class="flex flex-col gap-3">
-        <h2 class="display text-3xl sm:text-4xl">The fall, and getting up</h2>
+        <h2 class="display text-2xl sm:text-3xl">The fall, and getting up</h2>
         <p class="max-w-prose text-lg/relaxed">
           Seven years ago I fell and broke my leg, my wrist and my back. For a long time I could not work.
           What brought me back is what I offer my clients now: patient hands-on care, good circulation, and
           the belief that the body knows how to heal when you give it what it needs.
         </p>
-        <blockquote class="mt-2 max-w-prose border-l-4 border-apricot pl-5 font-display text-2xl font-semibold">
+        <blockquote class="mt-2 max-w-prose border-l-4 border-apricot pl-5 font-display text-xl font-semibold">
           My husband asked if maybe it was time to retire. I said no. I love my work.
         </blockquote>
       </div>
       <div class="flex flex-col gap-3">
-        <h2 class="display text-3xl sm:text-4xl">Who I work with</h2>
+        <h2 class="display text-2xl sm:text-3xl">Who I work with</h2>
         <p class="max-w-prose text-lg/relaxed">
           Everyone from newborns to great-grandparents. My favorites: seniors who want to keep moving
           comfortably, athletes who want to recover faster and play longer, and parents who want to learn
@@ -67,7 +67,7 @@
         </p>
       </div>
       <div class="flex flex-col gap-3">
-        <h2 class="display text-3xl sm:text-4xl">What “Livingood” means</h2>
+        <h2 class="display text-2xl sm:text-3xl">What “Livingood” means</h2>
         <p class="max-w-prose text-lg/relaxed">
           Live well, in balance: a healthy body, good food, a clear mind. That is what I try to bring to
           every session.
@@ -87,10 +87,10 @@
 
 <!-- Facts -->
 <section class="bg-leaf text-leaf-foreground">
-  <ul class="wrap grid gap-8 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-20">
+  <ul class="wrap grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:py-20">
     {#each facts as f (f.big)}
       <li class="flex flex-col gap-1 border-t border-leaf-foreground/25 pt-4">
-        <span class="font-display text-5xl font-bold sm:text-6xl">{f.big}</span>
+        <span class="font-display text-4xl font-bold sm:text-5xl">{f.big}</span>
         <span class="text-leaf-foreground/85">{f.small}</span>
       </li>
     {/each}
@@ -99,8 +99,8 @@
 
 <!-- CTA -->
 <section class="bg-pine text-pine-foreground">
-  <div class="wrap flex flex-col gap-8 py-16 lg:flex-row lg:items-end lg:justify-between lg:py-24">
-    <h2 class="display max-w-2xl text-[clamp(2.5rem,6vw,5rem)]">Come see me. Sessions are by appointment.</h2>
+  <div class="wrap flex flex-col gap-8 py-12 lg:flex-row lg:items-end lg:justify-between lg:py-16">
+    <h2 class="display max-w-2xl text-[clamp(1.875rem,4vw,3.25rem)]">Come see me. Sessions are by appointment.</h2>
     <BookCta tone="onPine" />
   </div>
 </section>
