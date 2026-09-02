@@ -1,158 +1,176 @@
 <script lang="ts">
-  import * as NavigationMenu from '#lib/components/ui/navigation-menu/index.ts';
+  import * as Sheet from '#lib/components/ui/sheet/index.ts';
   import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
-  import * as Popover from '#lib/components/ui/popover/index.ts';
   import * as ToggleGroup from '#lib/components/ui/toggle-group/index.ts';
   import { Button, buttonVariants } from '#lib/components/ui/button/index.ts';
+  import { Separator } from '#lib/components/ui/separator/index.ts';
   import { mode, userPrefersMode } from 'mode-watcher';
+  import { page } from '$app/state';
   import SunIcon from '@lucide/svelte/icons/sun';
   import MoonIcon from '@lucide/svelte/icons/moon';
   import MonitorIcon from '@lucide/svelte/icons/monitor';
-  import Logo from '#lib/assets/logo.svelte';
-  import { site } from '#lib/config/site.ts';
+  import PhoneIcon from '@lucide/svelte/icons/phone';
+  import MessageIcon from '@lucide/svelte/icons/message-circle';
+  import MenuIcon from '@lucide/svelte/icons/menu';
+  import Wordmark from './wordmark.svelte';
+  import { site, nav } from '#lib/config/site.ts';
 
-  const navLinks = [
-    {
-      title: 'Services',
-      href: '/services'
-    },
-    {
-      title: 'About',
-      href: '/about'
-    },
-    {
-      title: 'Contact',
-      href: '/contact'
-    }
-  ];
+  let menuOpen = $state(false);
 
-  let mobileMenuOpen = $state(false);
+  const isActive = (href: string) => page.url.pathname === href;
 </script>
 
-<header class="sticky top-0 z-50 flex h-16 flex-row items-center justify-between gap-8 bg-background px-6 py-3">
-  <div class="flex items-center gap-8">
-    <a class="flex items-center gap-2 text-xl font-semibold" href="/">
-      <Logo class="size-8" />
-      {site.name}
+<header
+  class="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80"
+>
+  <div class="container-page flex h-18 items-center justify-between gap-3">
+    <a href="/" class="rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-ring/50">
+      <Wordmark />
+      <span class="sr-only">{site.name}, home</span>
     </a>
 
-    <NavigationMenu.Root class="max-lg:hidden">
-      <NavigationMenu.List>
-        {#each navLinks as { title, href } (href)}
-          <NavigationMenu.Item>
-            <NavigationMenu.Link>
-              {#snippet child()}
-                <Button class="px-4" variant="ghost" {href}>{title}</Button>
-              {/snippet}
-            </NavigationMenu.Link>
-          </NavigationMenu.Item>
-        {/each}
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-  </div>
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
+      {#each nav as { title, href } (href)}
+        <a
+          {href}
+          aria-current={isActive(href) ? 'page' : undefined}
+          class={[
+            'rounded-lg px-4 py-2 text-[1.0625rem] font-medium transition-colors hover:bg-accent hover:text-accent-foreground',
+            isActive(href) ? 'text-primary underline decoration-2 underline-offset-8' : 'text-foreground'
+          ]}
+        >
+          {title}
+        </a>
+      {/each}
+    </nav>
 
-  <div class="flex items-center gap-2">
-    <div class="flex items-center gap-2 max-lg:hidden">
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
-          {#if mode.current === 'light'}
-            <SunIcon />
-          {:else if mode.current === 'dark'}
-            <MoonIcon />
-          {/if}
-          <span class="sr-only">Toggle theme</span>
-        </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="end">
-          <DropdownMenu.RadioGroup bind:value={userPrefersMode.current}>
-            <DropdownMenu.RadioItem value="light">
-              <SunIcon class="mr-2" />
-              Light
-            </DropdownMenu.RadioItem>
-            <DropdownMenu.RadioItem value="dark">
-              <MoonIcon class="mr-2" />
-              Dark
-            </DropdownMenu.RadioItem>
-            <DropdownMenu.RadioItem value="system">
-              <MonitorIcon class="mr-2" />
-              System
-            </DropdownMenu.RadioItem>
-          </DropdownMenu.RadioGroup>
-        </DropdownMenu.Content>
-      </DropdownMenu.Root>
-
-      <Button href="/book">Book a session</Button>
-    </div>
-
-    <Popover.Root bind:open={mobileMenuOpen}>
-      <Popover.Trigger class={['lg:hidden', buttonVariants({ variant: 'ghost', size: 'icon' })]}>
-        <div class="flex h-8 flex-row items-center">
-          <div class="relative size-4">
-            <span
-              class={[
-                'absolute inset-s-0 block h-0.5 w-4 bg-foreground transition-all duration-100',
-                mobileMenuOpen ? 'top-[0.4rem] -rotate-45' : 'top-1'
-              ]}
-            ></span>
-            <span
-              class={[
-                'absolute inset-s-0 block h-0.5 w-4 bg-foreground transition-all duration-100',
-                mobileMenuOpen ? 'top-[0.4rem] rotate-45' : 'top-2.5'
-              ]}
-            ></span>
-          </div>
-          <span class="sr-only">Toggle Menu</span>
-        </div>
-      </Popover.Trigger>
-      <Popover.Content
-        class="no-scrollbar h-(--bits-popover-content-available-height) w-(--bits-popover-content-available-width) overflow-y-auto rounded-none border-none ring-0 bg-background/90 p-0 shadow-none backdrop-blur"
-        align="start"
-        side="bottom"
-        preventScroll
+    <div class="flex items-center gap-2">
+      <!-- Phone number stays visible at every width; many clients call rather than book online. -->
+      <a
+        href={site.phoneHref}
+        class={[buttonVariants({ variant: 'outline', size: 'lg' }), 'px-3 sm:px-5']}
+        aria-label={`Call ${site.phone}`}
       >
-        <div class="flex min-h-full flex-col gap-8 overflow-auto p-6">
-          <div class="flex flex-col gap-3">
-            {#each navLinks as { title, href } (href)}
-              <a class="text-2xl font-medium active:opacity-60" {href} onclick={() => (mobileMenuOpen = false)}>
+        <PhoneIcon data-icon="inline-start" />
+        <span class="tabular-nums">{site.phone}</span>
+      </a>
+
+      <div class="hidden items-center gap-2 lg:flex">
+        <DropdownMenu.Root>
+          <DropdownMenu.Trigger
+            class={buttonVariants({ variant: 'ghost', size: 'icon-lg' })}
+            aria-label="Change color theme"
+          >
+            {#if mode.current === 'dark'}
+              <MoonIcon />
+            {:else}
+              <SunIcon />
+            {/if}
+          </DropdownMenu.Trigger>
+          <DropdownMenu.Content align="end">
+            <DropdownMenu.RadioGroup bind:value={userPrefersMode.current}>
+              <DropdownMenu.RadioItem value="light">
+                <SunIcon />
+                Light
+              </DropdownMenu.RadioItem>
+              <DropdownMenu.RadioItem value="dark">
+                <MoonIcon />
+                Dark
+              </DropdownMenu.RadioItem>
+              <DropdownMenu.RadioItem value="system">
+                <MonitorIcon />
+                System
+              </DropdownMenu.RadioItem>
+            </DropdownMenu.RadioGroup>
+          </DropdownMenu.Content>
+        </DropdownMenu.Root>
+
+        <Button href={site.bookingUrl} size="lg">Book a session</Button>
+      </div>
+
+      <Sheet.Root bind:open={menuOpen}>
+        <Sheet.Trigger
+          class={[buttonVariants({ variant: 'ghost', size: 'icon-lg' }), 'lg:hidden']}
+          aria-label="Open menu"
+        >
+          <MenuIcon />
+        </Sheet.Trigger>
+        <Sheet.Content side="right" class="w-[min(100vw,22rem)] gap-0 p-0">
+          <Sheet.Header class="border-b px-6 py-5">
+            <Sheet.Title class="sr-only">Menu</Sheet.Title>
+            <Wordmark />
+          </Sheet.Header>
+
+          <nav class="flex flex-col gap-1 px-4 py-4" aria-label="Main">
+            {#each nav as { title, href } (href)}
+              <a
+                {href}
+                aria-current={isActive(href) ? 'page' : undefined}
+                onclick={() => (menuOpen = false)}
+                class={[
+                  'rounded-xl px-4 py-3.5 font-serif text-2xl font-medium transition-colors hover:bg-accent',
+                  isActive(href) ? 'bg-secondary text-secondary-foreground' : 'text-foreground'
+                ]}
+              >
                 {title}
               </a>
             {/each}
+          </nav>
+
+          <Separator />
+
+          <div class="flex flex-col gap-3 px-6 py-6">
+            <Button href={site.bookingUrl} size="lg" onclick={() => (menuOpen = false)}>
+              Book a session
+            </Button>
+            <div class="grid grid-cols-2 gap-3">
+              <Button href={site.phoneHref} variant="outline" size="lg">
+                <PhoneIcon data-icon="inline-start" />
+                Call
+              </Button>
+              <Button href={site.smsHref} variant="outline" size="lg">
+                <MessageIcon data-icon="inline-start" />
+                Text
+              </Button>
+            </div>
+            <p class="text-center text-base text-muted-foreground tabular-nums">{site.phone}</p>
           </div>
 
-          <div class="mt-auto flex flex-col gap-8">
-            <Button href="/book" size="lg" onclick={() => (mobileMenuOpen = false)}>Book a session</Button>
-
+          <div class="mt-auto border-t px-6 py-5">
+            <p class="mb-2 text-sm font-medium text-muted-foreground">Appearance</p>
             <ToggleGroup.Root
               type="single"
+              aria-label="Color theme"
               bind:value={
                 () => userPrefersMode.current,
                 (value) => {
                   if (value) userPrefersMode.current = value as 'light' | 'dark' | 'system';
                 }
               }
-              class="bg-muted text-muted-foreground inline-flex w-full rounded-lg p-1"
+              class="inline-flex w-full rounded-xl bg-muted p-1 text-muted-foreground"
             >
               <ToggleGroup.Item
                 value="light"
-                class="flex-1 gap-1.5 rounded-md! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
+                class="h-11 flex-1 gap-1.5 rounded-lg! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
               >
-                <SunIcon class="mr-2" /> Light
+                <SunIcon /> Light
               </ToggleGroup.Item>
               <ToggleGroup.Item
                 value="dark"
-                class="flex-1 gap-1.5 rounded-md! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
+                class="h-11 flex-1 gap-1.5 rounded-lg! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
               >
-                <MoonIcon class="mr-2" /> Dark
+                <MoonIcon /> Dark
               </ToggleGroup.Item>
               <ToggleGroup.Item
                 value="system"
-                class="flex-1 gap-1.5 rounded-md! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
+                class="h-11 flex-1 gap-1.5 rounded-lg! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
               >
-                <MonitorIcon class="mr-2" /> System
+                <MonitorIcon /> Auto
               </ToggleGroup.Item>
             </ToggleGroup.Root>
           </div>
-        </div>
-      </Popover.Content>
-    </Popover.Root>
+        </Sheet.Content>
+      </Sheet.Root>
+    </div>
   </div>
 </header>

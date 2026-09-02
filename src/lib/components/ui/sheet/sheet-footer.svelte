@@ -12,8 +12,8 @@
 
 <div
 	bind:this={ref}
-	data-slot="popover-title"
-	class={cn("font-medium", className)}
+	data-slot="sheet-footer"
+	class={cn("gap-2 p-4 mt-auto flex flex-col", className)}
 	{...restProps}
 >
 	{@render children?.()}
