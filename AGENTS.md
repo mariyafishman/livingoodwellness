@@ -10,7 +10,8 @@ Refer to the README for the tech stack used in this project, and keep it updated
 
 - You have access to the **Svelte MCP server** — use it for up-to-date Svelte 5 / SvelteKit 3 docs and to validate generated Svelte code.
 - You have access to the **shadcn-svelte skills** — use them when adding or working with UI components.
-- If any of these aren't available in your environment, prompt the user to install them before falling back to memory.
+- If any of these aren't available in your environment, prompt the user to install them before falling back to memory. The `svelte-autofixer` MCP tool can also be run from the terminal with `npx @sveltejs/mcp svelte-autofixer <file>`.
+- `.claude/launch.json` defines a `dev` server (Vite, port 5173) and a `preview` server (built output, port 4173) for the in-app browser.
 
 You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
 
@@ -42,11 +43,33 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 ## Design
 
+### Direction: "the neighborhood broadside"
+
+Chosen 2026-09-02 after inspiration research (Savee: risograph and letterpress posters, one-line hand illustrations, circular-text badges, warm single-ink editorial sites; Mobbin: contact/hours sections of small local businesses, founder-story pages). The idea: the site is a **two-ink risograph flyer printed by one careful person**, the kind you'd pin up at the Hudson library. One practitioner, one ink. Not a spa template, not a clinic, not a card grid.
+
+- **Paper and ink.** Light mode is warm cream paper with dark brick-brown ink. Dark mode flips them (ink-dark paper, cream ink). A second riso ink, sunflower yellow (`--sun`), is the only accent and is the same in both modes. No gradients, no shadows, no glassmorphism.
+- **Type.** `Young Serif` for display (heavy, soft, friendly, legible for seniors), `Inter Variable` for body at an 18px base, `IBM Plex Mono` for labels, prices, hours and marginalia. Real scale contrast: display sizes are big, labels are small and tracked.
+- **Layout.** A single ruled column like a printed sheet: hairline rules between sections, section numerals in the margin, dotted leaders on price lists, an asymmetric 8/4 split on desktop with margin notes in the narrow column. Content is left-aligned and unhurried; whitespace is generous.
+- **Photos.** Every photo gets the duotone print treatment (`.duotone` in `layout.css`: grayscale, shadows in ink, highlights in paper) so stock shots and phone snapshots read as one printed set. Blend modes are token-driven and flip with the theme.
+- **Marks.** The butterfly logo is two inks with a slight misregistration (yellow fill offset under an ink outline). Circular "stamp" text (`stamp.svelte`) is the one decorative motif; a faint paper grain sits over the page.
+- **Copy.** Plain, warm, a little funny, first person on About. Describe who a session is for and what happens, never outcomes.
+- **Avoid.** Icon-in-a-circle cards, uniform rounded tiles, hero-photo-right layouts, coloured CTA bands, stock spa clichés.
+
+### Rules
+
 - UI is built with **shadcn-svelte**. Add components as needed. Feel free to edit the shadcn-svelte components to fit the design system since it is not a component library. It is how you build your component library.
-- All design tokens live in `src/routes/layout.css`.
-- Don't hardcode colors in components, use the theme variables instead and add new ones if needed.
+- All design tokens live in `src/routes/layout.css`. Brand tokens are `--paper`, `--ink`, `--sun`; the shadcn tokens map onto them.
+- Don't hardcode colors in components, use the theme variables instead and add new ones if needed. The only exception is `src/lib/assets/favicon.svg`, which cannot read page tokens.
 - Every color variable should be defined in both light and dark mode.
 - Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
+- Body text is at least 18px, tap targets for call/text/book are large, and the phone number stays visible in the header on mobile (many clients are seniors who call).
+
+### Content sources
+
+- Booking, payments, packages, membership and the intake form all live on MassageBook. Every "Book" action links to `site.bookingUrl` in `src/lib/config/site.ts`; it points at `/contact` until the MassageBook page exists.
+- Business facts (phone, address, hours) live in `src/lib/config/site.ts`; prices in `src/lib/config/services.ts`; stock photo URLs and credits in `src/lib/config/photos.ts`.
+- Mariya's portrait is `src/lib/assets/mariya.jpg`; `portrait.svelte` falls back to the butterfly mark if the file is missing.
+- The site is fully static (every route is prerendered). No forms, no server code, no payment or booking code.
 
 ## Git Commits & Branches
 
