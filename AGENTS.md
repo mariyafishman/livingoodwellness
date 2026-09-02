@@ -42,11 +42,34 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 ## Design
 
+### Direction: "the green door"
+
+Chosen 2026-09-02 after inspiration research (Savee: Swiss colour-block posters in green with orange and peach, bright green brand palettes, arch and doorway photo crops, friendly grotesk display type; Mobbin: founder sections, pricing rows, contact pages of small practices). The idea: **a sunny, hand-painted sign on a green door**. One warm, direct, funny practitioner, not a spa and not a clinic. Colour and big type carry the mood so the copy can stay short.
+
+- **Palette.** Deep pine green (`--pine`) and pale leaf green (`--leaf`) are the poster blocks; soft cream-yellow (`--butter`) is the "book" colour and the price band; apricot (`--apricot`) is a small accent only (butterfly lower wings, bullets, quote rules). Keep the light bands soft: Oleg rejected a saturated yellow and a bright green (2026-09-02). Dark mode is deep green-black with the same cream and apricot. The shadcn tokens (`--primary`, `--secondary`, `--accent`) map onto these.
+- **Type.** `Bricolage Grotesque Variable` (optical-size axis) for display, tight (`.display` utility). Headings top out around 5.5rem on the home hero and 3.25rem elsewhere; Oleg found the first pass too big, so don't scale up. `Inter Variable` for body at 17px (`body { font-size: 1.0625rem }`) on a 16px rem scale. Small tracked uppercase labels (`.label`) introduce sections.
+- **Layout.** Full-bleed colour bands stacked like posters: pine, warm white, butter, leaf. Inside each band an asymmetric 12-column grid (5/7 or 4/8). Lists are ledgers with hairline rules, not cards. No icon-in-a-circle grids, no uniform rounded tiles, no coloured CTA band with a faded logo.
+- **Photos.** Natural colour, cropped into the **arch** (`.arch` utility, a doorway shape) or a circle. The butterfly mark perches on the hero arch. Stock via `src/lib/config/photos.ts` until Mariya's own photos arrive.
+- **Marks.** Placeholder butterfly in `src/lib/assets/logo.svelte`: four petal wings, upper pair in `currentColor`, lower pair apricot, so it reads on every band. `favicon.svg` is the same mark on a green rounded square with fixed colours.
+- **Copy.** Short lines, plain words, a little humour, first person on About. Say who a session is for and what happens, never outcomes.
+- **Buttons.** Pills (`button.svelte`): `default` green, `secondary` cream for "Book" on dark or green bands, `outline` uses the current text colour so it works on any band. `book-cta.svelte` pairs "Book a session" with a "Contact" link to `/contact`; the phone number itself lives on the contact page and in the footer, not in the header (Oleg's call, 2026-09-02).
+
+### Rules
+
 - UI is built with **shadcn-svelte**. Add components as needed. Feel free to edit the shadcn-svelte components to fit the design system since it is not a component library. It is how you build your component library.
-- All design tokens live in `src/routes/layout.css`.
-- Don't hardcode colors in components, use the theme variables instead and add new ones if needed.
+- The shadcn-svelte CLI cannot resolve `"extends": "$app/tsconfig"`. To add a component, temporarily point `tsconfig.json` at `./node_modules/$app/tsconfig.json`, run `npx shadcn-svelte@latest add <name> -y`, then restore the file.
+- All design tokens live in `src/routes/layout.css`. Brand tokens are `--pine`, `--leaf`, `--butter`, `--apricot` (each with a `-foreground`), exposed to Tailwind as `bg-pine`, `text-butter-foreground`, etc.
+- Don't hardcode colors in components, use the theme variables instead and add new ones if needed. The only exception is `src/lib/assets/favicon.svg`, which cannot read page tokens.
 - Every color variable should be defined in both light and dark mode.
 - Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
+- Body text is at least 17px and tap targets for book/contact/call are at least 40px (many clients are seniors). The header carries only the nav, a Book button and the theme toggle.
+
+### Content sources
+
+- Booking, payments, packages, membership and the intake form all live on MassageBook. Every "Book" action links to `site.bookingUrl` in `src/lib/config/site.ts`; it points at `/contact` until the MassageBook page exists, and the contact page says "online booking is coming soon" until that URL is external.
+- Business facts (phone, address, hours) live in `src/lib/config/site.ts`; prices and service copy in `src/lib/config/services.ts`; stock photo URLs and credits in `src/lib/config/photos.ts`.
+- Mariya's portrait is `src/lib/assets/mariya.jpg`; `portrait.svelte` falls back to a butter arch with the butterfly if the file is missing.
+- The site is fully static (every route is prerendered via `src/routes/+layout.ts`). No forms, no server code, no payment or booking code.
 
 ## Git Commits & Branches
 
