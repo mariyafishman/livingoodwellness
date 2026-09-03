@@ -79,11 +79,11 @@
 
     <aside class="flex flex-col gap-6 lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
       <div class="relative mx-auto w-full max-w-sm lg:max-w-none">
-        <div class="absolute -top-6 -right-6 size-32 rounded-full bg-secondary sm:size-40" aria-hidden="true"></div>
-        <div class="absolute -bottom-5 left-8 size-10 rotate-45 bg-highlight" aria-hidden="true"></div>
+        <div class="absolute -right-8 -bottom-10 size-36 rounded-full bg-secondary sm:-right-10 sm:size-48" aria-hidden="true"></div>
+        <div class="absolute -top-5 -left-5 size-12 rotate-45 bg-highlight" aria-hidden="true"></div>
         <Portrait shape="leaf-alt" priority class="relative" />
       </div>
-      <dl class="grid grid-cols-1 gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2">
+      <dl class="relative grid grid-cols-1 gap-px overflow-hidden rounded-xl border bg-border sm:grid-cols-2">
         {#each facts as fact (fact.label)}
           <div class="flex flex-col gap-1 bg-card p-5">
             <dt class="text-xs font-semibold tracking-[0.14em] text-muted-foreground uppercase">{fact.label}</dt>

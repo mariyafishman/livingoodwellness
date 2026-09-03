@@ -75,7 +75,7 @@ Utilities defined there: `container-page` (page width and gutters), `eyebrow`, `
 ### Components
 
 - UI is built with **shadcn-svelte**. The components in `src/lib/components/ui` are source we own; edit them freely to fit the design rather than overriding with classes. `button` has extra variants (`highlight`, `inverse`, `inverse-outline`) and larger sizes; `badge` has `highlight` and `inverse`.
-- Site-level pieces live in `src/lib/components` (`header`, `footer`, `seo`, `hours-table`, `logo` in `src/lib/assets`).
+- Site-level pieces live in `src/lib/components`: `header`, `footer`, `seo` (per-page title and description), `section-heading` (eyebrow, title, lede, optional `aside` snippet), `cta-band` (closing ink band), `portrait` (Mariya's photo in the leaf shape, degrades to the butterfly if the file is missing), `price-list`, `hours-table`. The butterfly `logo` lives in `src/lib/assets` and takes a `mono` prop for watermarks. `src/routes/+error.svelte` styles 404s and errors in the same system.
 - Don't hardcode colors in components; use the theme variables and add new ones if needed. Every color variable must be defined in both light and dark mode.
 - Make sure any UI you build is fully responsive and looks good in both themes. Check focus states on the ink band as well as on paper.
 
