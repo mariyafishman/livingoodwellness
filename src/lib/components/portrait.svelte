@@ -10,7 +10,7 @@
 	let { caption = true, class: className }: Props = $props();
 </script>
 
-<div class={['relative pb-4', className]}>
+<div class={['relative pr-7 pb-8', className]}>
 	<div class="absolute inset-0 translate-x-6 translate-y-6 rounded-[2rem] bg-lilac sm:translate-x-7 sm:translate-y-7"></div>
 	<div class="relative overflow-hidden rounded-[1.75rem] bg-sage">
 		<img

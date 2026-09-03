@@ -48,6 +48,7 @@ The look is **Meadow Press**: warm editorial on cream paper. Personal, confident
 - **Type.** Manrope Variable for UI and display (800, tight tracking). Fraunces Variable italic for asides and whispers (`font-serif italic`). Body in Manrope 400–650.
 - **Spacing and shape.** 8-based rhythm. Section padding ~56–72px (`wrap` plus `py-16` / `py-20`). Soft radii 20–36px (`--radius: 1.5rem`). Pills are fully round. Overlapping color fields instead of shadows. Audience tickets are uneven widths, never a three-card SaaS grid.
 - **UI.** shadcn-svelte is the toolkit, not the look. Components in `src/lib/components/ui` are source we own — restyle variants, radius, and type to match Meadow Press. Buttons are full pills; primary is bottle (butter in dark), secondary is butter (lilac in dark).
+- LocalBusiness JSON-LD lives in `src/routes/+layout.svelte`. Page titles and descriptions go through `src/lib/components/seo.svelte`.
 - Every color variable is defined in both light and dark mode. The site must stay readable and on-brand in both.
 - Make sure any UI you build is fully responsive.
 

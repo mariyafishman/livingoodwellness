@@ -47,10 +47,10 @@
 {:else}
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger class={buttonVariants({ variant: 'ghost', size: 'icon' })}>
-			{#if mode.current === 'light'}
-				<SunIcon />
-			{:else if mode.current === 'dark'}
+			{#if mode.current === 'dark'}
 				<MoonIcon />
+			{:else}
+				<SunIcon />
 			{/if}
 			<span class="sr-only">Toggle theme</span>
 		</DropdownMenu.Trigger>
