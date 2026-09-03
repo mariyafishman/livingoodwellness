@@ -73,3 +73,4 @@ Several parts of this stack evolve quickly and training data is often stale — 
 ## Keeping This File Updated
 
 Treat AGENTS.md as living documentation. If a change you make invalidates anything here — new commands or scripts, moved directories, changed conventions, added dependencies or bindings — update this file in the same commit.
+- Inner pages reuse the same page-hero, story/prose, booking-card and contact-method patterns. No extra palette: all added layouts consume the existing surface, soft, night and text tokens. The About recovery paragraph is condensed to respect the brand's exclusions and avoid claims about healing.
