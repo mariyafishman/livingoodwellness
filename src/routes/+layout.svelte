@@ -1,28 +1,33 @@
 <script lang="ts">
-  import './layout.css';
-  import favicon from '#lib/assets/favicon.svg';
-  import { ModeWatcher } from 'mode-watcher';
-  import { Toaster } from '#lib/components/ui/sonner/index.ts';
-  import Header from '#lib/components/header.svelte';
-  import Footer from '#lib/components/footer.svelte';
+	import './layout.css';
+	import favicon from '#lib/assets/favicon.svg';
+	import { ModeWatcher } from 'mode-watcher';
+	import Header from '#lib/components/header.svelte';
+	import Footer from '#lib/components/footer.svelte';
 
-  let { children } = $props();
+	let { children } = $props();
 </script>
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
+	<link rel="icon" href={favicon} type="image/svg+xml" />
+	<meta name="theme-color" content="#1E4738" />
 </svelte:head>
 
 <ModeWatcher defaultMode="light" />
 
-<Toaster richColors />
+<a
+	href="#main"
+	class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+>
+	Skip to content
+</a>
 
 <div class="flex min-h-svh flex-col">
-  <Header />
+	<Header />
 
-  <main class="flex-1">
-    {@render children()}
-  </main>
+	<main id="main" class="flex-1">
+		{@render children()}
+	</main>
 
-  <Footer />
+	<Footer />
 </div>
