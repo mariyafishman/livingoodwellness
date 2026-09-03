@@ -39,7 +39,7 @@
 				Call or text ·
 				<a class="underline decoration-butter underline-offset-4" href="mailto:{site.email}">{site.email}</a>
 			</p>
-			<Button class="mt-5" href="/book" variant="secondary">Book on MassageBook</Button>
+			<Button class="mt-5" href="/book" variant="secondary">Book a session</Button>
 		</div>
 	</div>
 	<div class="border-t border-on-field/15">
