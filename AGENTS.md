@@ -42,11 +42,54 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 ## Design
 
-- UI is built with **shadcn-svelte**. Add components as needed. Feel free to edit the shadcn-svelte components to fit the design system since it is not a component library. It is how you build your component library.
-- All design tokens live in `src/routes/layout.css`.
-- Don't hardcode colors in components, use the theme variables instead and add new ones if needed.
-- Every color variable should be defined in both light and dark mode.
-- Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
+The look comes from the approved design canvas (Claude Design artifact "Livingood Wellness Center"), not from shadcn defaults. shadcn-svelte is the component toolkit; the components in `src/lib/components/ui` are source we own, so restyle, restructure or replace them to match the canvas rather than working around them.
+
+### Direction
+
+Warm paper, one deep green, one accent, and geometry. Bauhaus shows up as circles and quarter-circles, near-square corners, thin rules instead of shadows and a geometric sans; the serif and the cream keep it personal. It should feel like one experienced person with time for you: not a chain, not a spa, not a clinic.
+
+### Tokens (`src/routes/layout.css`)
+
+All colors are CSS variables defined for both `:root` (light) and `.dark`, mapped into Tailwind via `@theme inline`. Never hardcode a color in a component; add a token if one is missing and list it here.
+
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--background` / `--foreground` | Cream `#F4F0E6` / Ink `#1B231E` | Night `#131D17` / Bone `#EDE7DA` | Page |
+| `--card` | Surface `#FBF9F4` | `#20302A` | Cards, price panels |
+| `--primary` / `--primary-foreground` | Fir `#274A3A` / Cream | Mint `#B9D4BB` / Night | Primary buttons |
+| `--secondary`, `--muted` | Linen `#EAE4D5` | `#1B2921` | Alternate sections, muted fills |
+| `--muted-foreground` | `#525D55` | `#A8B2A9` | Body copy that recedes |
+| `--accent` / `--accent-foreground` | Sage `#D3DFCF` / Fir | `#243A2E` / Mint | Hover fills |
+| `--border`, `--input` | `#D6D0C1` | `#2F4237` | 1px rules |
+| `--ring` | Fir | Mint | Focus outline |
+| `--heading` | Fir | Bone | All display and heading text |
+| `--eyebrow` | `#C88F2B` | `#E2AE4C` | Tracked uppercase labels, list numbers |
+| `--ochre` / `--ochre-foreground` | `#D9A13B` / Ink | `#E2AE4C` / Night | Accent shapes, savings, the MassageBook button |
+| `--shape` | Fir | Moss `#5F8467` | Large decorative green shapes |
+| `--tint` / `--tint-foreground` | Sage / Fir | `#243A2E` / Mint | Image wells, tinted panels |
+| `--band` / `--band-foreground` / `--band-muted` / `--band-line` | Fir / Cream / `#B9CBBE` / `#3E5F4E` | `#20302A` / Bone / `#A8B2A9` / `#34483C` | Full-bleed green sections |
+| `--cta` | `#F2E2B8` | `#1B2921` | "Ready when you are" band, "Prefer to talk?" panel |
+| `--footer` / `--footer-foreground` / `--footer-muted` / `--footer-line` | `#1B3529` / Bone / `#9DB3A4` / `#2F4A3D` | `#0E1712` / Bone / `#8FA396` / `#24352C` | Footer |
+
+Tailwind class names follow the token names: `bg-band`, `text-band-foreground`, `bg-tint`, `text-eyebrow`, `bg-ochre`, `bg-cta`, `bg-footer`, `text-heading`, `bg-shape`.
+
+### Type
+
+- Display and headings: **Young Serif** (`font-serif`, `@fontsource/young-serif`), weight 400 only. Fallback Georgia.
+- Body, labels, buttons: **Jost** (`font-sans`, `@fontsource-variable/jost`), weights 300–600. Fallback Futura / Century Gothic.
+- Ramp (desktop): `text-display` 104px, `text-h1` 88px, `text-h2` 56px, `text-h3` 30px, `text-lead` 21px, `text-body` 17px, 15px small, `text-eyebrow` 13px tracked uppercase. Scale down on mobile (display 60px, h2 36px).
+- Eyebrows: the `eyebrow` utility class (Jost 500, 13px, 0.16em tracking, uppercase, `--eyebrow`).
+
+### Rhythm and shape
+
+- 8px base. Sections `py-16 md:py-28` (64 / 112px). Page gutters via the `wrap` utility (1200px content, 120px margins at 1440, 24px on mobile). 12-column grid with 32px gaps on desktop.
+- Radius: `--radius` is 4px and every shadcn radius step resolves to it. Circles (`rounded-full`) are the only other shape.
+- 1px rules, no shadows. A 6% paper grain is tiled over `body`.
+- Decorative marks are stroke or flat geometry (disc, half-disc, quarter-circle, bar, six dots, concentric rings), never emoji or icon-font glyphs. Lucide icons are for UI controls only.
+- Buttons: `default` (fir / mint), `outline` (1.5px heading border), `ochre` (MassageBook), `link` (inline arrow link). Sizes `sm` 44px, `default` 52px, `lg` 56px, plus icon sizes.
+- Logo: the butterfly in `src/lib/assets/logo.svelte` (recolour with `--logo-wing`, `--logo-lower`, `--logo-body` on a parent) and `favicon.svg`. Placeholder until the real mark arrives.
+- Imagery: the portrait is `src/lib/assets/mariya.jpg`, shown in a circle or an arch. Stock photos are not chosen yet; where the canvas shows one, use a `tint` panel with the line-drawn frond (`photo-placeholder.svelte`). No AI-generated people.
+- Every page must read well in both themes and at 390px, 768px and 1440px.
 
 ## Git Commits & Branches
 
