@@ -24,3 +24,6 @@ vite.config.ts.timestamp-*
 
 # TODO remove when finished
 /docs/
+
+# Agent worktrees
+.claude/worktrees/
