@@ -73,6 +73,8 @@ One experienced person with time for you. Deep moss green on warm linen, quiet s
 
 **Components**: `Button` variants are `default` (moss), `outline`, `secondary` (sage), `honey`, `inverse` (for deep bands), `ghost`, `link`. Default size is 44px tall; `lg` for hero and booking actions. Header is sticky, translucent linen, honey underline on the active link. Footer is a deep moss band with tagline, visit/contact/hours columns and the license line.
 
+**Pages and SEO**: every page sets its own title and description through `src/lib/components/seo.svelte`; the layout carries the LocalBusiness JSON-LD and `sitemap.xml` is a prerendered endpoint. `static/og.png` is a 1200×630 render of the hero (linen, rings, "Find your balance."); regenerate it if the palette or tagline changes. `+error.svelte` styles the 404.
+
 **Voice**: plain, first person on About, no "indulge"/"pamper", no outcomes promised. Bemer copy is limited to "temporarily improves local circulation" plus the required disclaimer.
 
 ## Git Commits & Branches
