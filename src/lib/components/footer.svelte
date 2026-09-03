@@ -19,7 +19,7 @@
 <footer class="relative overflow-hidden bg-ink text-ink-foreground">
   <!-- Bauhaus nod: one big marigold circle, mostly off-canvas. -->
   <div
-    class="pointer-events-none absolute -top-40 -right-32 size-[26rem] rounded-full bg-highlight/10 sm:-top-48 sm:size-[34rem]"
+    class="pointer-events-none absolute -right-32 -bottom-56 size-[26rem] rounded-full bg-highlight/[0.07] sm:-bottom-72 sm:size-[34rem]"
     aria-hidden="true"
   ></div>
 

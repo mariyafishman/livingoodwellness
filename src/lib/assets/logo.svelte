@@ -8,9 +8,11 @@
   interface Props {
     class?: string;
     title?: string;
+    /** Single-color version (lower wings follow currentColor). For watermarks. */
+    mono?: boolean;
   }
 
-  let { class: className, title = 'Livingood Wellness Center butterfly' }: Props = $props();
+  let { class: className, title = 'Livingood Wellness Center butterfly', mono = false }: Props = $props();
 </script>
 
 <svg
@@ -35,8 +37,8 @@
   <ellipse cx="19.5" cy="27" rx="14" ry="11.5" transform="rotate(-18 19.5 27)" fill="currentColor" />
   <ellipse cx="44.5" cy="27" rx="14" ry="11.5" transform="rotate(18 44.5 27)" fill="currentColor" />
   <!-- lower wings -->
-  <ellipse cx="23" cy="44" rx="9.5" ry="8" transform="rotate(20 23 44)" class="fill-highlight" />
-  <ellipse cx="41" cy="44" rx="9.5" ry="8" transform="rotate(-20 41 44)" class="fill-highlight" />
+  <ellipse cx="23" cy="44" rx="9.5" ry="8" transform="rotate(20 23 44)" class={mono ? 'fill-current' : 'fill-highlight'} />
+  <ellipse cx="41" cy="44" rx="9.5" ry="8" transform="rotate(-20 41 44)" class={mono ? 'fill-current' : 'fill-highlight'} />
   <!-- body -->
   <rect x="29.75" y="18" width="4.5" height="34" rx="2.25" fill="currentColor" />
 </svg>
