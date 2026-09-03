@@ -42,11 +42,46 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 ## Design
 
-- UI is built with **shadcn-svelte**. Add components as needed. Feel free to edit the shadcn-svelte components to fit the design system since it is not a component library. It is how you build your component library.
-- All design tokens live in `src/routes/layout.css`.
-- Don't hardcode colors in components, use the theme variables instead and add new ones if needed.
-- Every color variable should be defined in both light and dark mode.
-- Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
+### Direction: "Balance, drawn boldly"
+
+The site should feel like Mariya: one experienced person with time for you. Warm, direct, confident, a little playful. The visual language borrows a light touch of Bauhaus (circles, half-circles, flat color, clear grid) and softened neobrutalism (2px ink outlines, hard offset shadows, no blur, no gradients), on warm cream paper rather than white, so it reads as welcoming instead of loud. Reference mood: Folk Wellness (forest green + marigold + cream blocks), Mayple (editorial serif over sage/cream), Bauhaus circle posters.
+
+### Palette (tokens in `src/routes/layout.css`, all defined for light and dark)
+
+| Token | Light | Dark | Use |
+|-------|-------|------|-----|
+| `background` / `foreground` | warm cream / forest ink | deep forest / cream | page |
+| `primary` | forest green | bright leaf green | main buttons, links, wing color |
+| `accent` | marigold | marigold | the one Book CTA per view, highlights, underlines |
+| `secondary` | sage | mid forest | soft cards, alternate bands |
+| `peach` | blush peach | muted terracotta | at most one warm band per page |
+| `leaf` | bright leaf | bright leaf | decorative shapes only |
+| `forest` | deep forest | near-black forest | footer and dark bands |
+| `ink` | forest ink | cream | 2px outlines and hard shadows (`shadow-hard`, `shadow-hard-lg`) |
+| `muted` | sand | dim forest | eyebrows, secondary text backgrounds |
+
+Rules: marigold is for the primary action and small highlights, never large text areas. Green is the workhorse. Never hardcode colors; add a token to both blocks if a new one is needed.
+
+### Type
+
+- Display: **Fraunces Variable** (`font-display`), weight 500, `SOFT 60, WONK 1`, tight tracking. Used for h1–h3, the tagline, prices and pull quotes. `font-display-soft` utility applies the full treatment.
+- Body/UI: **Instrument Sans Variable** (`font-sans`). Buttons and nav are semibold with tight tracking.
+- `eyebrow` utility: 12px uppercase sans with wide tracking, for section labels.
+- Body text is 17px / 1.6. Headings use `text-wrap: balance`.
+
+### Shape, spacing, texture
+
+- Radius base 0.5rem; buttons `rounded-lg`, cards `rounded-xl`, badges pill. Circles and half-circles are the decorative vocabulary (logo, hero shapes, list markers).
+- Outlines are 2px `border-ink`. Cards and buttons carry `shadow-hard` (3px) or `shadow-hard-lg` (6px); buttons lift on hover and press flat on active.
+- Section rhythm: `section` utility (64px / 96px vertical), `container-site` (max 72rem). Alternate cream, sage, peach and forest bands; adjacent bands are separated by a 2px ink rule.
+- Imagery: portrait of Mariya in a 2px ink frame with a hard shadow, offset by a Bauhaus circle in accent. Stock photos only, no AI-generated people, no resort imagery.
+- No blur shadows, no gradients, no glassmorphism.
+
+### Components
+
+shadcn-svelte components in `src/lib/components/ui` are owned source and restyled: `button` (variants `default`, `accent`, `outline`, `secondary`, `ghost`, `link`), `card` (variants `default`, `flat`, `secondary`, `accent`, `peach`, `outline`), `badge`, `separator`. The shadcn CLI cannot parse this project's `$app/tsconfig`, so add new components by hand in the same style.
+
+Logo: placeholder butterfly of Bauhaus circles in `src/lib/assets/logo.svelte` (theme-aware, `mono` prop) and `favicon.svg`.
 
 ## Git Commits & Branches
 
