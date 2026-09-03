@@ -48,6 +48,23 @@ Several parts of this stack evolve quickly and training data is often stale — 
 - Every color variable should be defined in both light and dark mode.
 - Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
 
+
+### Good Company (selected canvas variation 02)
+
+- The separate Livingood canvas is the visual reference; do not add design-review routes to the production site.
+- Bottle green (#164b3d), butter (#e8ecb3), lilac (#dcd3e9), and warm paper (#faf9f2). Dark mode uses deep green backgrounds, warm pale text, muted green and plum panels. All colors and their semantic aliases are in layout.css.
+- Manrope 400–800 for body and confident, tightly tracked headings; Lora italic 400–500 for a few human accents. Desktop display 106px, section headings 56px; mobile 66px and 40px. Fonts currently load through Google Fonts.
+- Use an 8px rhythm, 80px section padding and 72px gutters on desktop; 56px sections and 24px gutters on mobile. Cards use 22–32px corners, major inset panels 36px, and buttons are rounded pills. Avoid generic shadows and component-library styling.
+- Home follows the chosen artboard: butter hero with Mariya's real portrait in an irregular lilac collage, solid rounded butterfly, pastel modality and rate cards, lilac bio, then a deep green visit panel.
+- The inline SVG and favicon use the selected solid butterfly as a placeholder. The favicon repeats the approved brand colors because it is a standalone asset.
+- Reuse the owned shadcn Button source and shared site components. Keep navigation readable, touch targets generous, and keyboard focus visible. Theme selection lives in the footer.
+- Content must stay personal, plain and accurate. No fabricated testimonials, generated people, medical promises, family details, or luxury-spa language. Use the supplied BEMER disclaimer wherever its benefits appear.
+- The site is prerendered. Book actions go to /book; only that page links to site.bookingUrl. Until configured, present a clear unavailable online-booking state with call/text alternatives. Never collect forms, payment, or intake on this site.
+
+- Inner pages reuse the same page-hero, story/prose, booking-card and contact-method patterns. No extra palette: all added layouts consume the existing surface, soft, night and text tokens. The About recovery paragraph is condensed to respect the brand's exclusions and avoid claims about healing.
+- Metadata is supplied by the shared Seo component; static LocalBusiness JSON-LD in src/app.html contains only documented facts and must be kept in sync with site.ts. Do not invent a public domain, coordinates, reviews, or the pending license number.
+- Small body and disclaimer copy has a 12px floor for readability; maintain the canvas composition rather than shrinking text to fit.
+
 ## Git Commits & Branches
 
 - Do **not** add the coding agent as a co-author on commits — no `Co-Authored-By` trailers, "Generated with" lines, or similar AI attribution in commit messages.

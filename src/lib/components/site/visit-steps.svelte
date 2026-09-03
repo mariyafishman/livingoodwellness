@@ -1,0 +1,12 @@
+<script lang="ts">
+ import { resolve } from '$app/paths';
+ import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
+ import { visits } from '#lib/config/content.js';
+ let { onBook = false }: { onBook?: boolean } = $props();
+ const book = resolve('/book');
+</script>
+    <section class="first-visit section-space" aria-labelledby="first-visit-title">
+      <div class="section-heading"><div><p class="eyebrow">{onBook ? 'Booking & your first visit' : '04 / Your first visit'}</p><h2 id="first-visit-title">Let’s keep it <em>simple.</em></h2></div>{#if !onBook}<a href={book} class="text-link">Book a session <ArrowUpRight size={18} /></a>{/if}</div>
+      <div class="visit-steps">{#each visits as step, i (step.title)}<div class="visit-step"><span class="step-number">0{i + 1}</span><h3>{step.title}</h3><p>{step.text}</p></div>{/each}</div>
+    </section>
+
