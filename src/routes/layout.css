@@ -431,3 +431,13 @@ details[open] summary > span { transform: rotate(45deg); }
  .contact-invitation>[data-slot=button] { margin:26px 0; }
 }
 
+/* Readability pass: preserve the canvas hierarchy without tiny supporting copy. */
+.modality p { font-size:13px; }
+.bemer-section .disclaimer { font-size:12px !important; line-height:1.65; }
+.receipt-note,.portrait-label,.email-link { font-size:12px; }
+@media(max-width:700px) {
+ .hero .eyebrow { font-size:10px; }
+ .hero-footnote,.session-top,.receipt-note,.portrait-label,.modality p,.email-link { font-size:12px; }
+ .hours-block dl { font-size:14px; }
+}
+.mobile-nav>[data-slot=button] { margin-top:20px; width:fit-content; }

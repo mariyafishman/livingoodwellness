@@ -57,7 +57,7 @@
 
 {#if href}
 	<a
-		bind:this={ref}
+		{@attach (element) => { ref = element; return () => { ref = null; }; }}
 		data-slot="button"
 		class={cn(buttonVariants({ variant, size }), className)}
 		href={disabled ? undefined : href}
@@ -70,7 +70,7 @@
 	</a>
 {:else}
 	<button
-		bind:this={ref}
+		{@attach (element) => { ref = element; return () => { ref = null; }; }}
 		data-slot="button"
 		class={cn(buttonVariants({ variant, size }), className)}
 		{type}

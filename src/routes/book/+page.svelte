@@ -22,5 +22,5 @@
  <div class="booking-alternative"><p>Prefer to talk?</p><a class="phone-link" href={site.phoneHref}>{site.phone}</a><div class="inline-links"><a class="text-link" href={site.phoneHref}>Call Mariya <ArrowUpRight size={16} /></a><a class="text-link" href={site.textHref}>Text Mariya <ArrowUpRight size={16} /></a></div></div>
  </div>
 </section>
-<VisitSteps />
+<VisitSteps onBook />
 <section class="booking-details section-space"><div><p class="eyebrow">Your visit</p><h2>A quiet<br /><em>home studio.</em></h2><address>{site.street}<br />{site.locality}</address><p>A private home with a dedicated studio.<br />By appointment only.</p><a class="text-link" href={site.directionsUrl} target="_blank" rel="noreferrer">Get directions <ArrowUpRight size={18} /></a></div><div class="hours-block"><h2>Studio hours</h2><dl>{#each hours as [day,time] (day)}<div><dt>{day}</dt><dd>{time}</dd></div>{/each}</dl><p>Pay online when booking or in person with cash, Venmo or card. Receipts are provided for insurance reimbursement or HSA/FSA.</p></div></section>

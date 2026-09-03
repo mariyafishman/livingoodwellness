@@ -40,4 +40,5 @@
   {#each links as link (link.href)}
     <a href={resolve(link.href)} aria-current={page.url.pathname === resolve(link.href) ? 'page' : undefined} onclick={() => menuOpen = false}>{link.title}</a>
   {/each}
+  <Button href={resolve('/book')} onclick={() => menuOpen = false}>Book a session <ArrowUpRight data-icon="inline-end" /></Button>
 </nav>

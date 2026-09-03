@@ -1,6 +1,7 @@
 <script lang="ts">
  import { resolve } from '$app/paths';
  import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
+ let { onServices = false }: { onServices?: boolean } = $props();
  import { modalities } from '#lib/config/content.js';
 </script>
     <section id="care" class="care-section section-space">
@@ -8,7 +9,7 @@
         <p class="eyebrow">01 / The care</p>
         <h2>Care for the<br />life you <em>live.</em></h2>
         <p>For seniors, athletes, children and parents. For chronic pain, post-injury recovery, or simply a little time to relax.</p>
-        <a href={resolve('/services')} class="text-link">Find your session <ArrowUpRight size={18} /></a>
+        <a href={onServices ? '#sessions' : resolve('/services')} class="text-link">Find your session <ArrowUpRight size={18} /></a>
         
       </div>
       <div class="modality-list">

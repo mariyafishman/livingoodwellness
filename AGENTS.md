@@ -61,6 +61,10 @@ Several parts of this stack evolve quickly and training data is often stale — 
 - Content must stay personal, plain and accurate. No fabricated testimonials, generated people, medical promises, family details, or luxury-spa language. Use the supplied BEMER disclaimer wherever its benefits appear.
 - The site is prerendered. Book actions go to /book; only that page links to site.bookingUrl. Until configured, present a clear unavailable online-booking state with call/text alternatives. Never collect forms, payment, or intake on this site.
 
+- Inner pages reuse the same page-hero, story/prose, booking-card and contact-method patterns. No extra palette: all added layouts consume the existing surface, soft, night and text tokens. The About recovery paragraph is condensed to respect the brand's exclusions and avoid claims about healing.
+- Metadata is supplied by the shared Seo component; static LocalBusiness JSON-LD in src/app.html contains only documented facts and must be kept in sync with site.ts. Do not invent a public domain, coordinates, reviews, or the pending license number.
+- Small body and disclaimer copy has a 12px floor for readability; maintain the canvas composition rather than shrinking text to fit.
+
 ## Git Commits & Branches
 
 - Do **not** add the coding agent as a co-author on commits — no `Co-Authored-By` trailers, "Generated with" lines, or similar AI attribution in commit messages.
@@ -73,4 +77,3 @@ Several parts of this stack evolve quickly and training data is often stale — 
 ## Keeping This File Updated
 
 Treat AGENTS.md as living documentation. If a change you make invalidates anything here — new commands or scripts, moved directories, changed conventions, added dependencies or bindings — update this file in the same commit.
-- Inner pages reuse the same page-hero, story/prose, booking-card and contact-method patterns. No extra palette: all added layouts consume the existing surface, soft, night and text tokens. The About recovery paragraph is condensed to respect the brand's exclusions and avoid claims about healing.
