@@ -12,8 +12,8 @@
 </script>
 
 <section class="relative overflow-hidden border-b-2 border-ink">
-  <div class="pointer-events-none absolute -top-24 -right-24 size-64 rounded-full bg-secondary sm:size-80" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute -right-8 top-40 size-24 rounded-full bg-accent sm:size-32" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -top-24 -right-24 size-56 rounded-full bg-secondary sm:size-80" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -right-8 top-40 hidden size-32 rounded-full bg-accent sm:block" aria-hidden="true"></div>
   <div class="container-site relative flex flex-col gap-5 py-14 sm:py-20">
     {#if eyebrow}
       <p class="eyebrow flex items-center gap-2 text-muted-foreground">

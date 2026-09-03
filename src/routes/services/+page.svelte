@@ -105,9 +105,9 @@
           <tbody class="divide-y-2 divide-ink">
             {#each packages as p (p.duration)}
               <tr>
-                <td class="px-6 py-4 font-semibold">{p.duration} × 6</td>
-                <td class="px-6 py-4 font-display text-2xl font-medium tracking-tight">{usd(p.price)}</td>
-                <td class="px-6 py-4 text-right"><Badge variant="accent">Save {usd(p.savings)}</Badge></td>
+                <td class="px-4 py-4 font-semibold whitespace-nowrap sm:px-6">{p.duration} × 6</td>
+                <td class="px-4 py-4 font-display text-2xl font-medium tracking-tight sm:px-6">{usd(p.price)}</td>
+                <td class="px-4 py-4 text-right sm:px-6"><Badge variant="accent" class="whitespace-nowrap">Save {usd(p.savings)}</Badge></td>
               </tr>
             {/each}
           </tbody>

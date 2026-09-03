@@ -92,6 +92,12 @@ Logo: placeholder butterfly of Bauhaus circles in `src/lib/assets/logo.svelte` (
 - Any non-trivial change — features, refactors, anything spanning multiple files or commits — goes on a feature branch with a PR; never push directly to `main`. Only trivial fixes may go to `main`, and only if explicitly asked.
 - If you push more changes to a branch after its PR is opened, update the PR description so it still reflects the full change set.
 
+## Dev Gotchas
+
+- Tailwind v4 only scans files that existed when `npm run dev` started. After creating new `.svelte` files, restart the dev server or new utility classes will be missing.
+- The Cloudflare adapter runs `workerd` inside `npm run dev` and holds `.svelte-kit/cloudflare`. Stop the dev server before `npm run build`, or the adapter fails with `EPERM` while clearing that directory.
+- The shadcn-svelte CLI cannot resolve this project's `$app/tsconfig`; add components by hand (see Design).
+
 ## Keeping This File Updated
 
 Treat AGENTS.md as living documentation. If a change you make invalidates anything here — new commands or scripts, moved directories, changed conventions, added dependencies or bindings — update this file in the same commit.
