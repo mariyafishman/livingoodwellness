@@ -26,7 +26,7 @@
     </div>
     <div class="flex flex-col gap-2.5 border-t border-border py-6 lg:py-7">
       <h2 class="font-sans text-xs tracking-[0.16em] uppercase text-muted-foreground">Email</h2>
-      <a class="font-serif text-xl leading-tight break-all text-heading hover:text-eyebrow lg:text-[22px]" href="mailto:{site.email}">
+      <a class="font-serif text-[17px] leading-tight text-heading [overflow-wrap:anywhere] hover:text-eyebrow sm:text-xl lg:text-[22px]" href="mailto:{site.email}">
         {site.email}
       </a>
     </div>

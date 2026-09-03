@@ -11,10 +11,11 @@
   import { site } from '#lib/config/site.ts';
   import { massage, packages, membership, bemer, clients } from '#lib/config/services.ts';
 
+  // Short labels for phones, the full ones from the canvas at sm and up.
   const facts = [
-    { big: '30+ years', small: 'of hands-on practice' },
-    { big: 'By appointment', small: 'no walk-ins, no rush' },
-    { big: 'Home studio', small: `${site.address.street}, ${site.address.city}` }
+    { big: '30+ years', short: '30+ yrs', small: 'of hands-on practice', shortSmall: 'of practice' },
+    { big: 'By appointment', short: 'By appt.', small: 'no walk-ins, no rush', shortSmall: 'no rush' },
+    { big: 'Home studio', short: site.address.city, small: `${site.address.street}, ${site.address.city}`, shortSmall: 'home studio' }
   ];
 
   const teasers = [
@@ -75,10 +76,14 @@
 <!-- Facts -->
 <section class="wrap" aria-label="At a glance">
   <ul class="grid grid-cols-3 gap-3 border-y border-border lg:gap-8">
-    {#each facts as { big, small } (big)}
+    {#each facts as { big, short, small, shortSmall } (big)}
       <li class="flex flex-col gap-1.5 py-5 lg:py-7">
-        <span class="font-serif text-xl text-heading lg:text-[30px]">{big}</span>
-        <span class="text-[13px] text-muted-foreground lg:text-[15px]">{small}</span>
+        <span class="font-serif text-xl text-heading lg:text-[30px]">
+          <span class="sm:hidden">{short}</span><span class="max-sm:hidden">{big}</span>
+        </span>
+        <span class="text-[13px] text-muted-foreground lg:text-[15px]">
+          <span class="sm:hidden">{shortSmall}</span><span class="max-sm:hidden">{small}</span>
+        </span>
       </li>
     {/each}
   </ul>
@@ -141,7 +146,6 @@
       alt="Mariya Fishman"
       width="1200"
       height="1600"
-      loading="lazy"
     />
   </div>
   <div class="flex flex-col gap-5 lg:col-span-6 lg:col-start-7 lg:gap-6">
