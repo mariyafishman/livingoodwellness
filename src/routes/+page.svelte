@@ -94,7 +94,7 @@
 <!-- Who it's for -->
 <section class="bg-sage text-sage-foreground" aria-labelledby="who-title">
   <div class="wrap section grid gap-10 lg:grid-cols-[1fr_2fr] lg:gap-16">
-    <SectionHeading eyebrow="Who I work with" title="Newborns to great-grandparents." />
+    <SectionHeading id="who-title" eyebrow="Who I work with" title="Newborns to great-grandparents." />
     <ul class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
       {#each whoFor as { title, text } (title)}
         <li class="flex flex-col gap-2 border-t border-sage-foreground/15 pt-5">
@@ -109,7 +109,7 @@
 <!-- Services -->
 <section class="wrap section flex flex-col gap-12" aria-labelledby="services-title">
   <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-    <SectionHeading eyebrow="Services" title="What I offer" lede="Massage shaped around what your body needs that day, with a few ways to make regular care easier." />
+    <SectionHeading id="services-title" eyebrow="Services" title="What I offer" lede="Massage shaped around what your body needs that day, with a few ways to make regular care easier." />
     <Button href="/services" variant="link" class="shrink-0">
       All services and prices
       <ArrowRightIcon data-icon="inline-end" />
@@ -171,7 +171,7 @@
 
 <!-- Prices at a glance -->
 <section class="wrap section grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20" aria-labelledby="prices-title">
-  <SectionHeading eyebrow="Sessions" title="Simple prices, no upsell." lede="Pick a length. Everything else, we figure out together in the room.">
+  <SectionHeading id="prices-title" eyebrow="Sessions" title="Simple prices, no upsell." lede="Pick a length. Everything else, we figure out together in the room.">
     <p class="text-sm text-muted-foreground">Packages, membership and Bemer sessions are listed on the services page.</p>
   </SectionHeading>
   <dl class="flex flex-col divide-y divide-border">
@@ -191,7 +191,7 @@
 <!-- Good to know -->
 <section class="bg-sage text-sage-foreground" aria-labelledby="know-title">
   <div class="wrap section flex flex-col gap-10">
-    <SectionHeading eyebrow="Good to know" title="A few practical things." />
+    <SectionHeading id="know-title" eyebrow="Good to know" title="A few practical things." />
     <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {#each goodToKnow as { title, text } (title)}
         <li class="flex flex-col gap-2 rounded-2xl bg-background/70 p-5">

@@ -2,6 +2,7 @@
   import type { Snippet } from 'svelte';
 
   interface Props {
+    id?: string;
     eyebrow?: string;
     title: string;
     lede?: string;
@@ -11,14 +12,14 @@
     children?: Snippet;
   }
 
-  let { eyebrow, title, lede, align = 'start', as = 'h2', class: className, children }: Props = $props();
+  let { id, eyebrow, title, lede, align = 'start', as = 'h2', class: className, children }: Props = $props();
 </script>
 
 <div class={['flex max-w-2xl flex-col gap-3', align === 'center' && 'mx-auto items-center text-center', className]}>
   {#if eyebrow}
     <span class="eyebrow">{eyebrow}</span>
   {/if}
-  <svelte:element this={as} class={as === 'h1' ? 'text-display-lg' : 'text-display-md'}>{title}</svelte:element>
+  <svelte:element this={as} {id} class={as === 'h1' ? 'text-display-lg' : 'text-display-md'}>{title}</svelte:element>
   {#if lede}
     <p class="text-lg text-muted-foreground">{lede}</p>
   {/if}
