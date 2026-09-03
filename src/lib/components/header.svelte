@@ -68,7 +68,7 @@
         {site.phone}
       </Button>
       <ThemeToggle class="max-lg:hidden" />
-      <Button href="/book" size="sm">Book<span class="max-sm:hidden">&nbsp;a session</span></Button>
+      <Button href="/book" size="sm"><span>Book<span class="max-sm:hidden">&nbsp;a session</span></span></Button>
 
       <button
         type="button"
