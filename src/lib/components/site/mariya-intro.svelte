@@ -7,7 +7,6 @@
     <section id="mariya" class="mariya-section section-space">
       <div class="mariya-visual">
         <Portrait class="mariya-portrait" />
-        <div class="portrait-label"><span>Mariya Fishman</span><span>Licensed Massage Therapist</span></div>
         <div class="bio-butterfly"><Logo /></div>
       </div>
       <div class="mariya-copy"><p class="eyebrow">03 / The person behind the practice</p><h2>Meet <em>Mariya.</em></h2>
