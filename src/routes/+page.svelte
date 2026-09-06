@@ -24,4 +24,4 @@
  <div class="company-collage"><div class="company-shape"></div><Portrait class="hero-portrait" eager /><div class="hello-note">Hello, I’m Mariya.</div><div class="company-butterfly"><Logo /></div></div>
 </section>
 <div class="care-ribbon"><span>For every stage of life.</span><Logo /><span>For the way you move.</span><Logo /><span>For a little more balance.</span></div>
-<Care /><SessionRates /><MariyaIntro /><Bemer /><VisitSteps /><VisitPanel />
+<Care showSectionLabel={false} /><SessionRates showSectionLabel={false} /><MariyaIntro showSectionLabel={false} /><Bemer /><VisitSteps showSectionLabel={false} /><VisitPanel />
