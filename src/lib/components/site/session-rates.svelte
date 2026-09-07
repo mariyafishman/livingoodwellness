@@ -7,7 +7,7 @@
  const book = resolve('/book');
 </script>
     <section id="sessions" class="sessions-section section-space">
-      <div class="section-heading"><div>{#if showSectionLabel}<p class="eyebrow">02 / Sessions & rates</p>{/if}<h2>A little time.<br /><em>All for you.</em></h2></div><p>Choose the time that suits you.<br />Massage therapy with Mariya.</p></div>
+      <div class="section-heading"><div>{#if showSectionLabel}<p class="eyebrow">02 / Sessions & rates</p>{/if}<h2>A little time.<br />All for you.</h2></div><p>Choose the time that suits you.<br />Massage therapy with Mariya.</p></div>
       <div class="session-grid">
         {#each sessions as session (session.minutes)}
           <a class="session-option" href={book} aria-label={`Book a ${session.minutes}-minute massage for $${session.price}`}>

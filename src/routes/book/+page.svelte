@@ -8,8 +8,8 @@
 </script>
 <Seo title="Book a session" description="Book massage therapy with Mariya Fishman in Hudson, MA. Choose a service and time on MassageBook, or call or text 978-493-6171." />
 <section class="booking-hero page-hero section-space">
- <div><p class="eyebrow">A little time, all for you</p><h1>Book a<br /><em>session.</em></h1><p class="page-lead">Choose a service and a time. Mariya will take it from there.</p><p class="quiet-note">By appointment only · Hudson, Massachusetts</p></div>
- <div class="booking-card"><Logo /><h2>Let’s find<br /><em>your time.</em></h2>
+ <div><p class="eyebrow">A little time, all for you</p><h1>Book a<br />session.</h1><p class="page-lead">Choose a service and a time. Mariya will take it from there.</p><p class="quiet-note">By appointment only · Hudson, Massachusetts</p></div>
+ <div class="booking-card"><Logo /><h2>Let’s find<br />your time.</h2>
  {#if site.bookingUrl}
   <p>Continue to MassageBook to choose your appointment. You can also purchase packages and membership there.</p>
   <Button href={site.bookingUrl} target="_blank" rel="noreferrer">Continue to MassageBook <ArrowUpRight data-icon="inline-end" /></Button>
@@ -23,4 +23,4 @@
  </div>
 </section>
 <VisitSteps onBook />
-<section class="booking-details section-space"><div><p class="eyebrow">Your visit</p><h2>A quiet<br /><em>home studio.</em></h2><address>{site.street}<br />{site.locality}</address><p>A private home with a dedicated studio.<br />By appointment only.</p><a class="text-link" href={site.directionsUrl} target="_blank" rel="noreferrer">Get directions <ArrowUpRight size={18} /></a></div><div class="hours-block"><h2>Studio hours</h2><dl>{#each hours as [day,time] (day)}<div><dt>{day}</dt><dd>{time}</dd></div>{/each}</dl><p>Pay online when booking or in person with cash, Venmo or card. Receipts are provided for insurance reimbursement or HSA/FSA.</p></div></section>
+<section class="booking-details section-space"><div><p class="eyebrow">Your visit</p><h2>A quiet<br />home studio.</h2><address>{site.street}<br />{site.locality}</address><p>A private home with a dedicated studio.<br />By appointment only.</p><a class="text-link" href={site.directionsUrl} target="_blank" rel="noreferrer">Get directions <ArrowUpRight size={18} /></a></div><div class="hours-block"><h2>Studio hours</h2><dl>{#each hours as [day,time] (day)}<div><dt>{day}</dt><dd>{time}</dd></div>{/each}</dl><p>Pay online when booking or in person with cash, Venmo or card. Receipts are provided for insurance reimbursement or HSA/FSA.</p></div></section>

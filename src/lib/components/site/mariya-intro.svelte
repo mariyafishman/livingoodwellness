@@ -10,7 +10,7 @@
         <Portrait class="mariya-portrait" />
         <div class="bio-butterfly"><Logo /></div>
       </div>
-      <div class="mariya-copy">{#if showSectionLabel}<p class="eyebrow">03 / The person behind the practice</p>{/if}<h2>Meet <em>Mariya.</em></h2>
+      <div class="mariya-copy">{#if showSectionLabel}<p class="eyebrow">03 / The person behind the practice</p>{/if}<h2>Meet Mariya.</h2>
         <blockquote>“Helping people feel<br />at home in their bodies.”</blockquote>
         <p>Mariya Fishman has practiced massage therapy for over 30 years. She works with seniors, athletes, children and everyone in between from her home studio in Hudson, MA, and offers Bemer circulation sessions to support recovery.</p>
         <p>Trained at the Muscular Therapy Institute in Cambridge. A volunteer on the Pan-Mass Challenge massage team, working with cancer survivors.</p>

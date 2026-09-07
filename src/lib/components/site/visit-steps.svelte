@@ -6,7 +6,7 @@
  const book = resolve('/book');
 </script>
     <section class="first-visit section-space" aria-labelledby="first-visit-title">
-      <div class="section-heading"><div>{#if showSectionLabel}<p class="eyebrow">{onBook ? 'Booking & your first visit' : '04 / Your first visit'}</p>{/if}<h2 id="first-visit-title">Let’s keep it <em>simple.</em></h2></div>{#if !onBook}<a href={book} class="text-link">Book a session <ArrowUpRight size={18} /></a>{/if}</div>
-      <div class="visit-steps">{#each visits as step, i (step.title)}<div class="visit-step"><span class="step-number">0{i + 1}</span><h3>{step.title}</h3><p>{step.text}</p></div>{/each}</div>
+      <div class="section-heading"><div>{#if showSectionLabel}<p class="eyebrow">{onBook ? 'Booking & your first visit' : '04 / Your first visit'}</p>{/if}<h2 id="first-visit-title">Let’s keep it simple.</h2></div>{#if !onBook}<a href={book} class="text-link">Book a session <ArrowUpRight size={18} /></a>{/if}</div>
+      <div class="visit-steps">{#each visits as step (step.title)}<div class="visit-step"><h3>{step.title}</h3><p>{step.text}</p></div>{/each}</div>
     </section>
 

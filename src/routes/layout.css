@@ -43,7 +43,6 @@
  h1,h2,h3,p,figure,blockquote { margin:0; }
  h1,h2,h3 { font-family:var(--heading-font); font-weight:var(--heading-weight); line-height:1.05; letter-spacing:var(--heading-tracking); }
  h1 { font-size:var(--display-size); } h2 { font-size:var(--heading-size); text-wrap:balance; } h3 { font-size:28px; letter-spacing:-.035em; }
- em { font-family:var(--italic-font); font-weight:400; color:var(--accent-ink); }
  p { text-wrap:pretty; } a { color:inherit; text-decoration:none; } address { font-style:normal; }
  a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid currentColor; outline-offset:5px; }
  button,summary { cursor:pointer; } img { max-width:100%; } [hidden] { display:none !important; }
@@ -100,7 +99,6 @@ section[id] { scroll-margin-top:28px; }
 /* Home layouts transcribed from Good Company. */
 .hero { position: relative; }
 .hero-copy { position: relative; z-index: 1; }
-.hero h1 em { display: block; }
 .hero-description { max-width: 405px; font-size: 18px; line-height: 1.65; margin-top: 32px !important; }
 .hero-actions { display: flex; align-items: center; gap: 28px; margin-top: 32px; }
 .care-ribbon { padding: 21px var(--page-gutter); display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -110,10 +108,8 @@ section[id] { scroll-margin-top:28px; }
 .modality-list { display: flex; flex-direction: column; }
 .modality { display: flex; align-items: center; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
 .modality:last-child { border-bottom: 1px solid var(--line); }
-.modality-number { align-self: flex-start; font-size: 11px; padding-top: 6px; color: var(--muted-ink); }
 .modality h3 { font-size: 25px; }
 .modality p { color: var(--muted-ink); font-size: 13px; margin-top: 7px; }
-.modality-mark { margin-left: auto; font-size: 22px; }
 .section-heading { display: flex; justify-content: space-between; gap: 50px; align-items: end; margin-bottom: 44px; }
 .section-heading > p { color: var(--muted-ink); font-size: 15px; max-width: 300px; }
 .sessions-section { background: var(--surface); }
@@ -168,7 +164,6 @@ details[open] summary > span { transform: rotate(45deg); }
 .bemer-action strong { font-family: var(--heading-font); font-size: 35px; font-weight: 400; }
 .bemer-action strong span { font-family: var(--body-font); font-size: 12px; }
 .visit-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-.step-number { display: block; font-size: 12px; padding: 16px 0 30px; border-top: 1px solid var(--line); }
 .visit-step h3 { margin-bottom: 18px; }
 .visit-step p { font-size: 15px; color: var(--muted-ink); max-width: 330px; }
 .contact-section { background: var(--night); color: var(--on-night); display: grid; grid-template-columns: 1fr 1.25fr; gap: 95px; --green: var(--on-night); --on-green: var(--night); --accent-ink: var(--on-night); --line: var(--night-line); }
@@ -194,7 +189,6 @@ details[open] summary > span { transform: rotate(45deg); }
 .hero { display: grid; grid-template-columns: 1.12fr 1fr; padding: 38px var(--page-gutter) 74px; gap: 54px; align-items: center; min-height: 664px; }
 .hero .eyebrow { border: 1px solid var(--line); border-radius: 100px; padding: 9px 16px; display: inline-block; font-size: 10px; letter-spacing: .09em; }
 .hero h1 { line-height: 1.04; }
-.hero h1 em { font-size: .97em; letter-spacing: -.075em; }
 .hero-description { font-size: 17px; margin-top: 26px !important; }
 .company-collage { position: relative; height: 525px; }
 .company-shape { position: absolute; inset: 5px 0 0; background: var(--soft); border-radius: 46% 54% 48% 52%; transform: rotate(-12deg); }
@@ -207,10 +201,8 @@ details[open] summary > span { transform: rotate(45deg); }
 .modality-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .modality { background: var(--surface); border: 0; border-radius: 22px; padding: 28px 24px; display: block; position: relative; min-height: 155px; }
 .modality:nth-child(2), .modality:nth-child(5) { background: var(--soft); }
-.modality-number { display: block; margin-bottom: 15px; padding: 0; }
 .modality h3 { font-size: 19px; line-height: 1.2; letter-spacing: -.04em; }
 .modality p { font-size: 11px; }
-.modality-mark { position: absolute; top: 20px; right: 22px; font-size: 22px; }
 .sessions-section { background: var(--page); padding-top: 30px; }
 .session-grid { gap: 20px; }
 .session-option { background: var(--surface); border: 0; border-radius: 28px; padding: 32px; }
@@ -231,7 +223,6 @@ details[open] summary > span { transform: rotate(45deg); }
 .bemer-section { border: 0; margin-top: 35px; }
 .bemer-section h2 { font-size: 30px; }
 .first-visit { padding-top: 45px; }
-.step-number { display: flex; align-items: center; justify-content: center; padding: 0; width: 52px; height: 52px; border: 0; background: var(--surface); border-radius: 50%; margin-bottom: 26px; font-size: 16px; }
 .visit-step h3 { font-size: 25px; }
 .contact-section { margin: 0 24px; border-radius: 36px; }
 .contact-invitation h2 { font-size: 69px; }
@@ -283,7 +274,6 @@ details[open] summary > span { transform: rotate(45deg); }
   .bemer-action strong span { font-size: 10px; }
   .bemer-action .text-link { font-size: 12px; }
   .visit-steps { grid-template-columns: 1fr; gap: 30px; }
-  .step-number { padding: 15px 0 20px; }
   .visit-step h3 { font-size: 26px; margin-bottom: 13px; }
   .visit-step p { font-size: 14px; }
   .contact-section { grid-template-columns: 1fr; gap: 44px; }
@@ -309,7 +299,6 @@ details[open] summary > span { transform: rotate(45deg); }
   .modality { min-height: 151px; padding: 20px 16px; border-radius: 18px; }
   .modality h3 { font-size: 16px; }
   .modality p { font-size: 10px; }
-  .modality-mark { right: 14px; top: 12px; font-size: 20px; }
   .sessions-section { padding-top: 20px; }
   .session-grid { gap: 14px; }
   .session-option { padding: 25px; border-radius: 22px; }
@@ -327,7 +316,6 @@ details[open] summary > span { transform: rotate(45deg); }
   .mariya-copy blockquote { font-size: 29px; }
   .bemer-section { margin-top: 15px; }
   .bemer-section h2 { font-size: 27px; }
-  .step-number { width: 40px; height: 40px; margin-bottom: 20px; font-size: 13px; }
   .visit-step h3 { font-size: 23px; }
   .contact-section { margin: 0 12px; padding: 42px 24px; border-radius: 24px; }
   .contact-invitation h2 { font-size: 52px; }

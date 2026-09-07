@@ -17,11 +17,11 @@
 <section class="hero opening" aria-label="Welcome to Livingood">
  <div class="hero-copy">
   <p class="eyebrow">Massage therapy · Hudson, Massachusetts</p>
-  <h1>Find your <em>balance.</em></h1>
+  <h1>Find your balance.</h1>
   <p class="hero-description">Over 30 years of experience with seniors, athletes, children and everyone in between.</p>
   <div class="hero-actions"><Button href={resolve('/book')}>Book a session <ArrowUpRight data-icon="inline-end" /></Button><a href={resolve('/about')} class="text-link">Meet Mariya <ArrowRight size={18} /></a></div>
  </div>
  <div class="company-collage"><div class="company-shape"></div><Portrait class="hero-portrait" eager /><div class="hello-note">Hello, I’m Mariya.</div><div class="company-butterfly"><Logo /></div></div>
 </section>
 <div class="care-ribbon"><span>For every stage of life.</span><Logo /><span>For the way you move.</span><Logo /><span>For a little more balance.</span></div>
-<Care showSectionLabel={false} /><SessionRates showSectionLabel={false} /><MariyaIntro showSectionLabel={false} /><Bemer /><VisitSteps showSectionLabel={false} /><VisitPanel />
+<Care showSectionLabel={false} /><SessionRates showSectionLabel={false} /><Bemer /><MariyaIntro showSectionLabel={false} /><VisitSteps showSectionLabel={false} /><VisitPanel />
