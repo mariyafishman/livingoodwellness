@@ -3,14 +3,13 @@
   import SEO from '#lib/components/seo.svelte';
   import PageIntro from '#lib/components/page-intro.svelte';
   import { Button } from '#lib/components/ui/button/index.ts';
-  import { site } from '#lib/config/site.ts';
 
   const notFound = $derived(page.status === 404);
   const title = $derived(notFound ? 'Page not found' : 'Something went wrong');
   const lead = $derived(
     notFound
       ? 'That page is not here, but the studio still is.'
-      : 'Please try again in a moment. If you need Mariya now, call or text.'
+      : 'Please try again in a moment, or get in touch with Mariya directly.'
   );
 </script>
 
@@ -19,7 +18,7 @@
 <PageIntro {title} {lead}>
   <div class="mt-8 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-4 md:mt-10">
     <Button href="/">Back to the home page</Button>
-    <Button href={site.phone.tel} variant="outline">Call or text {site.phone.display}</Button>
+    <Button href="/contact" variant="outline">Contact</Button>
   </div>
 </PageIntro>
 
