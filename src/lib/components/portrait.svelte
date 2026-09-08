@@ -1,5 +1,4 @@
 <script lang="ts">
-  import mariya from '#lib/assets/mariya.jpg';
   import Logo from '#lib/assets/logo.svelte';
   import { site } from '#lib/config/site.ts';
   import { cn } from '#lib/utils.ts';
@@ -19,11 +18,11 @@
 
 <div class={cn('relative aspect-square w-full max-w-[35rem]', className)}>
   <div class="absolute inset-0 rounded-full bg-accent" aria-hidden="true"></div>
-  <img
-    src={mariya}
+  <!-- The circle is at most 448px wide (80% of 35rem), so 900px covers HiDPI. -->
+  <enhanced:img
+    src="#lib/assets/mariya.jpg?w=900;600;400"
+    sizes="(min-width: 48rem) 448px, 80vw"
     alt="{site.practitioner.name}, {site.practitioner.title}"
-    width="1200"
-    height="1600"
     class="absolute top-[10%] left-[10%] aspect-square w-[80%] rounded-full object-cover object-[50%_38%]"
     fetchpriority={priority ? 'high' : undefined}
     loading={priority ? 'eager' : 'lazy'}
