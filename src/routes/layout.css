@@ -1,81 +1,113 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
-@import "shadcn-svelte/tailwind.css";
-@import "@fontsource-variable/inter";
+@import 'tw-animate-css';
+@import 'shadcn-svelte/tailwind.css';
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/dm-sans';
+@import '@fontsource-variable/cormorant-garamond/wght-italic.css';
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Brand tokens. Direction: "variation 4" of the Livingood home-page canvas.
+ * Cream page, butter and lilac colour blocks, one deep green for text, buttons
+ * and the dark card. See the Design section of AGENTS.md.
+ */
 :root {
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.145 0 0);
-	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.145 0 0);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.145 0 0);
-	--primary: oklch(0.205 0 0);
-	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.97 0 0);
-	--secondary-foreground: oklch(0.205 0 0);
-	--muted: oklch(0.97 0 0);
-	--muted-foreground: oklch(0.556 0 0);
-	--accent: oklch(0.97 0 0);
-	--accent-foreground: oklch(0.205 0 0);
+	/* Brand palette (light) */
+	--cream: #fafaf2;
+	--butter: #e8ebb2;
+	--lilac: #dcd3e8;
+	--green: #164e3e;
+	--green-soft: #3f5a50;
+
+	/* Semantic tokens */
+	--background: var(--cream);
+	--foreground: var(--green);
+	--card: var(--cream);
+	--card-foreground: var(--green);
+	--popover: var(--cream);
+	--popover-foreground: var(--green);
+	--primary: var(--green);
+	--primary-foreground: var(--butter);
+	--secondary: var(--butter);
+	--secondary-foreground: var(--green);
+	--accent: var(--lilac);
+	--accent-foreground: var(--green);
+	--muted: #efefe3;
+	--muted-foreground: var(--green-soft);
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.922 0 0);
-	--input: oklch(0.922 0 0);
-	--ring: oklch(0.708 0 0);
-	--chart-1: oklch(0.87 0 0);
-	--chart-2: oklch(0.556 0 0);
-	--chart-3: oklch(0.439 0 0);
-	--chart-4: oklch(0.371 0 0);
-	--chart-5: oklch(0.269 0 0);
-	--radius: 0.625rem;
-	--sidebar: oklch(0.985 0 0);
-	--sidebar-foreground: oklch(0.145 0 0);
-	--sidebar-primary: oklch(0.205 0 0);
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.97 0 0);
-	--sidebar-accent-foreground: oklch(0.205 0 0);
-	--sidebar-border: oklch(0.922 0 0);
-	--sidebar-ring: oklch(0.708 0 0);
+	--border: var(--green);
+	--input: var(--green);
+	--ring: var(--green);
+	--chart-1: var(--green);
+	--chart-2: var(--butter);
+	--chart-3: var(--lilac);
+	--chart-4: var(--green-soft);
+	--chart-5: #efefe3;
+
+	/* Rhythm */
+	--radius: 1.25rem; /* pricing cards */
+	--radius-block: 1.75rem; /* colour blocks */
+	--shadow-note: 0 8px 24px rgba(22, 78, 62, 0.12);
+
+	--sidebar: var(--cream);
+	--sidebar-foreground: var(--green);
+	--sidebar-primary: var(--green);
+	--sidebar-primary-foreground: var(--butter);
+	--sidebar-accent: var(--lilac);
+	--sidebar-accent-foreground: var(--green);
+	--sidebar-border: var(--green);
+	--sidebar-ring: var(--green);
 }
 
 .dark {
-	--background: oklch(0.145 0 0);
-	--foreground: oklch(0.985 0 0);
-	--card: oklch(0.205 0 0);
-	--card-foreground: oklch(0.985 0 0);
-	--popover: oklch(0.205 0 0);
-	--popover-foreground: oklch(0.985 0 0);
-	--primary: oklch(0.922 0 0);
-	--primary-foreground: oklch(0.205 0 0);
-	--secondary: oklch(0.269 0 0);
-	--secondary-foreground: oklch(0.985 0 0);
-	--muted: oklch(0.269 0 0);
-	--muted-foreground: oklch(0.708 0 0);
-	--accent: oklch(0.269 0 0);
-	--accent-foreground: oklch(0.985 0 0);
+	/* Brand palette (dark): the green becomes the page, butter carries the light */
+	--cream: #eef0d6;
+	--butter: #e8ebb2;
+	--lilac: #3b3452;
+	--green: #0f2b22;
+	--green-soft: #b7c9be;
+
+	--background: var(--green);
+	--foreground: var(--cream);
+	--card: #153a2f;
+	--card-foreground: var(--cream);
+	--popover: #153a2f;
+	--popover-foreground: var(--cream);
+	--primary: var(--butter);
+	--primary-foreground: #164e3e;
+	--secondary: #1b4638;
+	--secondary-foreground: var(--cream);
+	--accent: var(--lilac);
+	--accent-foreground: #efe9f5;
+	--muted: #173a2f;
+	--muted-foreground: var(--green-soft);
 	--destructive: oklch(0.704 0.191 22.216);
-	--border: oklch(1 0 0 / 10%);
-	--input: oklch(1 0 0 / 15%);
-	--ring: oklch(0.556 0 0);
-	--chart-1: oklch(0.87 0 0);
-	--chart-2: oklch(0.556 0 0);
-	--chart-3: oklch(0.439 0 0);
-	--chart-4: oklch(0.371 0 0);
-	--chart-5: oklch(0.269 0 0);
-	--sidebar: oklch(0.205 0 0);
-	--sidebar-foreground: oklch(0.985 0 0);
-	--sidebar-primary: oklch(0.488 0.243 264.376);
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.269 0 0);
-	--sidebar-accent-foreground: oklch(0.985 0 0);
-	--sidebar-border: oklch(1 0 0 / 10%);
-	--sidebar-ring: oklch(0.556 0 0);
+	--border: color-mix(in oklab, var(--butter) 45%, transparent);
+	--input: color-mix(in oklab, var(--butter) 45%, transparent);
+	--ring: var(--butter);
+	--chart-1: var(--butter);
+	--chart-2: #1b4638;
+	--chart-3: var(--lilac);
+	--chart-4: var(--green-soft);
+	--chart-5: #173a2f;
+	--shadow-note: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+	--sidebar: #153a2f;
+	--sidebar-foreground: var(--cream);
+	--sidebar-primary: var(--butter);
+	--sidebar-primary-foreground: #164e3e;
+	--sidebar-accent: var(--lilac);
+	--sidebar-accent-foreground: #efe9f5;
+	--sidebar-border: color-mix(in oklab, var(--butter) 45%, transparent);
+	--sidebar-ring: var(--butter);
 }
 
 @theme inline {
-	--font-sans: 'Inter Variable', sans-serif;
+	--font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Cormorant Garamond Variable', Georgia, 'Times New Roman', serif;
+
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -107,23 +139,73 @@
 	--color-card: var(--card);
 	--color-foreground: var(--foreground);
 	--color-background: var(--background);
-	--radius-sm: calc(var(--radius) * 0.6);
-	--radius-md: calc(var(--radius) * 0.8);
+
+	--radius-sm: calc(var(--radius) * 0.4);
+	--radius-md: calc(var(--radius) * 0.6);
 	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) * 1.4);
-	--radius-2xl: calc(var(--radius) * 1.8);
-	--radius-3xl: calc(var(--radius) * 2.2);
-	--radius-4xl: calc(var(--radius) * 2.6);
+	--radius-xl: var(--radius-block);
+	--radius-2xl: calc(var(--radius-block) * 1.25);
+	--radius-3xl: calc(var(--radius-block) * 1.5);
+	--radius-card: var(--radius);
+	--radius-block: var(--radius-block);
+
+	--shadow-note: var(--shadow-note);
+}
+
+/* Page gutter: 20px on phones, 64px from md up, 1440px max like the artboards. */
+@utility wrap {
+	margin-inline: auto;
+	width: 100%;
+	max-width: 90rem;
+	padding-inline: 1.25rem;
+	@media (width >= 48rem) {
+		padding-inline: 4rem;
+	}
+}
+
+/* Section rhythm: 64px on phones, 112px on desktop. */
+@utility section-gap {
+	margin-top: 4rem;
+	@media (width >= 48rem) {
+		margin-top: 7rem;
+	}
 }
 
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
 	}
+	html {
+		@apply font-sans antialiased;
+	}
 	body {
 		@apply bg-background text-foreground;
 	}
-	html {
-		@apply font-sans;
+	::selection {
+		@apply bg-accent text-accent-foreground;
+	}
+}
+
+@layer components {
+	/* Display type: plain Manrope 800, tight tracking, no eyebrows or italics. */
+	.display-1 {
+		@apply font-display text-[3.75rem] leading-[0.95] font-extrabold tracking-[-0.04em] text-balance md:text-[6.5rem];
+	}
+	.display-2 {
+		@apply font-display text-[2.375rem] leading-none font-extrabold tracking-[-0.04em] text-balance md:text-[3.5rem];
+	}
+	.display-3 {
+		@apply font-display text-[1.625rem] leading-[1.1] font-extrabold tracking-[-0.03em] text-balance;
+	}
+	/* Row title inside hairline lists (services, how it works). */
+	.row-title {
+		@apply font-display text-lg leading-tight font-extrabold tracking-[-0.02em] md:text-3xl md:tracking-[-0.03em];
+	}
+	.lead {
+		@apply text-base leading-normal md:text-lg;
+	}
+	/* Hand-written note on the portrait. */
+	.note {
+		@apply bg-background text-foreground shadow-note rounded-md px-4 py-2.5 font-serif text-xl italic md:px-5 md:py-3 md:text-[1.75rem];
 	}
 }

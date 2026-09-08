@@ -2,7 +2,6 @@
   import './layout.css';
   import favicon from '#lib/assets/favicon.svg';
   import { ModeWatcher } from 'mode-watcher';
-  import { Toaster } from '#lib/components/ui/sonner/index.ts';
   import Header from '#lib/components/header.svelte';
   import Footer from '#lib/components/footer.svelte';
 
@@ -10,17 +9,22 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
+  <link rel="icon" href={favicon} type="image/svg+xml" />
 </svelte:head>
 
 <ModeWatcher defaultMode="light" />
 
-<Toaster richColors />
+<a
+  href="#main"
+  class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:font-display focus:font-bold focus:text-primary-foreground"
+>
+  Skip to content
+</a>
 
 <div class="flex min-h-svh flex-col">
   <Header />
 
-  <main class="flex-1">
+  <main id="main" class="flex-1">
     {@render children()}
   </main>
 

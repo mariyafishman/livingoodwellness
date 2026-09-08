@@ -1,158 +1,111 @@
 <script lang="ts">
-  import * as NavigationMenu from '#lib/components/ui/navigation-menu/index.ts';
-  import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
+  import { page } from '$app/state';
   import * as Popover from '#lib/components/ui/popover/index.ts';
-  import * as ToggleGroup from '#lib/components/ui/toggle-group/index.ts';
   import { Button, buttonVariants } from '#lib/components/ui/button/index.ts';
-  import { mode, userPrefersMode } from 'mode-watcher';
-  import SunIcon from '@lucide/svelte/icons/sun';
-  import MoonIcon from '@lucide/svelte/icons/moon';
-  import MonitorIcon from '@lucide/svelte/icons/monitor';
   import Logo from '#lib/assets/logo.svelte';
   import { site } from '#lib/config/site.ts';
+  import { cn } from '#lib/utils.ts';
 
   const navLinks = [
-    {
-      title: 'Services',
-      href: '/services'
-    },
-    {
-      title: 'About',
-      href: '/about'
-    },
-    {
-      title: 'Contact',
-      href: '/contact'
-    }
+    { title: 'Services', href: '/services' },
+    { title: 'About', href: '/about' },
+    { title: 'Contact', href: '/contact' }
   ];
 
   let mobileMenuOpen = $state(false);
+
+  const isCurrent = (href: string) =>
+    page.url.pathname === href || page.url.pathname.startsWith(`${href}/`);
+
+  const focusRing =
+    'rounded-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-4 focus-visible:ring-offset-secondary';
 </script>
 
-<header class="sticky top-0 z-50 flex h-16 flex-row items-center justify-between gap-8 bg-background px-6 py-3">
-  <div class="flex items-center gap-8">
-    <a class="flex items-center gap-2 text-xl font-semibold" href="/">
-      <Logo class="size-8" />
-      {site.name}
+<header class="bg-secondary text-secondary-foreground">
+  <div class="wrap flex h-20 items-center justify-between gap-6 md:h-24">
+    <a href="/" class={cn('flex items-center gap-2.5 md:gap-3', focusRing)} aria-label="{site.name}, home">
+      <Logo class="size-8 md:size-10" />
+      <span class="flex flex-col">
+        <span class="font-display text-lg leading-none font-extrabold tracking-[-0.02em] md:text-xl">Livingood</span>
+        <span
+          class="mt-1 hidden font-display text-[0.5625rem] leading-tight font-semibold tracking-[0.18em] uppercase sm:block"
+        >
+          Wellness Center
+        </span>
+      </span>
     </a>
 
-    <NavigationMenu.Root class="max-lg:hidden">
-      <NavigationMenu.List>
-        {#each navLinks as { title, href } (href)}
-          <NavigationMenu.Item>
-            <NavigationMenu.Link>
-              {#snippet child()}
-                <Button class="px-4" variant="ghost" {href}>{title}</Button>
-              {/snippet}
-            </NavigationMenu.Link>
-          </NavigationMenu.Item>
-        {/each}
-      </NavigationMenu.List>
-    </NavigationMenu.Root>
-  </div>
+    <nav aria-label="Main" class="hidden items-center gap-8 text-[0.9375rem] font-medium md:flex">
+      {#each navLinks as { title, href } (href)}
+        <a
+          {href}
+          aria-current={isCurrent(href) ? 'page' : undefined}
+          class={cn(
+            'decoration-2 underline-offset-[6px] hover:underline aria-[current=page]:underline',
+            focusRing
+          )}
+        >
+          {title}
+        </a>
+      {/each}
+    </nav>
 
-  <div class="flex items-center gap-2">
-    <div class="flex items-center gap-2 max-lg:hidden">
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
-          {#if mode.current === 'light'}
-            <SunIcon />
-          {:else if mode.current === 'dark'}
-            <MoonIcon />
-          {/if}
-          <span class="sr-only">Toggle theme</span>
-        </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="end">
-          <DropdownMenu.RadioGroup bind:value={userPrefersMode.current}>
-            <DropdownMenu.RadioItem value="light">
-              <SunIcon class="mr-2" />
-              Light
-            </DropdownMenu.RadioItem>
-            <DropdownMenu.RadioItem value="dark">
-              <MoonIcon class="mr-2" />
-              Dark
-            </DropdownMenu.RadioItem>
-            <DropdownMenu.RadioItem value="system">
-              <MonitorIcon class="mr-2" />
-              System
-            </DropdownMenu.RadioItem>
-          </DropdownMenu.RadioGroup>
-        </DropdownMenu.Content>
-      </DropdownMenu.Root>
+    <div class="flex items-center gap-2">
+      <Button href="/book" size="sm" class="max-md:hidden">Book a session</Button>
+      <Button href="/book" size="sm" class="md:hidden">Book</Button>
 
-      <Button href="/book">Book a session</Button>
+      <Popover.Root bind:open={mobileMenuOpen}>
+        <Popover.Trigger
+          class={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'md:hidden')}
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+        >
+          <span class="relative block size-5" aria-hidden="true">
+            <span
+              class={[
+                'absolute left-0 block h-0.5 w-5 rounded-full bg-current transition-all duration-150',
+                mobileMenuOpen ? 'top-[9px] -rotate-45' : 'top-1'
+              ]}
+            ></span>
+            <span
+              class={[
+                'absolute left-0 block h-0.5 w-5 rounded-full bg-current transition-all duration-150',
+                mobileMenuOpen ? 'top-[9px] rotate-45' : 'top-3.5'
+              ]}
+            ></span>
+          </span>
+        </Popover.Trigger>
+        <Popover.Content
+          class="h-(--bits-popover-content-available-height) w-(--bits-popover-content-available-width) overflow-y-auto rounded-none bg-secondary p-0 text-secondary-foreground shadow-none ring-0"
+          align="start"
+          side="bottom"
+          sideOffset={0}
+          preventScroll
+        >
+          <nav aria-label="Main" class="wrap flex min-h-full flex-col gap-10 py-8">
+            <ul class="flex flex-col gap-4">
+              {#each navLinks as { title, href } (href)}
+                <li>
+                  <a
+                    {href}
+                    aria-current={isCurrent(href) ? 'page' : undefined}
+                    class={cn(
+                      'font-display text-[2.375rem] leading-none font-extrabold tracking-[-0.04em] aria-[current=page]:underline aria-[current=page]:decoration-4 aria-[current=page]:underline-offset-8 active:opacity-60',
+                      focusRing
+                    )}
+                    onclick={() => (mobileMenuOpen = false)}
+                  >
+                    {title}
+                  </a>
+                </li>
+              {/each}
+            </ul>
+            <div class="mt-auto flex flex-col gap-3">
+              <Button href="/book" size="lg" onclick={() => (mobileMenuOpen = false)}>Book a session</Button>
+              <Button href={site.phone.tel} variant="outline" size="lg">Call or text {site.phone.display}</Button>
+            </div>
+          </nav>
+        </Popover.Content>
+      </Popover.Root>
     </div>
-
-    <Popover.Root bind:open={mobileMenuOpen}>
-      <Popover.Trigger class={['lg:hidden', buttonVariants({ variant: 'ghost', size: 'icon' })]}>
-        <div class="flex h-8 flex-row items-center">
-          <div class="relative size-4">
-            <span
-              class={[
-                'absolute inset-s-0 block h-0.5 w-4 bg-foreground transition-all duration-100',
-                mobileMenuOpen ? 'top-[0.4rem] -rotate-45' : 'top-1'
-              ]}
-            ></span>
-            <span
-              class={[
-                'absolute inset-s-0 block h-0.5 w-4 bg-foreground transition-all duration-100',
-                mobileMenuOpen ? 'top-[0.4rem] rotate-45' : 'top-2.5'
-              ]}
-            ></span>
-          </div>
-          <span class="sr-only">Toggle Menu</span>
-        </div>
-      </Popover.Trigger>
-      <Popover.Content
-        class="no-scrollbar h-(--bits-popover-content-available-height) w-(--bits-popover-content-available-width) overflow-y-auto rounded-none border-none ring-0 bg-background/90 p-0 shadow-none backdrop-blur"
-        align="start"
-        side="bottom"
-        preventScroll
-      >
-        <div class="flex min-h-full flex-col gap-8 overflow-auto p-6">
-          <div class="flex flex-col gap-3">
-            {#each navLinks as { title, href } (href)}
-              <a class="text-2xl font-medium active:opacity-60" {href} onclick={() => (mobileMenuOpen = false)}>
-                {title}
-              </a>
-            {/each}
-          </div>
-
-          <div class="mt-auto flex flex-col gap-8">
-            <Button href="/book" size="lg" onclick={() => (mobileMenuOpen = false)}>Book a session</Button>
-
-            <ToggleGroup.Root
-              type="single"
-              bind:value={
-                () => userPrefersMode.current,
-                (value) => {
-                  if (value) userPrefersMode.current = value as 'light' | 'dark' | 'system';
-                }
-              }
-              class="bg-muted text-muted-foreground inline-flex w-full rounded-lg p-1"
-            >
-              <ToggleGroup.Item
-                value="light"
-                class="flex-1 gap-1.5 rounded-md! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
-              >
-                <SunIcon class="mr-2" /> Light
-              </ToggleGroup.Item>
-              <ToggleGroup.Item
-                value="dark"
-                class="flex-1 gap-1.5 rounded-md! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
-              >
-                <MoonIcon class="mr-2" /> Dark
-              </ToggleGroup.Item>
-              <ToggleGroup.Item
-                value="system"
-                class="flex-1 gap-1.5 rounded-md! border-0 bg-transparent data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm"
-              >
-                <MonitorIcon class="mr-2" /> System
-              </ToggleGroup.Item>
-            </ToggleGroup.Root>
-          </div>
-        </div>
-      </Popover.Content>
-    </Popover.Root>
   </div>
 </header>
