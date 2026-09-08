@@ -97,7 +97,7 @@
   >
     <div class="relative mx-2 aspect-[4/5] md:mx-0">
       <enhanced:img
-        src="#lib/assets/mariya.jpg?w=1000;700;450"
+        src="#lib/assets/mariya.jpg"
         sizes="(min-width: 90rem) 480px, (min-width: 48rem) 33vw, 90vw"
         alt="{site.practitioner.name} in her Hudson studio"
         loading="lazy"

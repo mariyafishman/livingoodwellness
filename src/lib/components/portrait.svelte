@@ -18,9 +18,9 @@
 
 <div class={cn('relative aspect-square w-full max-w-[35rem]', className)}>
   <div class="absolute inset-0 rounded-full bg-accent" aria-hidden="true"></div>
-  <!-- The circle is at most 448px wide (80% of 35rem), so 900px covers HiDPI. -->
+  <!-- The circle is at most 448px wide (80% of 35rem); sizes lets the build pick widths for it. -->
   <enhanced:img
-    src="#lib/assets/mariya.jpg?w=900;600;400"
+    src="#lib/assets/mariya.jpg"
     sizes="(min-width: 48rem) 448px, 80vw"
     alt="{site.practitioner.name}, {site.practitioner.title}"
     class="absolute top-[10%] left-[10%] aspect-square w-[80%] rounded-full object-cover object-[50%_38%]"
