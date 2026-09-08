@@ -23,20 +23,20 @@
 >
   <!-- antennae -->
   <path
-    d="M31 23c-3-6-7-9-11-10M33 23c3-6 7-9 11-10"
+    d="M31 24c-3-6-7-9-11-10M33 24c3-6 7-9 11-10"
     fill="none"
     stroke="currentColor"
     stroke-width="2"
     stroke-linecap="round"
   />
-  <circle cx="19.5" cy="12.5" r="2" />
-  <circle cx="44.5" cy="12.5" r="2" />
+  <circle cx="19.5" cy="13.5" r="2" />
+  <circle cx="44.5" cy="13.5" r="2" />
   <!-- upper wings -->
-  <path d="M30.5 31C26 17 8 12 5 24c-2.5 10 11 16 25.5 12.5Z" />
-  <path d="M33.5 31C38 17 56 12 59 24c2.5 10-11 16-25.5 12.5Z" />
-  <!-- lower wings -->
-  <path d="M30.5 39C19 39 8 47 12 56c3 6.5 16 3 18.5-8.5Z" />
-  <path d="M33.5 39C45 39 56 47 52 56c-3 6.5-16 3-18.5-8.5Z" />
+  <path d="M31 29C25 15 5 12 4.5 25c-.5 9 12 15 26.5 15Z" />
+  <path d="M33 29c6-14 26-17 26.5-4 .5 9-12 15-26.5 15Z" />
+  <!-- lower wings, overlapping the upper pair at the body -->
+  <path d="M31 37c-10 0-21 7-17.5 16 2.5 6.5 15 4 17.5-7Z" />
+  <path d="M33 37c10 0 21 7 17.5 16-2.5 6.5-15 4-17.5-7Z" />
   <!-- body -->
   <rect x="29.75" y="23" width="4.5" height="30" rx="2.25" />
 </svg>
