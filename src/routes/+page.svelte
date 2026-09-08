@@ -103,7 +103,7 @@
         width="1200"
         height="1600"
         loading="lazy"
-        class="size-full -rotate-3 rounded-[1.25rem] object-cover object-top md:rounded-[1.5rem]"
+        class="size-full -rotate-3 rounded-[1.25rem] object-cover object-[50%_35%] md:rounded-[1.5rem]"
       />
       <Logo class="absolute -right-3 -bottom-2 size-[3.75rem] -rotate-12 md:-right-5 md:size-[5.5rem]" />
     </div>
