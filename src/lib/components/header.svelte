@@ -101,7 +101,7 @@
             </ul>
             <div class="mt-auto flex flex-col gap-3">
               <Button href="/book" size="lg" onclick={() => (mobileMenuOpen = false)}>Book a session</Button>
-              <Button href={site.phone.tel} variant="outline" size="lg">Call or text {site.phone.display}</Button>
+              <Button href="/contact" variant="outline" size="lg" onclick={() => (mobileMenuOpen = false)}>Contact</Button>
             </div>
           </nav>
         </Popover.Content>
