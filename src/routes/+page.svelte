@@ -94,9 +94,9 @@
 <!-- Meet Mariya -->
 <section class="wrap section-gap" aria-labelledby="meet-title">
   <div
-    class="grid items-center gap-7 rounded-[1.5rem] bg-accent p-6 text-accent-foreground md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:rounded-block md:p-14"
+    class="grid items-center gap-7 rounded-[1.5rem] bg-accent p-6 text-accent-foreground md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:rounded-block md:p-14"
   >
-    <div class="relative mx-2 aspect-[4/3] md:mx-0 md:aspect-auto md:h-[27.5rem]">
+    <div class="relative mx-2 aspect-[4/5] md:mx-0">
       <img
         src={mariya}
         alt="{site.practitioner.name} in her Hudson studio"

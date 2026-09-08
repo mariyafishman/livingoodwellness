@@ -24,7 +24,7 @@
     alt="{site.practitioner.name}, {site.practitioner.title}"
     width="1200"
     height="1600"
-    class="absolute top-[4%] left-[10%] aspect-square w-[80%] rounded-full object-cover object-[50%_38%]"
+    class="absolute top-[10%] left-[10%] aspect-square w-[80%] rounded-full object-cover object-[50%_38%]"
     fetchpriority={priority ? 'high' : undefined}
     loading={priority ? 'eager' : 'lazy'}
   />
