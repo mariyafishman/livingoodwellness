@@ -27,7 +27,7 @@
 <!-- Story, in her words -->
 <article class="wrap section-gap grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
   <div class="md:sticky md:top-8 md:self-start">
-    <h2 class="display-2">In her own words</h2>
+    <h2 class="display-2">In my own words</h2>
     <p class="mt-4 text-sm text-muted-foreground md:mt-6 md:text-base">
       {site.practitioner.name}, {site.practitioner.title}
     </p>
