@@ -54,12 +54,12 @@ export const massage = {
     { duration: '120 min', price: '$160' }
   ],
   modalities: [
-    'Swedish and relaxation',
-    'Deep tissue and therapeutic',
-    'Sports and recovery',
-    'Gentle massage for seniors',
-    'Infant-massage instruction for parents',
-    'Lymphatic drainage'
+    { name: 'Swedish and relaxation', tagline: 'Time to slow down' },
+    { name: 'Deep tissue and therapeutic', tagline: 'Focused, hands-on care' },
+    { name: 'Sports and recovery', tagline: 'For your active life' },
+    { name: 'Gentle massage for seniors', tagline: 'Care at your pace' },
+    { name: 'Infant-massage instruction', tagline: 'For parents' },
+    { name: 'Lymphatic drainage', tagline: 'Gentle and trained' }
   ],
   audiences: [
     'Seniors',
@@ -96,6 +96,22 @@ export const bemer = {
     'A pulsed electromagnetic (PEMF) session that temporarily improves local blood circulation and supports muscle recovery.',
   disclaimer: 'BEMER is not intended to diagnose, treat, cure or prevent any disease. Individual results vary.'
 } as const;
+
+/** The booking flow, as explained on the home and book pages. */
+export const howItWorks = [
+  {
+    title: 'Choose your time',
+    text: 'Pick a service and an appointment on the booking page.'
+  },
+  {
+    title: 'A little about you',
+    text: 'New clients get a short intake form by email before the visit.'
+  },
+  {
+    title: 'Come as you are',
+    text: 'Visit the quiet home studio in Hudson. Pay online or in person with cash, Venmo, or card.'
+  }
+] as const;
 
 export const goodToKnow = [
   'By appointment, in a quiet home studio in Hudson.',
