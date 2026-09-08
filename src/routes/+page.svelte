@@ -5,7 +5,6 @@
   import SessionCards from '#lib/components/session-cards.svelte';
   import { Button } from '#lib/components/ui/button/index.ts';
   import Logo from '#lib/assets/logo.svelte';
-  import mariya from '#lib/assets/mariya.jpg';
   import { site, packages, membership, bemer, howItWorks } from '#lib/config/site.ts';
 
   const textLink =
@@ -97,11 +96,10 @@
     class="grid items-center gap-7 rounded-[1.5rem] bg-accent p-6 text-accent-foreground md:grid-cols-[0.8fr_1.2fr] md:gap-16 md:rounded-block md:p-14"
   >
     <div class="relative mx-2 aspect-[4/5] md:mx-0">
-      <img
-        src={mariya}
+      <enhanced:img
+        src="#lib/assets/mariya.jpg"
+        sizes="(min-width: 90rem) 480px, (min-width: 48rem) 33vw, 90vw"
         alt="{site.practitioner.name} in her Hudson studio"
-        width="1200"
-        height="1600"
         loading="lazy"
         class="size-full -rotate-3 rounded-[1.25rem] object-cover object-[50%_35%] md:rounded-[1.5rem]"
       />
