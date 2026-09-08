@@ -31,10 +31,7 @@
           {site.address.street}<br />{site.address.city}, {site.address.state} {site.address.zip}
         </address>
         <p class="mt-2.5 text-[0.8125rem] leading-normal md:text-sm">{site.address.note}</p>
-        <div class="mt-2.5 flex flex-wrap gap-x-5 gap-y-1 text-[0.8125rem]">
-          <a href={directionsUrl} target="_blank" rel="noopener" class={textLink}>Get directions</a>
-          <a href={site.phone.tel} class={textLink}>Call or text {site.phone.display}</a>
-        </div>
+        <a href={directionsUrl} target="_blank" rel="noopener" class={[textLink, 'mt-2.5 text-[0.8125rem]']}>Get directions</a>
       </div>
       <div>
         <h3 class="font-display text-lg leading-tight font-extrabold tracking-[-0.02em] md:text-[1.375rem]">Studio hours</h3>
