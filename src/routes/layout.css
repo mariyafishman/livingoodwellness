@@ -8,9 +8,9 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Brand tokens. Direction: "variation 4" of the Livingood home-page canvas.
- * Cream page, butter and lilac colour blocks, one deep green for text, buttons
- * and the dark card. See the Design section of AGENTS.md.
+ * Brand tokens. Warm, editorial and calm: cream page, butter and lilac colour
+ * blocks, one deep green for text, hairlines, buttons and the dark card.
+ * See the Design section of AGENTS.md.
  */
 :root {
 	/* Brand palette (light) */
@@ -152,7 +152,7 @@
 	--shadow-note: var(--shadow-note);
 }
 
-/* Page gutter: 20px on phones, 64px from md up, 1440px max like the artboards. */
+/* Page gutter: 20px on phones, 64px from md up, 1440px max. */
 @utility wrap {
 	margin-inline: auto;
 	width: 100%;

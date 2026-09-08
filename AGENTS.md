@@ -42,7 +42,9 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 ## Design
 
-The look is **"variation 4"** of the Livingood home-page canvas (Claude Design project "Livingood Home Page", option 4, "Combined"). Treat it as the system for every page, not just the home page.
+**Style in one line:** a warm, modern, editorial look for one experienced practitioner. Cream paper, big plain sans-serif headlines, soft butter and lilac colour blocks, one deep green doing all the work, generous whitespace, and a small hand-drawn butterfly. Confident but unhurried; friendly, not precious. It should feel closer to a well-designed independent studio than to a spa, a clinic or a template.
+
+**How it is built:** a page is a stack of full-width bands and rounded colour blocks with hairline lists in between. Every page opens on a butter band that the header sits inside, and every page closes on the green studio card. Big type carries the hierarchy; there are no eyebrows, ribbons, icons-as-decoration, gradients, drop shadows (the one exception is the note on the portrait) or stock-photo backgrounds. Use this system for every page, not just the home page.
 
 - **Feel:** one experienced person who has time for you. Calm, confident, a little warm. Not a spa, not a clinic. Plain headings, no eyebrow labels, no ribbons or sticker notes, no italic accent words. The only italic is Mariya's own hand-written note on the portrait.
 - **Palette (light):** cream `#FAFAF2` page, butter `#E8EBB2` and lilac `#DCD3E8` colour blocks, one deep green `#164E3E` for text, hairlines, buttons and the dark card; `#3F5A50` for secondary text. Mapped to semantic tokens in `src/routes/layout.css`: `background`/`foreground` = cream/green, `primary` = green on butter, `secondary` = butter, `accent` = lilac, `muted-foreground` = the soft green, `border` = green hairlines. Dark mode inverts the roles (green page, butter primary, mid-green `secondary`, deep-lilac `accent`). Always use the semantic tokens; never hardcode a hex in a component.
