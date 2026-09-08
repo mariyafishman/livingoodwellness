@@ -42,11 +42,19 @@ Several parts of this stack evolve quickly and training data is often stale — 
 
 ## Design
 
-- UI is built with **shadcn-svelte**. Add components as needed. Feel free to edit the shadcn-svelte components to fit the design system since it is not a component library. It is how you build your component library.
-- All design tokens live in `src/routes/layout.css`.
-- Don't hardcode colors in components, use the theme variables instead and add new ones if needed.
-- Every color variable should be defined in both light and dark mode.
-- Make sure any UI you build is fully responsive, and looks good in both light and dark mode.
+**Style in one line:** a warm, modern, editorial look for one experienced practitioner. Cream paper, big plain sans-serif headlines, soft butter and lilac colour blocks, one deep green doing all the work, generous whitespace, and a small hand-drawn butterfly. Confident but unhurried; friendly, not precious. It should feel closer to a well-designed independent studio than to a spa, a clinic or a template.
+
+**How it is built:** a page is a stack of full-width bands and rounded colour blocks with hairline lists in between. Every page opens on a butter band that the header sits inside, and every page closes on the green studio card. Big type carries the hierarchy; there are no eyebrows, ribbons, icons-as-decoration, gradients, drop shadows (the one exception is the note on the portrait) or stock-photo backgrounds. Use this system for every page, not just the home page.
+
+- **Feel:** one experienced person who has time for you. Calm, confident, a little warm. Not a spa, not a clinic. Plain headings, no eyebrow labels, no ribbons or sticker notes, no italic accent words. The only italic is Mariya's own hand-written note on the portrait.
+- **Palette (light):** cream `#FAFAF2` page, butter `#E8EBB2` and lilac `#DCD3E8` colour blocks, one deep green `#164E3E` for text, hairlines, buttons and the dark card; `#3F5A50` for secondary text. Mapped to semantic tokens in `src/routes/layout.css`: `background`/`foreground` = cream/green, `primary` = green on butter, `secondary` = butter, `accent` = lilac, `muted-foreground` = the soft green, `border` = green hairlines. Dark mode inverts the roles (green page, butter primary, mid-green `secondary`, deep-lilac `accent`). Always use the semantic tokens; never hardcode a hex in a component.
+- **Type:** Manrope 800 for every heading and button (`font-display`), DM Sans for body (`font-sans`), Cormorant Garamond italic for the note only (`font-serif`). Fonts ship via `@fontsource-variable`. Utility classes in `layout.css`: `.display-1` (hero), `.display-2` (section titles), `.display-3` (card titles), `.row-title`, `.lead`, `.note`.
+- **Rhythm:** 20px gutters on phones, 64px from `md`, 1440px max (`wrap` utility). Section gaps 64px / 112px (`section-gap`). Radii: 28px on colour blocks (`rounded-block`, 24px on phones), 20px on pricing cards (`rounded-lg`), 999px pills on buttons. Lists use 1px green hairlines (`border-t`/`border-b`), not cards.
+- **Components:** `Button` is a pill with variants `default` (green), `secondary` (butter), `outline` (2px border in the current text colour, so it inverts on the green card), `ghost`, `link`. Header sits on a butter band that merges with each page's opening block. Footer is the green rounded card (studio heading, book button, address, hours, license, copyright, theme toggle). Butterfly logo is inline SVG in `src/lib/assets/logo.svelte` (uses `currentColor`; decorative unless given a `label`) and `favicon.svg`.
+- **Photos:** Mariya's portrait sits in a lilac circle (hero) or a rotated rounded rectangle (meet section). Stock photos only, no AI-generated people.
+- **Shared page pieces** in `src/lib/components`: `page-intro` (butter opening band with title and lead), `portrait` (lilac circle, photo, note, butterfly), `service-list` (numbered hairline rows), `session-cards` (the three pricing stamps), `seo` (title, description, canonical, Open Graph) and `json-ld` (LocalBusiness, rendered once from the layout). Every page passes its own `title` and `description` to `SEO`. The Open Graph image is `static/og.png` (1200x630, same palette and type).
+- Booking, packages and membership always link to `/book`, never straight to MassageBook.
+- All design tokens live in `src/routes/layout.css`. Every colour variable is defined for both light and dark. Make every page responsive and check both themes.
 
 ## Git Commits & Branches
 
