@@ -7,7 +7,7 @@
 
 <SEO
   title="About Mariya"
-  description="Mariya Fishman has practiced massage therapy for over 30 years. Engineer turned bodyworker, trained at the Muscular Therapy Institute in Cambridge, working from her home studio in Hudson, MA."
+  description="Mariya Fishman has practiced massage therapy for over 30 years. Mechanical engineer turned bodyworker, originally from Minsk, Belarus, trained at the Muscular Therapy Institute in Cambridge, working from her home studio in Hudson, MA. Sessions in English or Russian."
 />
 
 <!-- Intro -->
@@ -16,8 +16,8 @@
     <div>
       <h1 class="display-1">Meet Mariya</h1>
       <p class="lead mt-5 max-w-[29rem] md:mt-8">
-        Massage therapist for more than thirty years. Engineer before that. Working alone from a calm room in her
-        house in Hudson, and in no hurry to stop.
+        Massage therapist for more than thirty years. Mechanical engineer for fifteen before that. Working alone
+        from a calm room in her house in Hudson, in English or Russian, and in no hurry to stop.
       </p>
     </div>
     <Portrait priority note="Hello, I'm Mariya." class="mx-auto md:justify-self-end" />
@@ -35,10 +35,10 @@
 
   <div class="max-w-[38rem] text-lg leading-normal md:text-xl">
     <p>
-      I have been a massage therapist for more than thirty years. Before that I was a mechanical engineer, and
-      before that I was a girl in Belarus who wanted to be a doctor. When I came to America I trained at the
-      Muscular Therapy Institute in Cambridge and found the work I was meant to do: helping people feel at home in
-      their bodies.
+      I have been a massage therapist for more than thirty years. Before that I was a mechanical engineer for
+      fifteen years, and before that I was a girl in Minsk, Belarus, who wanted to be a doctor. I came to America
+      thirty-six years ago, trained at the Muscular Therapy Institute in Cambridge and found the work I was meant
+      to do: helping people feel at home in their bodies.
     </p>
     <p class="mt-5">
       Seven years ago I fell and broke my leg, my wrist and my back. For a long time I could not work. What
@@ -62,7 +62,8 @@
     </p>
 
     <p class="mt-12 md:mt-16">
-      Sessions are by appointment in my quiet home studio in Hudson, Massachusetts. Call or text me at
+      Sessions are by appointment in my quiet home studio in Hudson, Massachusetts. We can talk in English or
+      Russian, whichever is more comfortable for you. Call or text me at
       <a
         href={site.phone.tel}
         class="rounded-sm font-display font-bold underline decoration-2 underline-offset-4 outline-none hover:opacity-80 focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
