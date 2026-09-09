@@ -29,18 +29,20 @@
 </section>
 
 <!-- Services -->
-<section class="wrap section-gap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16" aria-labelledby="services-title">
-  <div>
-    <h2 id="services-title" class="display-2">Care for the life you live.</h2>
-    <p class="lead mt-4 max-w-[24rem] md:mt-6">
-      For seniors, athletes, children and parents. For chronic pain, post-injury recovery, or simply a little
-      time to relax.
-    </p>
-    <Button href="/services" variant="link" class="mt-5 text-[0.9375rem] max-md:hidden">All services and rates</Button>
-  </div>
-  <div>
-    <ServiceList />
-    <Button href="/services" variant="link" class="mt-5 text-[0.9375rem] md:hidden">All services and rates</Button>
+<section class="section-gap band-pad bg-warm text-warm-foreground" aria-labelledby="services-title">
+  <div class="wrap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div>
+      <h2 id="services-title" class="display-2">Care for the life you live.</h2>
+      <p class="lead mt-4 max-w-[24rem] md:mt-6">
+        For seniors, athletes, children and parents. For chronic pain, post-injury recovery, or simply a little
+        time to relax.
+      </p>
+      <Button href="/services" variant="link" class="mt-5 text-[0.9375rem] max-md:hidden">All services and rates</Button>
+    </div>
+    <div>
+      <ServiceList />
+      <Button href="/services" variant="link" class="mt-5 text-[0.9375rem] md:hidden">All services and rates</Button>
+    </div>
   </div>
 </section>
 
@@ -52,7 +54,7 @@
   </div>
   <div class="mt-3 grid gap-3 md:mt-5 md:grid-cols-2 md:gap-5">
     <div
-      class="grid gap-5 rounded-[1rem] bg-secondary p-5 text-secondary-foreground md:grid-cols-2 md:gap-6 md:rounded-lg md:p-8"
+      class="grid gap-5 rounded-[1rem] bg-cool p-5 text-cool-foreground md:grid-cols-2 md:gap-6 md:rounded-lg md:p-8"
     >
       <div>
         <h3 class="display-3">Six-session packages</h3>
@@ -122,21 +124,28 @@
 </section>
 
 <!-- How it works -->
-<section class="wrap section-gap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16" aria-labelledby="begin-title">
-  <div>
-    <h2 id="begin-title" class="display-2">A good place to begin.</h2>
-    <p class="lead mt-4 max-w-[24rem] md:mt-6">Booking takes a minute. Everything else happens at the studio.</p>
-    <Button href="/book" class="mt-7 max-md:hidden">Book a session</Button>
-  </div>
-  <div>
-    <ol class="border-t">
-      {#each howItWorks as { title, text } (title)}
-        <li class="grid gap-x-6 border-b py-3.5 md:grid-cols-[1fr_1.2fr] md:items-baseline md:py-5">
-          <span class="row-title">{title}</span>
-          <span class="mt-1 text-sm leading-normal text-muted-foreground md:mt-0 md:text-base">{text}</span>
-        </li>
-      {/each}
-    </ol>
-    <Button href="/book" class="mt-6 w-full md:hidden">Book a session</Button>
+<section class="section-gap band-pad bg-cool text-cool-foreground" aria-labelledby="begin-title">
+  <div class="wrap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div>
+      <h2 id="begin-title" class="display-2">A good place to begin.</h2>
+      <p class="lead mt-4 max-w-[24rem] md:mt-6">Booking takes a minute. Everything else happens at the studio.</p>
+      <Button href="/book" class="mt-7 max-md:hidden">Book a session</Button>
+    </div>
+    <div>
+      <ol class="border-t">
+        {#each howItWorks as { title, text }, i (title)}
+          <li
+            class={[
+              'grid gap-x-6 border-b px-4 py-3.5 md:grid-cols-[1fr_1.2fr] md:items-baseline md:px-6 md:py-5',
+              i % 2 === 0 ? 'bg-background/45' : 'bg-accent/45'
+            ]}
+          >
+            <span class="row-title">{title}</span>
+            <span class="mt-1 text-sm leading-normal opacity-80 md:mt-0 md:text-base">{text}</span>
+          </li>
+        {/each}
+      </ol>
+      <Button href="/book" class="mt-6 w-full md:hidden">Book a session</Button>
+    </div>
   </div>
 </section>

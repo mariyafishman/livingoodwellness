@@ -7,7 +7,7 @@
 <ol class="border-t">
   {#each massage.modalities as { name, tagline }, i (name)}
     <li
-      class="grid gap-x-6 border-b py-3.5 md:grid-cols-[3rem_1fr_auto] md:items-baseline md:py-5"
+      class="grid gap-x-6 border-b px-4 py-3.5 odd:bg-accent/45 even:bg-cool/70 md:grid-cols-[3rem_1fr_auto] md:items-baseline md:px-6 md:py-5"
     >
       <span class="hidden font-display text-xs font-bold md:block">{String(i + 1).padStart(2, '0')}</span>
       <span class="row-title">{name}</span>

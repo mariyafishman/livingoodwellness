@@ -8,8 +8,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Brand tokens. Warm, editorial and calm: cream page, butter and lilac colour
- * blocks, one deep green for text, hairlines, buttons and the dark card.
+ * Brand tokens. Warm, editorial and calm: cream page, butter, lilac, peach and
+ * sky colour blocks, one deep green for text, hairlines, buttons and the dark card.
  * See the Design section of AGENTS.md.
  */
 :root {
@@ -17,6 +17,8 @@
 	--cream: oklch(0.983 0.011 106.6);
 	--butter: oklch(0.924 0.074 110.3);
 	--lilac: oklch(0.880 0.030 305.1);
+	--peach: oklch(0.910 0.055 48.8);
+	--sky: oklch(0.910 0.038 225.4);
 	--green: oklch(0.383 0.064 170.3);
 	--green-soft: oklch(0.443 0.036 169.7);
 
@@ -33,6 +35,10 @@
 	--secondary-foreground: var(--green);
 	--accent: var(--lilac);
 	--accent-foreground: var(--green);
+	--warm: var(--peach);
+	--warm-foreground: var(--green);
+	--cool: var(--sky);
+	--cool-foreground: var(--green);
 	--muted: oklch(0.949 0.016 106.7);
 	--muted-foreground: var(--green-soft);
 	--destructive: oklch(0.577 0.245 27.325);
@@ -65,6 +71,8 @@
 	--cream: oklch(0.947 0.034 110.6);
 	--butter: oklch(0.924 0.074 110.3);
 	--lilac: oklch(0.346 0.052 294.2);
+	--peach: oklch(0.365 0.055 40.2);
+	--sky: oklch(0.351 0.041 221.8);
 	--green: oklch(0.264 0.038 169.7);
 	--green-soft: oklch(0.819 0.025 159);
 
@@ -80,6 +88,10 @@
 	--secondary-foreground: var(--cream);
 	--accent: var(--lilac);
 	--accent-foreground: oklch(0.942 0.017 308.3);
+	--warm: var(--peach);
+	--warm-foreground: var(--cream);
+	--cool: var(--sky);
+	--cool-foreground: var(--cream);
 	--muted: oklch(0.319 0.046 170.3);
 	--muted-foreground: var(--green-soft);
 	--destructive: oklch(0.704 0.191 22.216);
@@ -127,6 +139,10 @@
 	--color-destructive: var(--destructive);
 	--color-accent-foreground: var(--accent-foreground);
 	--color-accent: var(--accent);
+	--color-warm-foreground: var(--warm-foreground);
+	--color-warm: var(--warm);
+	--color-cool-foreground: var(--cool-foreground);
+	--color-cool: var(--cool);
 	--color-muted-foreground: var(--muted-foreground);
 	--color-muted: var(--muted);
 	--color-secondary-foreground: var(--secondary-foreground);
@@ -168,6 +184,14 @@
 	margin-top: 4rem;
 	@media (width >= 48rem) {
 		margin-top: 7rem;
+	}
+}
+
+/* Full-width editorial colour bands use the same vertical rhythm as sections. */
+@utility band-pad {
+	padding-block: 4rem;
+	@media (width >= 48rem) {
+		padding-block: 7rem;
 	}
 }
 

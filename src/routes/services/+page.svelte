@@ -18,21 +18,23 @@
 />
 
 <!-- Massage therapy -->
-<section class="wrap section-gap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16" aria-labelledby="massage-title">
-  <div>
-    <h2 id="massage-title" class="display-2">Massage therapy</h2>
-    <p class="lead mt-4 max-w-[24rem] md:mt-6">
-      Every session is one-on-one with Mariya, shaped around what your body needs that day. Choose the length; she
-      chooses the approach with you.
-    </p>
-    <h3 class="mt-8 font-display text-lg font-extrabold tracking-[-0.02em] md:mt-10">Who it's for</h3>
-    <ul class="mt-3 flex flex-wrap gap-2">
-      {#each massage.audiences as audience (audience)}
-        <li class="rounded-full border px-4 py-2 text-sm md:text-[0.9375rem]">{audience}</li>
-      {/each}
-    </ul>
+<section class="section-gap band-pad bg-warm text-warm-foreground" aria-labelledby="massage-title">
+  <div class="wrap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div>
+      <h2 id="massage-title" class="display-2">Massage therapy</h2>
+      <p class="lead mt-4 max-w-[24rem] md:mt-6">
+        Every session is one-on-one with Mariya, shaped around what your body needs that day. Choose the length; she
+        chooses the approach with you.
+      </p>
+      <h3 class="mt-8 font-display text-lg font-extrabold tracking-[-0.02em] md:mt-10">Who it's for</h3>
+      <ul class="mt-3 flex flex-wrap gap-2">
+        {#each massage.audiences as audience (audience)}
+          <li class="rounded-full border bg-background/40 px-4 py-2 text-sm md:text-[0.9375rem]">{audience}</li>
+        {/each}
+      </ul>
+    </div>
+    <ServiceList />
   </div>
-  <ServiceList />
 </section>
 
 <!-- Sessions -->
@@ -46,7 +48,7 @@
 
 <!-- Packages and membership -->
 <section class="wrap section-gap grid gap-3 md:grid-cols-[1.2fr_0.8fr] md:gap-5" aria-labelledby="packages-title">
-  <div id="packages" class="scroll-mt-8 rounded-[1rem] bg-secondary p-5 text-secondary-foreground md:rounded-lg md:p-8">
+  <div id="packages" class="scroll-mt-8 rounded-[1rem] bg-cool p-5 text-cool-foreground md:rounded-lg md:p-8">
     <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
       <h2 id="packages-title" class="display-3 md:text-[2rem]">Six-session packages</h2>
       <p class="text-sm md:text-[0.9375rem]">{packages.note}</p>
@@ -109,17 +111,24 @@
 </section>
 
 <!-- Good to know -->
-<section class="wrap section-gap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16" aria-labelledby="know-title">
-  <div>
-    <h2 id="know-title" class="display-2">Good to know</h2>
-    <Button href="/book" class="mt-7 max-md:hidden">Book a session</Button>
-  </div>
-  <div>
-    <ul class="border-t">
-      {#each goodToKnow as item (item)}
-        <li class="border-b py-3.5 text-base leading-normal md:py-5 md:text-lg">{item}</li>
-      {/each}
-    </ul>
-    <Button href="/book" class="mt-6 w-full md:hidden">Book a session</Button>
+<section class="section-gap band-pad bg-cool text-cool-foreground" aria-labelledby="know-title">
+  <div class="wrap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div>
+      <h2 id="know-title" class="display-2">Good to know</h2>
+      <Button href="/book" class="mt-7 max-md:hidden">Book a session</Button>
+    </div>
+    <div>
+      <ul class="border-t">
+        {#each goodToKnow as item, i (item)}
+          <li
+            class={[
+              'border-b px-4 py-3.5 text-base leading-normal md:px-6 md:py-5 md:text-lg',
+              i % 2 === 0 ? 'bg-background/45' : 'bg-accent/45'
+            ]}
+          >{item}</li>
+        {/each}
+      </ul>
+      <Button href="/book" class="mt-6 w-full md:hidden">Book a session</Button>
+    </div>
   </div>
 </section>

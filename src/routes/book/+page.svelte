@@ -22,23 +22,30 @@
 </PageIntro>
 
 <!-- How it works -->
-<section class="wrap section-gap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16" aria-labelledby="how-title">
-  <div>
-    <h2 id="how-title" class="display-2">How it works</h2>
-    <p class="lead mt-4 max-w-[24rem] md:mt-6">
-      Sessions, packages and membership are all booked and paid for on MassageBook. Mariya sees every booking as it
-      comes in.
-    </p>
+<section class="section-gap band-pad bg-warm text-warm-foreground" aria-labelledby="how-title">
+  <div class="wrap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div>
+      <h2 id="how-title" class="display-2">How it works</h2>
+      <p class="lead mt-4 max-w-[24rem] md:mt-6">
+        Sessions, packages and membership are all booked and paid for on MassageBook. Mariya sees every booking as it
+        comes in.
+      </p>
+    </div>
+    <ol class="border-t">
+      {#each howItWorks as { title, text }, i (title)}
+        <li
+          class={[
+            'grid gap-x-6 border-b px-4 py-3.5 md:grid-cols-[3rem_1fr_1.2fr] md:items-baseline md:px-6 md:py-5',
+            i % 2 === 0 ? 'bg-background/45' : 'bg-accent/45'
+          ]}
+        >
+          <span class="hidden font-display text-xs font-bold md:block">{String(i + 1).padStart(2, '0')}</span>
+          <span class="row-title">{title}</span>
+          <span class="mt-1 text-sm leading-normal opacity-80 md:mt-0 md:text-base">{text}</span>
+        </li>
+      {/each}
+    </ol>
   </div>
-  <ol class="border-t">
-    {#each howItWorks as { title, text }, i (title)}
-      <li class="grid gap-x-6 border-b py-3.5 md:grid-cols-[3rem_1fr_1.2fr] md:items-baseline md:py-5">
-        <span class="hidden font-display text-xs font-bold md:block">{String(i + 1).padStart(2, '0')}</span>
-        <span class="row-title">{title}</span>
-        <span class="mt-1 text-sm leading-normal text-muted-foreground md:mt-0 md:text-base">{text}</span>
-      </li>
-    {/each}
-  </ol>
 </section>
 
 <!-- Main action and the alternative -->
@@ -66,26 +73,33 @@
 </section>
 
 <!-- Reminders -->
-<section class="wrap section-gap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16" aria-labelledby="remember-title">
-  <div>
-    <h2 id="remember-title" class="display-2">Before you come</h2>
-    <p class="lead mt-4 max-w-[24rem] md:mt-6">
-      By appointment only, in a private home with a dedicated studio at {site.address.street}, {site.address.city}.
-    </p>
-  </div>
-  <div>
-    <h3 class="font-display text-lg font-extrabold tracking-[-0.02em] md:text-[1.375rem]">Studio hours</h3>
-    <dl class="mt-3 border-t">
-      {#each hours as { days, time } (days)}
-        <div class="flex items-baseline justify-between gap-6 border-b py-3.5 md:py-4">
-          <dt class="row-title text-base md:text-xl">{days}</dt>
-          <dd class="text-sm text-muted-foreground md:text-base">{time}</dd>
-        </div>
-      {/each}
-    </dl>
-    <p class="mt-4 text-sm text-muted-foreground md:text-base">
-      Receipts provided for insurance reimbursement or HSA/FSA. New clients receive a short intake form from
-      MassageBook after booking.
-    </p>
+<section class="section-gap band-pad bg-cool text-cool-foreground" aria-labelledby="remember-title">
+  <div class="wrap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div>
+      <h2 id="remember-title" class="display-2">Before you come</h2>
+      <p class="lead mt-4 max-w-[24rem] md:mt-6">
+        By appointment only, in a private home with a dedicated studio at {site.address.street}, {site.address.city}.
+      </p>
+    </div>
+    <div>
+      <h3 class="font-display text-lg font-extrabold tracking-[-0.02em] md:text-[1.375rem]">Studio hours</h3>
+      <dl class="mt-3 border-t">
+        {#each hours as { days, time }, i (days)}
+          <div
+            class={[
+              'flex items-baseline justify-between gap-6 border-b px-4 py-3.5 md:px-6 md:py-4',
+              i % 2 === 0 ? 'bg-background/45' : 'bg-accent/45'
+            ]}
+          >
+            <dt class="row-title text-base md:text-xl">{days}</dt>
+            <dd class="text-sm opacity-80 md:text-base">{time}</dd>
+          </div>
+        {/each}
+      </dl>
+      <p class="mt-4 text-sm opacity-75 md:text-base">
+        Receipts provided for insurance reimbursement or HSA/FSA. New clients receive a short intake form from
+        MassageBook after booking.
+      </p>
+    </div>
   </div>
 </section>

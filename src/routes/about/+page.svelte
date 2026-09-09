@@ -28,63 +28,71 @@
 </section>
 
 <!-- Story, in her words -->
-<article class="wrap section-gap grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-  <div class="md:sticky md:top-8 md:self-start">
-    <h2 class="display-2">In my own words</h2>
-    <p class="mt-4 text-sm text-muted-foreground md:mt-6 md:text-base">
-      {site.practitioner.name}, {site.practitioner.title}
-    </p>
-  </div>
+<article class="section-gap band-pad bg-cool text-cool-foreground">
+  <div class="wrap grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div class="md:sticky md:top-8 md:self-start">
+      <h2 class="display-2">In my own words</h2>
+      <p class="mt-4 text-sm opacity-75 md:mt-6 md:text-base">
+        {site.practitioner.name}, {site.practitioner.title}
+      </p>
+    </div>
 
-  <div class="max-w-[38rem] text-lg leading-normal md:text-xl">
-    <p>
-      I have been a massage therapist for more than thirty years. Before that I was a mechanical engineer for
-      fifteen years, and before that I was a girl in Minsk, Belarus, who wanted to be a doctor. I came to America
-      thirty-six years ago, trained at the Muscular Therapy Institute in Cambridge and found the work I was meant
-      to do: helping people feel at home in their bodies.
-    </p>
-    <p class="mt-5">
-      Seven years ago I fell and broke my leg, my wrist and my back. For a long time I could not work. What
-      brought me back was the same thing I now offer my clients: patient hands-on care, good circulation, and the
-      belief that the body knows how to heal when you give it what it needs. My husband asked if maybe it was
-      time to retire. I said no. I love my work.
-    </p>
+    <div class="max-w-[42rem] text-lg leading-normal md:text-xl">
+      <div class="rounded-[1.25rem] bg-background/55 p-5 md:rounded-block md:p-8">
+        <p>
+          I have been a massage therapist for more than thirty years. Before that I was a mechanical engineer for
+          fifteen years, and before that I was a girl in Minsk, Belarus, who wanted to be a doctor. I came to America
+          thirty-six years ago, trained at the Muscular Therapy Institute in Cambridge and found the work I was meant
+          to do: helping people feel at home in their bodies.
+        </p>
+        <p class="mt-5">
+          Seven years ago I fell and broke my leg, my wrist and my back. For a long time I could not work. What
+          brought me back was the same thing I now offer my clients: patient hands-on care, good circulation, and the
+          belief that the body knows how to heal when you give it what it needs. My husband asked if maybe it was
+          time to retire. I said no. I love my work.
+        </p>
+      </div>
 
-    <h3 class="display-3 mt-12 md:mt-16">Who I work with</h3>
-    <p class="mt-4">
-      Everyone from newborns to great-grandparents. My favorite clients are seniors who want to keep moving
-      comfortably, athletes who want to recover faster and play longer, and parents who want to learn how to
-      massage their babies. Every year I volunteer on the massage team at the Pan-Mass Challenge, working with
-      cancer survivors.
-    </p>
+      <div class="mt-4 rounded-[1.25rem] bg-accent p-5 text-accent-foreground md:mt-5 md:rounded-block md:p-8">
+        <h3 class="display-3">Who I work with</h3>
+        <p class="mt-4">
+          Everyone from newborns to great-grandparents. My favorite clients are seniors who want to keep moving
+          comfortably, athletes who want to recover faster and play longer, and parents who want to learn how to
+          massage their babies. Every year I volunteer on the massage team at the Pan-Mass Challenge, working with
+          cancer survivors.
+        </p>
+      </div>
 
-    <h3 class="display-3 mt-12 md:mt-16">What "Livingood" means</h3>
-    <p class="mt-4">
-      Livingood is a name before it is a motto. While I was recovering from my fall I found
-      <a href={inspiration.website} target="_blank" rel="noopener" class={textLink}>{inspiration.name}</a>, and
-      his teaching on real food, movement and letting the body heal itself gave me the push to get better and get
-      back to work. When I opened the studio I named it after him, with gratitude.
-    </p>
-    <p class="mt-5">
-      The name is also a reminder to live well, in balance: a healthy body, good food, and a clear mind. That
-      balance is what I try to bring to every session.
-    </p>
-    <p class="mt-5 text-base text-muted-foreground md:text-lg">Follow Dr. Livingood for more of his work:</p>
-    <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-base md:text-lg">
-      {#each inspiration.socials as social (social.href)}
-        <li><a href={social.href} target="_blank" rel="noopener" class={textLink}>{social.label}</a></li>
-      {/each}
-    </ul>
+      <div class="mt-4 rounded-[1.25rem] bg-warm p-5 text-warm-foreground md:mt-5 md:rounded-block md:p-8">
+        <h3 class="display-3">What "Livingood" means</h3>
+        <p class="mt-4">
+          Livingood is a name before it is a motto. While I was recovering from my fall I found
+          <a href={inspiration.website} target="_blank" rel="noopener" class={textLink}>{inspiration.name}</a>, and
+          his teaching on real food, movement and letting the body heal itself gave me the push to get better and get
+          back to work. When I opened the studio I named it after him, with gratitude.
+        </p>
+        <p class="mt-5">
+          The name is also a reminder to live well, in balance: a healthy body, good food, and a clear mind. That
+          balance is what I try to bring to every session.
+        </p>
+        <p class="mt-5 text-base opacity-75 md:text-lg">Follow Dr. Livingood for more of his work:</p>
+        <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-base md:text-lg">
+          {#each inspiration.socials as social (social.href)}
+            <li><a href={social.href} target="_blank" rel="noopener" class={textLink}>{social.label}</a></li>
+          {/each}
+        </ul>
+      </div>
 
-    <p class="mt-12 md:mt-16">
-      Sessions are by appointment in my quiet home studio in Hudson, Massachusetts. We can talk in English or
-      Russian, whichever is more comfortable for you. Call or text me at
-      <a href={site.phone.tel} class={textLink}>{site.phone.display}</a>.
-    </p>
+      <p class="mt-10 md:mt-12">
+        Sessions are by appointment in my quiet home studio in Hudson, Massachusetts. We can talk in English or
+        Russian, whichever is more comfortable for you. Call or text me at
+        <a href={site.phone.tel} class={textLink}>{site.phone.display}</a>.
+      </p>
 
-    <div class="mt-8 flex flex-col gap-2.5 sm:flex-row sm:gap-4 md:mt-10">
-      <Button href="/book">Book a session</Button>
-      <Button href="/services" variant="outline">See services</Button>
+      <div class="mt-8 flex flex-col gap-2.5 sm:flex-row sm:gap-4 md:mt-10">
+        <Button href="/book">Book a session</Button>
+        <Button href="/services" variant="outline">See services</Button>
+      </div>
     </div>
   </div>
 </article>

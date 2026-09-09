@@ -4,11 +4,11 @@
   import { cn } from '#lib/utils.ts';
 
   /**
-   * The three massage "stamps": butter, lilac, green. Each card is one link
+   * The three massage "stamps": peach, lilac, green. Each card is one link
    * to the book page.
    */
   const tones = [
-    'bg-secondary text-secondary-foreground',
+    'bg-warm text-warm-foreground',
     'bg-accent text-accent-foreground',
     'bg-primary text-primary-foreground'
   ];

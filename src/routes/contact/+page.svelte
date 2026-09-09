@@ -46,7 +46,7 @@
     <p class="mt-3 text-sm leading-normal md:text-[0.9375rem]">{site.address.note}</p>
     <a href={directionsUrl} target="_blank" rel="noopener" class={[textLink, 'mt-4 text-sm focus-visible:ring-offset-primary']}>Get directions</a>
   </div>
-  <div class="rounded-[1rem] border p-5 md:rounded-lg md:p-8">
+  <div class="rounded-[1rem] bg-cool p-5 text-cool-foreground md:rounded-lg md:p-8">
     <h2 class="display-3">Hours</h2>
     <dl class="mt-4 grid grid-cols-[1fr_auto] gap-x-6 gap-y-2 text-sm md:text-base">
       {#each hours as { days, time } (days)}
@@ -58,13 +58,15 @@
   </div>
 </section>
 
-<section class="wrap section-gap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16" aria-labelledby="book-title">
-  <div>
-    <h2 id="book-title" class="display-2">Ready to book?</h2>
-    <p class="lead mt-4 max-w-[24rem] md:mt-6">Pick a service and a time on the booking page. New clients get a short intake form by email.</p>
-  </div>
-  <div class="flex flex-col gap-2.5 sm:flex-row sm:items-start sm:gap-4">
-    <Button href="/book">Book a session</Button>
-    <Button href="/services" variant="outline">See services and rates</Button>
+<section class="section-gap band-pad bg-warm text-warm-foreground" aria-labelledby="book-title">
+  <div class="wrap grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+    <div>
+      <h2 id="book-title" class="display-2">Ready to book?</h2>
+      <p class="lead mt-4 max-w-[24rem] md:mt-6">Pick a service and a time on the booking page. New clients get a short intake form by email.</p>
+    </div>
+    <div class="flex flex-col gap-2.5 sm:flex-row sm:items-start sm:gap-4">
+      <Button href="/book">Book a session</Button>
+      <Button href="/services" variant="outline">See services and rates</Button>
+    </div>
   </div>
 </section>
