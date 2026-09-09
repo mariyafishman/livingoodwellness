@@ -34,6 +34,17 @@ export const site = {
   bookingUrl: 'https://www.massagebook.com/'
 } as const;
 
+/** The doctor whose work inspired Mariya's recovery and the studio's name. */
+export const inspiration = {
+  name: 'Dr. Blake Livingood',
+  website: 'https://drlivingood.com/',
+  socials: [
+    { label: 'YouTube', href: 'https://www.youtube.com/@DrLivingood' },
+    { label: 'Instagram', href: 'https://www.instagram.com/drlivingood/' },
+    { label: 'Facebook', href: 'https://www.facebook.com/drlivingood' }
+  ]
+} as const;
+
 export const hours = [
   { days: 'Mon, Wed, Fri', time: '9:00 AM – 7:00 PM' },
   { days: 'Tue, Thu', time: '2:00 PM – 7:00 PM' },

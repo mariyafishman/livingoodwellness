@@ -2,7 +2,10 @@
   import SEO from '#lib/components/seo.svelte';
   import Portrait from '#lib/components/portrait.svelte';
   import { Button } from '#lib/components/ui/button/index.ts';
-  import { site } from '#lib/config/site.ts';
+  import { inspiration, site } from '#lib/config/site.ts';
+
+  const textLink =
+    'rounded-sm font-display font-bold underline decoration-2 underline-offset-4 outline-none hover:opacity-80 focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background';
 </script>
 
 <SEO
@@ -57,19 +60,26 @@
 
     <h3 class="display-3 mt-12 md:mt-16">What "Livingood" means</h3>
     <p class="mt-4">
-      The name is a reminder to live well, in balance: a healthy body, good food, and a clear mind. That balance
-      is what I try to bring to every session.
+      Livingood is a name before it is a motto. While I was recovering from my fall I found
+      <a href={inspiration.website} target="_blank" rel="noopener" class={textLink}>{inspiration.name}</a>, and
+      his teaching on real food, movement and letting the body heal itself gave me the push to get better and get
+      back to work. When I opened the studio I named it after him, with gratitude.
     </p>
+    <p class="mt-5">
+      The name is also a reminder to live well, in balance: a healthy body, good food, and a clear mind. That
+      balance is what I try to bring to every session.
+    </p>
+    <p class="mt-5 text-base text-muted-foreground md:text-lg">Follow Dr. Livingood for more of his work:</p>
+    <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-base md:text-lg">
+      {#each inspiration.socials as social (social.href)}
+        <li><a href={social.href} target="_blank" rel="noopener" class={textLink}>{social.label}</a></li>
+      {/each}
+    </ul>
 
     <p class="mt-12 md:mt-16">
       Sessions are by appointment in my quiet home studio in Hudson, Massachusetts. We can talk in English or
       Russian, whichever is more comfortable for you. Call or text me at
-      <a
-        href={site.phone.tel}
-        class="rounded-sm font-display font-bold underline decoration-2 underline-offset-4 outline-none hover:opacity-80 focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-      >
-        {site.phone.display}
-      </a>.
+      <a href={site.phone.tel} class={textLink}>{site.phone.display}</a>.
     </p>
 
     <div class="mt-8 flex flex-col gap-2.5 sm:flex-row sm:gap-4 md:mt-10">
