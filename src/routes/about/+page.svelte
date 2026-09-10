@@ -46,9 +46,13 @@
     <p class="mt-5">
       Seven years ago I fell and broke my leg, my wrist and my back. For a long time I could not work. What
       brought me back was the same thing I now offer my clients: patient hands-on care, good circulation, and the
-      belief that the body knows how to heal when you give it what it needs. My husband asked if maybe it was
-      time to retire. I said no. I love my work.
+      belief that the body knows how to heal when you give it what it needs.
     </p>
+    <blockquote class="mt-8 rounded-[1rem] bg-accent p-6 text-accent-foreground md:mt-10 md:rounded-lg md:p-8">
+      <p class="display-3 md:text-[2rem]">
+        My husband asked if maybe it was time to retire. I said no. I love my work.
+      </p>
+    </blockquote>
 
     <h3 class="display-3 mt-12 md:mt-16">Who I work with</h3>
     <p class="mt-4">
@@ -58,23 +62,27 @@
       cancer survivors.
     </p>
 
-    <h3 class="display-3 mt-12 md:mt-16">What "Livingood" means</h3>
-    <p class="mt-4">
-      Livingood is a name before it is a motto. While I was recovering from my fall I found
-      <a href={inspiration.website} target="_blank" rel="noopener" class={textLink}>{inspiration.name}</a>, and
-      his teaching on real food, movement and letting the body heal itself gave me the push to get better and get
-      back to work. When I opened the studio I named it after him, with gratitude.
-    </p>
-    <p class="mt-5">
-      The name is also a reminder to live well, in balance: a healthy body, good food, and a clear mind. That
-      balance is what I try to bring to every session.
-    </p>
-    <p class="mt-5 text-base text-muted-foreground md:text-lg">Follow Dr. Livingood for more of his work:</p>
-    <ul class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-base md:text-lg">
-      {#each inspiration.socials as social (social.href)}
-        <li><a href={social.href} target="_blank" rel="noopener" class={textLink}>{social.label}</a></li>
-      {/each}
-    </ul>
+    <div class="mt-12 rounded-[1.5rem] bg-secondary p-6 text-secondary-foreground md:mt-16 md:rounded-block md:p-10">
+      <h3 class="display-3 md:text-[2rem]">What "Livingood" means</h3>
+      <p class="mt-4">
+        Livingood is a name before it is a motto. While I was recovering from my fall I found
+        <a href={inspiration.website} target="_blank" rel="noopener" class={textLink}>{inspiration.name}</a>, and
+        his teaching on real food, movement and letting the body heal itself gave me the push to get better and get
+        back to work. When I opened the studio I named it after him, with gratitude.
+      </p>
+      <p class="mt-5">
+        The name is also a reminder to live well, in balance: a healthy body, good food, and a clear mind. That
+        balance is what I try to bring to every session.
+      </p>
+      <p class="mt-6 text-sm md:text-base">Follow Dr. Livingood for more of his work:</p>
+      <ul class="mt-3 flex flex-wrap gap-2">
+        {#each inspiration.socials as social (social.href)}
+          <li>
+            <Button href={social.href} target="_blank" rel="noopener" variant="outline" size="sm">{social.label}</Button>
+          </li>
+        {/each}
+      </ul>
+    </div>
 
     <p class="mt-12 md:mt-16">
       Sessions are by appointment in my quiet home studio in Hudson, Massachusetts. We can talk in English or
