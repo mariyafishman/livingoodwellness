@@ -1,8 +1,11 @@
 <script lang="ts">
   /**
-   * The Livingood butterfly. A solid, upright mark drawn in `currentColor`,
-   * so it takes the colour of the text around it. Decorative by default;
-   * pass a `label` when it stands alone.
+   * The Livingood butterfly, redrawn from the studio's business card: a
+   * tilted watercolour butterfly whose wings run orange, yellow and green
+   * into blue, teal and magenta. The wings carry their own brand colours;
+   * the body and antennae use `currentColor` so they follow the text
+   * around them. Decorative by default; pass a `label` when it stands
+   * alone.
    */
   interface Props {
     class?: string;
@@ -10,33 +13,75 @@
   }
 
   let { class: className, label }: Props = $props();
+
+  // Gradient and wing ids must be unique per instance, since the logo is
+  // rendered several times on one page.
+  const uid = $props.id();
 </script>
 
 <svg
   class={className}
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 64 64"
-  fill="currentColor"
   role={label ? 'img' : undefined}
   aria-label={label}
   aria-hidden={label ? undefined : 'true'}
 >
-  <!-- antennae -->
-  <path
-    d="M31 24c-3-6-7-9-11-10M33 24c3-6 7-9 11-10"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-  />
-  <circle cx="19.5" cy="13.5" r="2" />
-  <circle cx="44.5" cy="13.5" r="2" />
-  <!-- upper wings -->
-  <path d="M31 29C25 15 5 12 4.5 25c-.5 9 12 15 26.5 15Z" />
-  <path d="M33 29c6-14 26-17 26.5-4 .5 9-12 15-26.5 15Z" />
-  <!-- lower wings, overlapping the upper pair at the body -->
-  <path d="M31 37c-10 0-21 7-17.5 16 2.5 6.5 15 4 17.5-7Z" />
-  <path d="M33 37c10 0 21 7 17.5 16-2.5 6.5-15 4-17.5-7Z" />
-  <!-- body -->
-  <rect x="29.75" y="23" width="4.5" height="30" rx="2.25" />
+  <defs>
+    <linearGradient id="{uid}-lf" gradientUnits="userSpaceOnUse" x1="12" y1="6" x2="31" y2="34">
+      <stop offset="0" stop-color="#F09A3A" />
+      <stop offset="0.2" stop-color="#F3D24C" />
+      <stop offset="0.48" stop-color="#7BC24A" />
+      <stop offset="0.76" stop-color="#3B9BDA" />
+      <stop offset="1" stop-color="#2F6ACB" />
+    </linearGradient>
+    <linearGradient id="{uid}-rf" gradientUnits="userSpaceOnUse" x1="59" y1="20" x2="33" y2="32">
+      <stop offset="0" stop-color="#B0E8EE" />
+      <stop offset="0.45" stop-color="#3EBBD2" />
+      <stop offset="1" stop-color="#2C7ACF" />
+    </linearGradient>
+    <linearGradient id="{uid}-lh" gradientUnits="userSpaceOnUse" x1="12" y1="52" x2="31" y2="38">
+      <stop offset="0" stop-color="#2955C0" />
+      <stop offset="0.55" stop-color="#4C8BE0" />
+      <stop offset="1" stop-color="#96B6EC" />
+    </linearGradient>
+    <linearGradient id="{uid}-rh" gradientUnits="userSpaceOnUse" x1="52" y1="54" x2="33" y2="38">
+      <stop offset="0" stop-color="#C21C77" />
+      <stop offset="0.45" stop-color="#E9579E" />
+      <stop offset="1" stop-color="#8D5BC6" />
+    </linearGradient>
+    <radialGradient id="{uid}-wash" cx="0.42" cy="0.5" r="0.55">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <g transform="rotate(30 32 32) translate(32 32) scale(0.94) translate(-32 -32)">
+    <!-- hindwings -->
+    <path id="{uid}-lhw" d="M31.5 33c-7.5-1-19.5 3-21.5 11-2 10 10 14 17 8 3-3 4.5-6 4.5-10Z" fill="url(#{uid}-lh)" />
+    <path id="{uid}-rhw" d="M32.5 33c7.5-1 19.5 3 21.5 11 2 10-10 14-17 8-3-3-4.5-6-4.5-10Z" fill="url(#{uid}-rh)" />
+    <!-- forewings, overlapping the hindwings at the body -->
+    <path id="{uid}-lfw" d="M31.5 26c-3.5-8-13.5-21-19.5-20-7 1-10 12-7 20 4 9 17 12 26 10Z" fill="url(#{uid}-lf)" />
+    <path id="{uid}-rfw" d="M32.5 26c3.5-8 13.5-21 19.5-20 7 1 10 12 7 20-4 9-17 12-26 10Z" fill="url(#{uid}-rf)" />
+    <!-- watercolour wash -->
+    <g fill="url(#{uid}-wash)">
+      <use href="#{uid}-lhw" />
+      <use href="#{uid}-rhw" />
+      <use href="#{uid}-lfw" />
+      <use href="#{uid}-rfw" />
+    </g>
+    <!-- body -->
+    <g fill="currentColor">
+      <path
+        d="M31.3 22c-2-5-4.5-8.5-7.5-10.5M32.7 22c2-5 4.5-8.5 7.5-10.5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.4"
+        stroke-linecap="round"
+      />
+      <circle cx="23.5" cy="11.2" r="1.3" />
+      <circle cx="40.5" cy="11.2" r="1.3" />
+      <circle cx="32" cy="23.6" r="1.9" />
+      <rect x="30.9" y="24.8" width="2.2" height="21" rx="1.1" />
+    </g>
+  </g>
 </svg>
