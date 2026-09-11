@@ -2,10 +2,11 @@
   /**
    * The Livingood butterfly, after the watercolour one on the studio's
    * business card. A mirrored pair of wings on a thin body, tilted like the
-   * card, each wing in its own colour: the left forewing runs from a dark
-   * orange tip through yellow, green and aqua into blue, the right forewing
-   * is teal, the left hindwing deep blue and the right hindwing lavender
-   * into magenta. The wings carry their own brand colours; the body and
+   * card; each side is one continuous silhouette with scalloped margins and
+   * faint veins. The left side runs from a dark orange forewing tip through
+   * yellow, green and aqua into blue and a deep-blue hindwing; the right
+   * side from teal through cyan and blue into a lavender-and-magenta
+   * hindwing. The wings carry their own brand colours; the body and
    * antennae use `currentColor` so they follow the text around them.
    * Decorative by default; pass a `label` when it stands alone.
    */
@@ -30,39 +31,32 @@
   aria-hidden={label ? undefined : 'true'}
 >
   <defs>
-    <linearGradient id="{uid}-lf" gradientUnits="userSpaceOnUse" x1="9" y1="7" x2="30" y2="35">
+    <linearGradient id="{uid}-lw" gradientUnits="userSpaceOnUse" x1="11" y1="6" x2="16" y2="55">
       <stop offset="0" stop-color="#A63F2A" />
-      <stop offset="0.07" stop-color="#E2743A" />
-      <stop offset="0.2" stop-color="#F0C346" />
-      <stop offset="0.34" stop-color="#B9D24C" />
-      <stop offset="0.48" stop-color="#6DBE5E" />
-      <stop offset="0.62" stop-color="#8ED2C4" />
-      <stop offset="0.8" stop-color="#4E9EDC" />
-      <stop offset="1" stop-color="#2B5FBA" />
-    </linearGradient>
-    <linearGradient id="{uid}-rf" gradientUnits="userSpaceOnUse" x1="56" y1="9" x2="34" y2="35">
-      <stop offset="0" stop-color="#2E97A6" />
-      <stop offset="0.25" stop-color="#5CC6D2" />
-      <stop offset="0.5" stop-color="#84D9E2" />
-      <stop offset="0.75" stop-color="#3F8ED4" />
-      <stop offset="1" stop-color="#2758B8" />
-    </linearGradient>
-    <linearGradient id="{uid}-lh" gradientUnits="userSpaceOnUse" x1="30" y1="37" x2="9" y2="50">
-      <stop offset="0" stop-color="#57A6E4" />
-      <stop offset="0.4" stop-color="#3B7DD6" />
-      <stop offset="0.75" stop-color="#2A4EB2" />
+      <stop offset="0.05" stop-color="#E2743A" />
+      <stop offset="0.15" stop-color="#F0C346" />
+      <stop offset="0.27" stop-color="#B9D24C" />
+      <stop offset="0.38" stop-color="#6DBE5E" />
+      <stop offset="0.5" stop-color="#8ED2C4" />
+      <stop offset="0.6" stop-color="#4E9EDC" />
+      <stop offset="0.72" stop-color="#2F6CC4" />
+      <stop offset="0.86" stop-color="#2A4EB2" />
       <stop offset="1" stop-color="#1D3585" />
     </linearGradient>
-    <linearGradient id="{uid}-rh" gradientUnits="userSpaceOnUse" x1="34" y1="36" x2="52" y2="53">
-      <stop offset="0" stop-color="#AEB8E8" />
-      <stop offset="0.25" stop-color="#8E90D6" />
-      <stop offset="0.44" stop-color="#9C4FB3" />
-      <stop offset="0.6" stop-color="#C2207F" />
-      <stop offset="0.85" stop-color="#A5125E" />
+    <linearGradient id="{uid}-rw" gradientUnits="userSpaceOnUse" x1="53" y1="7" x2="48" y2="55">
+      <stop offset="0" stop-color="#2E97A6" />
+      <stop offset="0.12" stop-color="#5CC6D2" />
+      <stop offset="0.28" stop-color="#84D9E2" />
+      <stop offset="0.45" stop-color="#3F8ED4" />
+      <stop offset="0.56" stop-color="#4F7FD0" />
+      <stop offset="0.65" stop-color="#9AA0DE" />
+      <stop offset="0.75" stop-color="#9C4FB3" />
+      <stop offset="0.85" stop-color="#C2207F" />
+      <stop offset="0.94" stop-color="#A5125E" />
       <stop offset="1" stop-color="#77204B" />
     </linearGradient>
-    <radialGradient id="{uid}-edge" cx="0.5" cy="0.5" r="0.62">
-      <stop offset="0.55" stop-color="#0B1440" stop-opacity="0" />
+    <radialGradient id="{uid}-edge" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0.6" stop-color="#0B1440" stop-opacity="0" />
       <stop offset="1" stop-color="#0B1440" stop-opacity="0.3" />
     </radialGradient>
     <radialGradient id="{uid}-spot">
@@ -71,16 +65,15 @@
     </radialGradient>
   </defs>
   <g transform="rotate(30 32 32) translate(32 32) scale(0.9) translate(-32 -32)">
-    <!-- hindwings, tucked under the forewings and joined along the body -->
-    <path id="{uid}-lhw" d="M32 32c-9-1-22 1-25 8-2 7 3 13 9 13 7 0 13-5 16-9Z" fill="url(#{uid}-lh)" />
-    <path id="{uid}-rhw" d="M32 32c9-1 22 1 25 8 2 7-3 13-9 13-7 0-13-5-16-9Z" fill="url(#{uid}-rh)" />
-    <!-- forewings -->
-    <path id="{uid}-lfw" d="M32 24c-5-7-17-18-23-17-5 1-6 9-4 16 2 7 5 11 8 12 7 2 15 3 19 2Z" fill="url(#{uid}-lf)" />
-    <path id="{uid}-rfw" d="M32 24c5-7 17-18 23-17 5 1 6 9 4 16-2 7-5 11-8 12-7 2-15 3-19 2Z" fill="url(#{uid}-rf)" />
+    <!-- wings, one continuous silhouette per side with scalloped margins -->
+    <path id="{uid}-lw" d="M31.5 23 C26 16 15 6 9 7 Q6.7 8 6.5 11 Q4.3 12.6 4.5 16 Q2.9 17.8 4 21 Q3.1 23.1 5 26 Q4.5 27.8 7 30 Q7 32 10 34 Q10 35.5 13 36.5 C12.5 37.5 11.5 38 11 39 Q7.8 41.3 7.5 42.5 Q5.4 45.2 6 46.5 Q5.5 49.3 7.5 50.5 Q8.1 53 11 53.5 Q12.5 55.1 16 54.5 Q17.7 55 21 53 Q22.6 52.9 25.5 50 Q26.6 49.4 28.5 46 Q29.2 46 30.5 43 L31.5 42 Z" fill="url(#{uid}-lw)" />
+    <path id="{uid}-rw" d="M32.5 23 C38 16 49 6 55 7 Q57.3 8 57.5 11 Q59.7 12.6 59.5 16 Q61.1 17.8 60 21 Q60.9 23.1 59 26 Q59.5 27.8 57 30 Q57 32 54 34 Q54 35.5 51 36.5 C51.5 37.5 52.5 38 53 39 Q56.2 41.3 56.5 42.5 Q58.6 45.2 58 46.5 Q58.5 49.3 56.5 50.5 Q55.9 53 53 53.5 Q51.5 55.1 48 54.5 Q46.3 55 43 53 Q41.4 52.9 38.5 50 Q37.4 49.4 35.5 46 Q34.8 46 33.5 43 L32.5 42 Z" fill="url(#{uid}-rw)" />
     <!-- pooled watercolour edges -->
     <g fill="url(#{uid}-edge)">
-      <use href="#{uid}-lhw" /><use href="#{uid}-rhw" /><use href="#{uid}-lfw" /><use href="#{uid}-rfw" />
+      <use href="#{uid}-lw" /><use href="#{uid}-rw" />
     </g>
+    <!-- veins -->
+    <path d="M30 26 Q17.5 16.5 9 9 M30 26 Q15.5 20.5 5 17 M30 26 Q15.8 25 5.5 26 M30 26 Q17.5 28.5 9 33 M30 39 Q19 41.8 8 42.5 M30 39 Q18.8 45.2 7.5 49.5 M30 39 Q22 47.5 14 54 M30 39 Q26.5 46.5 23 52 M34 26 Q46.5 16.5 55 9 M34 26 Q48.5 20.5 59 17 M34 26 Q48.2 25 58.5 26 M34 26 Q46.5 28.5 55 33 M34 39 Q45 41.8 56 42.5 M34 39 Q45.2 45.2 56.5 49.5 M34 39 Q42 47.5 50 54 M34 39 Q37.5 46.5 41 52" fill="none" stroke="#0B1440" stroke-opacity="0.16" stroke-width="0.5" stroke-linecap="round" />
     <!-- lighter patches -->
     <g fill="url(#{uid}-spot)">
       <ellipse cx="14" cy="24" rx="5" ry="3.4" />
@@ -90,7 +83,7 @@
       <ellipse cx="47" cy="43" rx="3" ry="2" />
     </g>
     <g fill="#3A1030" opacity="0.45">
-      <circle cx="49" cy="52.2" r="0.7" /><circle cx="53.5" cy="50" r="0.7" /><circle cx="56.5" cy="45.5" r="0.7" />
+      <circle cx="48" cy="52.5" r="0.7" /><circle cx="53" cy="50" r="0.7" /><circle cx="56.5" cy="46" r="0.7" />
     </g>
     <!-- body -->
     <g stroke="currentColor" stroke-linecap="round" fill="none">
