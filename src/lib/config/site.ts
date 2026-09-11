@@ -30,8 +30,7 @@ export const site = {
     zip: '01749',
     note: 'Private home with a dedicated studio. By appointment only.'
   },
-  /** Placeholder until the MassageBook account exists. */
-  bookingUrl: 'https://www.massagebook.com/'
+  bookingUrl: 'https://www.massagebook.com/business/25802828/select-product/services'
 } as const;
 
 /** The doctor whose work inspired Mariya's recovery and the studio's name. */
