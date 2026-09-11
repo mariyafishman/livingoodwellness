@@ -57,8 +57,6 @@
       <!-- pooled watercolour edges -->
       <use href="#ls" fill="url(#edge)"/>
       <use href="#rs" fill="url(#edge)"/>
-      <!-- veins -->
-      <path d="M32 35 Q18 22.9 4 12 M32 35 Q17.5 25.6 3 17.5 M32 35 Q18 29.1 4 24.5 M32 35 Q19.2 31.9 6.5 30 M32 35 Q20 35.9 8 38 M32 35 Q20.5 39.4 9 45 M32 35 Q23.2 42.1 14.5 50.5 M32 35 Q27.5 42.6 23 51.5 M32 35 Q46 22.9 60 12 M32 35 Q46.5 25.6 61 17.5 M32 35 Q46 29.1 60 24.5 M32 35 Q44.8 31.9 57.5 30 M32 35 Q44 35.9 56 38 M32 35 Q43.5 39.4 55 45 M32 35 Q40.8 42.1 49.5 50.5 M32 35 Q36.5 42.6 41 51.5" fill="none" stroke="#0B1440" stroke-opacity="0.16" stroke-width="0.5" stroke-linecap="round"/>
       <!-- lighter patches -->
       <g fill="url(#spot)">
         <ellipse cx="17" cy="25" rx="5.5" ry="3.2"/>
@@ -67,9 +65,9 @@
         <ellipse cx="47" cy="29" rx="3" ry="2"/>
         <ellipse cx="41" cy="42" rx="3.4" ry="2.2"/>
       </g>
-      <g fill="#3A1030" opacity="0.45">
-        <circle cx="41" cy="50" r="0.7"/><circle cx="45.5" cy="49.5" r="0.7"/><circle cx="49.5" cy="46.5" r="0.7"/>
-      </g>
+      <!-- thin black outline, ridged by the scalloped margins -->
+      <use href="#ls" fill="none" stroke="#161626" stroke-width="0.6" stroke-linejoin="round"/>
+      <use href="#rs" fill="none" stroke="#161626" stroke-width="0.6" stroke-linejoin="round"/>
       <!-- body -->
       <g stroke="#164E3E" stroke-linecap="round" fill="none">
         <path d="M31.3 25c-1.8-3-4.2-6-7.3-8.2M32.7 25c1.8-3 4.2-6 7.3-8.2" stroke-width="0.8"/>
