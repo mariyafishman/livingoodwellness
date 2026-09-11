@@ -6,8 +6,8 @@
    * faint veins. The left side runs from a dark orange forewing tip through
    * yellow, green and aqua into blue and a deep-blue hindwing; the right
    * side from teal through cyan and blue into a lavender-and-magenta
-   * hindwing. The wings carry their own brand colours; the body and
-   * antennae use `currentColor` so they follow the text around them.
+   * hindwing. Every colour is fixed, including the dark body and antennae,
+   * so the mark looks the same on every background and in both themes.
    * Decorative by default; pass a `label` when it stands alone.
    */
   interface Props {
@@ -100,10 +100,10 @@
       <use href="#{uid}-rs" stroke-width="0.6" />
     </g>
     <!-- body -->
-    <g stroke="currentColor" stroke-linecap="round" fill="none">
+    <g stroke="#161626" stroke-linecap="round" fill="none">
       <path d="M31.3 25c-1.8-3-4.2-6-7.3-8.2M32.7 25c1.8-3 4.2-6 7.3-8.2" stroke-width="0.8" />
       <line x1="32" y1="27" x2="32" y2="45" stroke-width="2" />
     </g>
-    <circle cx="32" cy="26" r="1.6" fill="currentColor" />
+    <circle cx="32" cy="26" r="1.6" fill="#161626" />
   </g>
 </svg>
