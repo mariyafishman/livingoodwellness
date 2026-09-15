@@ -5,10 +5,13 @@
   import SessionCards from '#lib/components/session-cards.svelte';
   import { Button } from '#lib/components/ui/button/index.ts';
   import Logo from '#lib/assets/logo.svelte';
-  import { site, packages, membership, bemer, howItWorks } from '#lib/config/site.ts';
+  import { site, packages, membership, bemer, lifewave, howItWorks } from '#lib/config/site.ts';
 
   const textLink =
     'inline-block rounded-sm font-display text-[0.8125rem] font-bold underline decoration-2 underline-offset-4 outline-none hover:opacity-80 focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background';
+  /** Same link, but inheriting the surrounding text size so it sits on the paragraph's baseline. */
+  const inlineLink =
+    'rounded-sm font-display font-bold underline decoration-2 underline-offset-4 outline-none hover:opacity-80 focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background';
 </script>
 
 <SEO />
@@ -87,6 +90,10 @@
   <p class="mt-4 text-xs text-muted-foreground md:mt-5 md:text-sm">
     Receipts provided for insurance reimbursement or HSA/FSA. Pay in person (cash, Venmo, card) or online when
     booking.
+  </p>
+  <p class="mt-2 text-xs text-muted-foreground md:text-sm">
+    Mariya also uses and recommends {lifewave.name}.
+    <a href="/services#lifewave" class={inlineLink}>Read about them</a>
   </p>
 </section>
 

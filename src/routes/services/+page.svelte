@@ -1,15 +1,16 @@
 <script lang="ts">
+  import ArrowUpRightIcon from '@lucide/svelte/icons/arrow-up-right';
   import SEO from '#lib/components/seo.svelte';
   import PageIntro from '#lib/components/page-intro.svelte';
   import ServiceList from '#lib/components/service-list.svelte';
   import SessionCards from '#lib/components/session-cards.svelte';
   import { Button } from '#lib/components/ui/button/index.ts';
-  import { massage, packages, membership, bemer, goodToKnow } from '#lib/config/site.ts';
+  import { massage, packages, membership, bemer, lifewave, goodToKnow } from '#lib/config/site.ts';
 </script>
 
 <SEO
   title="Services and rates"
-  description="Massage therapy from $90, six-session packages, an $80 monthly membership and Bemer circulation sessions. By appointment in Mariya Fishman's home studio in Hudson, MA."
+  description="Massage therapy from $90, six-session packages, an $80 monthly membership, Bemer circulation sessions, and the LifeWave patches Mariya recommends. By appointment in Mariya Fishman's home studio in Hudson, MA."
 />
 
 <PageIntro
@@ -104,6 +105,29 @@
         <Button href="/book" variant="secondary" size="sm" class="mt-6">Book a Bemer session</Button>
       </div>
       <p class="text-xs leading-snug opacity-80">{bemer.disclaimer}</p>
+    </div>
+  </div>
+</section>
+
+<!-- LifeWave -->
+<section class="wrap section-gap" aria-labelledby="lifewave-title">
+  <div
+    id="lifewave"
+    class="grid scroll-mt-8 gap-6 rounded-[1.5rem] bg-accent p-6 text-accent-foreground md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:rounded-block md:p-14"
+  >
+    <div>
+      <h2 id="lifewave-title" class="display-2">{lifewave.name}</h2>
+      <p class="lead mt-4 max-w-[26rem] md:mt-6">{lifewave.description}</p>
+    </div>
+    <div class="flex flex-col justify-between gap-6">
+      <div>
+        <p class="lead">Ask Mariya about them at your next visit, or order straight from LifeWave.</p>
+        <Button href={lifewave.url} target="_blank" rel="noopener" size="sm" class="mt-6">
+          Order from LifeWave
+          <ArrowUpRightIcon data-icon="inline-end" aria-hidden="true" />
+        </Button>
+      </div>
+      <p class="text-xs leading-snug opacity-80">{lifewave.disclaimer}</p>
     </div>
   </div>
 </section>
