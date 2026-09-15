@@ -107,6 +107,16 @@ export const bemer = {
   disclaimer: 'BEMER is not intended to diagnose, treat, cure or prevent any disease. Individual results vary.'
 } as const;
 
+/** Mariya's personal recommendation. She is an independent LifeWave Brand Partner; orders go through her partner link. */
+export const lifewave = {
+  name: 'LifeWave patches',
+  url: 'https://lifewave.com/mira',
+  description:
+    'Mariya uses LifeWave phototherapy patches herself and recommends them to clients. They are ordered directly from LifeWave through her partner link.',
+  disclaimer:
+    'Mariya is an independent LifeWave Brand Partner and may earn a commission on orders placed through this link. LifeWave patches are not intended to diagnose, treat, cure or prevent any disease.'
+} as const;
+
 /** The booking flow, as explained on the home and book pages. */
 export const howItWorks = [
   {
