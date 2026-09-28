@@ -1,44 +1,25 @@
 # AGENTS.md
 
-Guidance for AI coding agents working in this repository.
+Keep this file current: if a change makes anything here wrong or incomplete, update it in the same change.
 
 ## Tech Stack
 
-Refer to the README for the tech stack used in this project, and keep it updated if you add or remove dependencies.
+See the Tech Stack section of `README.md`. If you add, remove, or change a core technology, update it in the same change.
 
-## Agent Tooling
+Most of this tech stack had a recent major version, so your training data is likely stale. When unsure about an API, check the official docs instead of guessing.
 
-- You have access to the **Svelte MCP server** — use it for up-to-date Svelte 5 / SvelteKit 3 docs and to validate generated Svelte code.
-- You have access to the **shadcn-svelte skills** — use them when adding or working with UI components.
-- If any of these aren't available in your environment, prompt the user to install them before falling back to memory.
+## Skills
 
-You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:
+- Use the **svelte-code-writer** and **svelte-core-bestpractices** skills whenever you write or edit Svelte code.
+- Use the **shadcn-svelte** skill whenever you add or change UI. The component source lives in `src/lib/components/ui` and is ours to change: add components with the CLI as needed and edit existing ones freely.
+- If a skill is missing, say so in your reply and ask the user to install it.
 
-### Available Svelte MCP Tools:
+## Git Commits & PRs
 
-#### 1. list-sections
-
-Use this FIRST to discover all available documentation sections. Returns a structured list with titles, use_cases, and paths.
-When asked about Svelte or SvelteKit topics, ALWAYS use this tool at the start of the chat to find relevant sections.
-
-#### 2. get-documentation
-
-Retrieves full documentation content for specific sections. Accepts single or multiple sections.
-After calling the list-sections tool, you MUST analyze the returned documentation sections (especially the use_cases field) and then use the get-documentation tool to fetch ALL documentation sections that are relevant for the user's task.
-
-#### 3. svelte-autofixer
-
-Analyzes Svelte code and returns issues and suggestions.
-You MUST use this tool whenever writing Svelte code before sending it to the user. Keep calling it until no issues or suggestions are returned.
-
-#### 4. playground-link
-
-Generates a Svelte Playground link with the provided code.
-After completing the code, ask the user if they want a playground link. Only call this tool after user confirmation and NEVER if code was written to files in their project.
-
-## Use Current Docs
-
-Several parts of this stack evolve quickly and training data is often stale — when unsure about an API, check the official docs instead of guessing.
+- No AI attribution anywhere: no `Co-Authored-By` or "Generated with" lines in commits, no `ai/` or `agent/` branch prefixes, nothing about the tool in PR titles or descriptions. Describe the change, not what made it.
+- Write concise commit messages following the Conventional Commits spec and name branches after the change.
+- Every change goes on a feature branch with a PR. Never push directly to `main`.
+- If you push more commits after opening a PR, update its description to cover the full change set.
 
 ## Design
 
@@ -55,16 +36,3 @@ Several parts of this stack evolve quickly and training data is often stale — 
 - **Shared page pieces** in `src/lib/components`: `page-intro` (butter opening band with title and lead), `portrait` (lilac circle, photo, note, butterfly), `service-list` (numbered hairline rows), `session-cards` (the three pricing stamps), `seo` (title, description, canonical, Open Graph) and `json-ld` (LocalBusiness, rendered once from the layout). Every page passes its own `title` and `description` to `SEO`. The Open Graph image is `static/og.png` (1200x630, same palette and type).
 - Booking, packages and membership always link to `/book`, never straight to MassageBook. The one product link that goes straight out is the LifeWave button on `/services` (`lifewave.url` in `src/lib/config/site.ts`): it is a store, not booking, so it opens in a new tab with `target="_blank" rel="noopener"` and a trailing `ArrowUpRightIcon` (`data-icon="inline-end"`), the same treatment as the MassageBook buttons on `/book`. Keep its Brand Partner disclaimer next to the button.
 - All design tokens live in `src/routes/layout.css`. Every colour variable is defined for both light and dark. Make every page responsive and check both themes.
-
-## Git Commits & Branches
-
-- Do **not** add the coding agent as a co-author on commits — no `Co-Authored-By` trailers, "Generated with" lines, or similar AI attribution in commit messages.
-- No AI attribution in branch names either — don't prefix branches with `ai/`, `agent/`, or similar. Name branches after the change using conventional naming conventions.
-- The same applies to PR titles and descriptions: describe the change, not the tool that made it.
-- Write concise, conventional commit messages describing the change itself.
-- Any non-trivial change — features, refactors, anything spanning multiple files or commits — goes on a feature branch with a PR; never push directly to `main`. Only trivial fixes may go to `main`, and only if explicitly asked.
-- If you push more changes to a branch after its PR is opened, update the PR description so it still reflects the full change set.
-
-## Keeping This File Updated
-
-Treat AGENTS.md as living documentation. If a change you make invalidates anything here — new commands or scripts, moved directories, changed conventions, added dependencies or bindings — update this file in the same commit.
