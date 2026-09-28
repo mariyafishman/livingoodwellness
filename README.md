@@ -13,9 +13,9 @@ Website for Livingood Wellness Center.
 - **[mode-watcher](https://github.com/svecosystem/mode-watcher)** - light/dark theme
 - **[Cloudflare Workers](https://developers.cloudflare.com/workers/)** - deployment platform
 
-## Developing
+## Getting Started
 
 ```sh
-npm install
+npm i
 npm run dev
 ```
