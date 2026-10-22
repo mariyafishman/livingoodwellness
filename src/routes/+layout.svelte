@@ -15,12 +15,12 @@
 
 <JsonLd />
 
-<!-- Butter header band in light, deep green page in dark: matches the browser chrome to each. -->
-<ModeWatcher defaultMode="light" themeColors={{ light: '#e8ebb2', dark: '#0f2b22' }} />
+<!-- Cream paper in light, deep plum page in dark: matches the browser chrome to each. -->
+<ModeWatcher defaultMode="light" themeColors={{ light: '#fbf4ec', dark: '#2a1830' }} />
 
 <a
   href="#main"
-  class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:font-display focus:font-bold focus:text-primary-foreground"
+  class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:font-semibold focus:text-primary-foreground"
 >
   Skip to content
 </a>

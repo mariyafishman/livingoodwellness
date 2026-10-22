@@ -6,6 +6,8 @@
 export const site = {
   name: 'Livingood Wellness Center',
   tagline: 'Find your balance.',
+  /** The line from the studio's business card. */
+  mission: 'We are helping people to be in balance.',
   description:
     'Massage therapy in Hudson, MA. Mariya Fishman, Licensed Massage Therapist, brings over 30 years of experience with seniors, athletes, children and everyone in between.',
   /** Canonical site URL. Used for Open Graph and JSON-LD. */

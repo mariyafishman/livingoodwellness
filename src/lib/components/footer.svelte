@@ -8,34 +8,34 @@
   const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}`;
   const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
-  const textLink =
-    'inline-block rounded-sm font-display font-bold underline decoration-2 underline-offset-4 outline-none hover:opacity-80 focus-visible:ring-3 focus-visible:ring-current/50 focus-visible:ring-offset-4 focus-visible:ring-offset-primary';
+  /* Links on the card: semibold with a rule in the card's own text colour. */
+  const cardLink =
+    'rounded-xs border-b-2 border-current/40 pb-px font-semibold outline-none hover:border-current focus-visible:ring-3 focus-visible:ring-current/50 focus-visible:ring-offset-4 focus-visible:ring-offset-ink';
 </script>
 
-<footer class="wrap section-gap pb-8 md:pb-16">
-  <div
-    class="relative grid gap-8 rounded-[1.5rem] bg-primary p-6 text-primary-foreground md:grid-cols-[1.1fr_0.9fr] md:gap-16 md:rounded-block md:p-16"
-  >
-    <div class="pr-12 md:pr-0">
-      <h2 class="font-display text-[2.5rem] leading-none font-extrabold tracking-[-0.04em] text-balance md:text-[4rem]">
-        A quiet home studio in Hudson, MA.
-      </h2>
-      <Button href="/book" variant="secondary" class="mt-7 max-md:w-full md:mt-9">Book a session</Button>
-      <p class="mt-7 text-sm md:mt-10">Questions before you book?</p>
-      <a href="/contact" class={[textLink, 'mt-1.5 text-[0.9375rem]']}>Contact Mariya</a>
-    </div>
-
-    <div class="grid content-start gap-7 border-t border-primary-foreground/30 pt-7 md:gap-8 md:border-t-0 md:pt-0">
-      <div>
-        <address class="font-display text-lg leading-tight font-extrabold tracking-[-0.02em] not-italic md:text-[1.375rem]">
-          {site.address.street}<br />{site.address.city}, {site.address.state} {site.address.zip}
-        </address>
-        <p class="mt-2.5 text-[0.8125rem] leading-normal md:text-sm">{site.address.note}</p>
-        <a href={directionsUrl} target="_blank" rel="noopener" class={[textLink, 'mt-2.5 text-[0.8125rem]']}>Get directions</a>
+<footer class="wrap section-gap pb-6 md:pb-8">
+  <div class="flex flex-col gap-10 rounded-block bg-ink px-6 pt-10 pb-6 text-ink-foreground md:gap-12 md:px-12 md:pt-14 md:pb-8 lg:px-14 lg:pt-16">
+    <div class="grid gap-10 md:grid-cols-2 md:gap-12 xl:grid-cols-[1.6fr_1fr_1.1fr] xl:gap-16">
+      <div class="flex flex-col items-start gap-6 md:col-span-2 md:gap-7 xl:col-span-1">
+        <h2 class="font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] text-balance md:max-w-[13ch] md:text-[3.75rem]">
+          A quiet home studio in Hudson, MA.
+        </h2>
+        <Button href="/book" variant="contrast" class="max-sm:w-full">Book a session</Button>
+        <p class="text-sm md:text-[0.9375rem]">
+          Questions before you book? <a href="/contact" class={cardLink}>Contact Mariya</a>
+        </p>
       </div>
-      <div>
-        <h3 class="font-display text-lg leading-tight font-extrabold tracking-[-0.02em] md:text-[1.375rem]">Studio hours</h3>
-        <dl class="mt-3 grid grid-cols-[1fr_auto] gap-x-4 gap-y-1.5 text-[0.8125rem] leading-normal md:gap-x-6 md:gap-y-2 md:text-sm">
+
+      <div class="flex flex-col gap-2 text-[0.9375rem] leading-normal">
+        <h3 class="text-base font-semibold">Studio</h3>
+        <address class="not-italic">{site.address.street}<br />{site.address.city}, {site.address.state} {site.address.zip}</address>
+        <p class="text-sm opacity-80">{site.address.note}</p>
+        <a href={directionsUrl} target="_blank" rel="noopener" class={[cardLink, 'self-start text-sm']}>Get directions</a>
+      </div>
+
+      <div class="flex flex-col gap-2 text-[0.9375rem] leading-normal">
+        <h3 class="text-base font-semibold">Hours</h3>
+        <dl class="grid grid-cols-[auto_1fr] gap-x-5 gap-y-1.5">
           {#each hours as { days, time } (days)}
             <dt>{days}</dt>
             <dd>{time}</dd>
@@ -44,12 +44,14 @@
       </div>
     </div>
 
-    <Logo class="absolute top-6 right-6 size-10 rotate-12 md:top-14 md:right-14 md:size-14" />
-
     <div
-      class="flex flex-col gap-4 border-t border-primary-foreground/30 pt-5 text-[0.8125rem] leading-relaxed md:col-span-2 md:flex-row md:items-center md:justify-between"
+      class="flex flex-col gap-5 border-t border-current/30 pt-5 text-sm leading-normal xl:flex-row xl:items-center xl:justify-between xl:gap-x-6"
     >
-      <span>{site.practitioner.title}, {site.practitioner.license}</span>
+      <span class="flex items-center gap-3">
+        <Logo class="size-10 shrink-0" />
+        <span>{site.practitioner.title}, {site.practitioner.license}</span>
+      </span>
+      <a href="mailto:{site.email}" class={[cardLink, 'self-start xl:self-auto']}>{site.email}</a>
       <ThemeToggle />
       <span>&copy; {currentYear} {site.name}</span>
     </div>

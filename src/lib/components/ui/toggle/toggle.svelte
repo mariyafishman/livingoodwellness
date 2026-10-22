@@ -3,10 +3,10 @@
 
 	/*
 	 * Small pill toggles. The pressed state uses the page background so the
-	 * toggle reads on any surface, including the green footer card.
+	 * toggle reads on any surface, including the plum footer card.
 	 */
 	export const toggleVariants = tv({
-		base: "group/toggle inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-full font-display font-bold transition-colors outline-none hover:bg-current/10 focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background aria-pressed:bg-background aria-pressed:text-foreground data-[state=on]:bg-background data-[state=on]:text-foreground aria-invalid:ring-destructive/20 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+		base: "group/toggle inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-full font-semibold transition-colors outline-none hover:bg-current/10 focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background aria-pressed:bg-background aria-pressed:text-foreground data-[state=on]:bg-background data-[state=on]:text-foreground aria-invalid:ring-destructive/20 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 		variants: {
 			variant: {
 				default: "bg-transparent",
