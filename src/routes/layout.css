@@ -13,16 +13,16 @@
  * plum card at the foot of every page. See the Design section of AGENTS.md.
  */
 :root {
-	/* Brand palette (light), lifted from the studio's business card */
-	--cream: #fbf4ec;
-	--peach: #f5e1d2;
-	--blush: #f8ecf1;
-	--lilac: #ddc3de;
-	--plum: #3b2440;
-	--plum-soft: #5e4a63;
-	--magenta: #a8155f;
-	--magenta-deep: #7e0f47;
-	--gold: #d9a62e;
+	/* Brand palette (light), lifted from the studio's business card, in oklch */
+	--cream: oklch(0.970 0.013 71.3);
+	--peach: oklch(0.922 0.030 59.3);
+	--blush: oklch(0.954 0.014 350.1);
+	--lilac: oklch(0.847 0.047 324.8);
+	--plum: oklch(0.302 0.058 320.3);
+	--plum-soft: oklch(0.439 0.047 319.5);
+	--magenta: oklch(0.484 0.185 357.6);
+	--magenta-deep: oklch(0.394 0.149 357.1);
+	--gold: oklch(0.753 0.141 83.8);
 
 	/* Semantic tokens */
 	--background: var(--cream);
@@ -32,7 +32,7 @@
 	--popover: var(--cream);
 	--popover-foreground: var(--plum);
 	--primary: var(--magenta);
-	--primary-foreground: #ffffff;
+	--primary-foreground: oklch(1 0 0);
 	--primary-hover: var(--magenta-deep);
 	--secondary: var(--peach);
 	--secondary-foreground: var(--plum);
@@ -59,7 +59,7 @@
 	--sidebar: var(--cream);
 	--sidebar-foreground: var(--plum);
 	--sidebar-primary: var(--magenta);
-	--sidebar-primary-foreground: #ffffff;
+	--sidebar-primary-foreground: oklch(1 0 0);
 	--sidebar-accent: var(--lilac);
 	--sidebar-accent-foreground: var(--plum);
 	--sidebar-border: color-mix(in oklab, var(--plum) 25%, transparent);
@@ -68,33 +68,33 @@
 
 .dark {
 	/* Brand palette (dark): the plum becomes the page and the peach carries the light */
-	--cream: #f5e1d2;
-	--peach: #4a3050;
-	--blush: #3d2843;
-	--lilac: #513c66;
-	--plum: #2a1830;
-	--plum-soft: #cdb8c9;
-	--magenta: #e996bf;
-	--magenta-deep: #f2b3d1;
-	--gold: #d9a62e;
+	--cream: oklch(0.922 0.030 59.3);
+	--peach: oklch(0.354 0.063 319.9);
+	--blush: oklch(0.314 0.054 318.6);
+	--lilac: oklch(0.398 0.073 306.3);
+	--plum: oklch(0.244 0.051 317.3);
+	--plum-soft: oklch(0.805 0.033 332.2);
+	--magenta: oklch(0.769 0.111 349.0);
+	--magenta-deep: oklch(0.833 0.082 348.9);
+	--gold: oklch(0.753 0.141 83.8);
 
 	--background: var(--plum);
 	--foreground: var(--cream);
-	--card: #342038;
+	--card: oklch(0.280 0.051 320.7);
 	--card-foreground: var(--cream);
 	--popover: var(--plum);
 	--popover-foreground: var(--cream);
 	--primary: var(--magenta);
-	--primary-foreground: #2a1830;
+	--primary-foreground: var(--plum);
 	--primary-hover: var(--magenta-deep);
 	--secondary: var(--peach);
 	--secondary-foreground: var(--cream);
 	--accent: var(--lilac);
-	--accent-foreground: #f1e3f1;
+	--accent-foreground: oklch(0.931 0.024 325.8);
 	--muted: var(--blush);
 	--muted-foreground: var(--plum-soft);
 	--ink: var(--cream);
-	--ink-foreground: #2a1830;
+	--ink-foreground: var(--plum);
 	--destructive: oklch(0.704 0.191 22.216);
 	--border: color-mix(in oklab, var(--cream) 30%, transparent);
 	--input: color-mix(in oklab, var(--cream) 30%, transparent);
@@ -105,12 +105,12 @@
 	--chart-4: var(--gold);
 	--chart-5: var(--plum-soft);
 
-	--sidebar: #342038;
+	--sidebar: oklch(0.280 0.051 320.7);
 	--sidebar-foreground: var(--cream);
 	--sidebar-primary: var(--magenta);
-	--sidebar-primary-foreground: #2a1830;
+	--sidebar-primary-foreground: var(--plum);
 	--sidebar-accent: var(--lilac);
-	--sidebar-accent-foreground: #f1e3f1;
+	--sidebar-accent-foreground: oklch(0.931 0.024 325.8);
 	--sidebar-border: color-mix(in oklab, var(--cream) 30%, transparent);
 	--sidebar-ring: var(--magenta);
 }
