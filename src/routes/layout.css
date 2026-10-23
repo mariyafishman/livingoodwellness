@@ -1,112 +1,123 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn-svelte/tailwind.css';
-@import '@fontsource-variable/manrope';
-@import '@fontsource-variable/dm-sans';
-@import '@fontsource-variable/cormorant-garamond/wght-italic.css';
+@import '@fontsource-variable/fraunces/opsz.css';
+@import '@fontsource-variable/fraunces/opsz-italic.css';
+@import '@fontsource-variable/public-sans';
 
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Brand tokens. Warm, editorial and calm: cream page, butter and lilac colour
- * blocks, one deep green for text, hairlines, buttons and the dark card.
- * See the Design section of AGENTS.md.
+ * Brand tokens. Warm paper: cream page, peach and lilac colour blocks, plum
+ * text, magenta buttons and links, a gold ring round the portrait, and one
+ * plum card at the foot of every page. See the Design section of AGENTS.md.
  */
 :root {
-	/* Brand palette (light) */
-	--cream: oklch(0.983 0.011 106.6);
-	--butter: oklch(0.924 0.074 110.3);
-	--lilac: oklch(0.880 0.030 305.1);
-	--green: oklch(0.383 0.064 170.3);
-	--green-soft: oklch(0.443 0.036 169.7);
+	/* Brand palette (light), lifted from the studio's business card, in oklch */
+	--cream: oklch(0.970 0.013 71.3);
+	--peach: oklch(0.922 0.030 59.3);
+	--blush: oklch(0.954 0.014 350.1);
+	--lilac: oklch(0.847 0.047 324.8);
+	--plum: oklch(0.302 0.058 320.3);
+	--plum-soft: oklch(0.439 0.047 319.5);
+	--magenta: oklch(0.484 0.185 357.6);
+	--magenta-deep: oklch(0.394 0.149 357.1);
+	--gold: oklch(0.753 0.141 83.8);
 
 	/* Semantic tokens */
 	--background: var(--cream);
-	--foreground: var(--green);
+	--foreground: var(--plum);
 	--card: var(--cream);
-	--card-foreground: var(--green);
+	--card-foreground: var(--plum);
 	--popover: var(--cream);
-	--popover-foreground: var(--green);
-	--primary: var(--green);
-	--primary-foreground: var(--butter);
-	--secondary: var(--butter);
-	--secondary-foreground: var(--green);
+	--popover-foreground: var(--plum);
+	--primary: var(--magenta);
+	--primary-foreground: oklch(1 0 0);
+	--primary-hover: var(--magenta-deep);
+	--secondary: var(--peach);
+	--secondary-foreground: var(--plum);
 	--accent: var(--lilac);
-	--accent-foreground: var(--green);
-	--muted: oklch(0.949 0.016 106.7);
-	--muted-foreground: var(--green-soft);
+	--accent-foreground: var(--plum);
+	--muted: var(--blush);
+	--muted-foreground: var(--plum-soft);
+	--ink: var(--plum);
+	--ink-foreground: var(--peach);
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: var(--green);
-	--input: var(--green);
-	--ring: var(--green);
-	--chart-1: var(--green);
-	--chart-2: var(--butter);
+	--border: color-mix(in oklab, var(--plum) 25%, transparent);
+	--input: color-mix(in oklab, var(--plum) 25%, transparent);
+	--ring: var(--magenta);
+	--chart-1: var(--magenta);
+	--chart-2: var(--peach);
 	--chart-3: var(--lilac);
-	--chart-4: var(--green-soft);
-	--chart-5: oklch(0.949 0.016 106.7);
+	--chart-4: var(--gold);
+	--chart-5: var(--plum-soft);
 
 	/* Rhythm */
-	--radius: 1.25rem; /* pricing cards */
+	--radius: 1.25rem; /* quote blocks, small cards */
 	--radius-block: 1.75rem; /* colour blocks */
-	--shadow-note: 0 8px 24px oklch(0.383 0.064 170.3 / 0.12);
 
 	--sidebar: var(--cream);
-	--sidebar-foreground: var(--green);
-	--sidebar-primary: var(--green);
-	--sidebar-primary-foreground: var(--butter);
+	--sidebar-foreground: var(--plum);
+	--sidebar-primary: var(--magenta);
+	--sidebar-primary-foreground: oklch(1 0 0);
 	--sidebar-accent: var(--lilac);
-	--sidebar-accent-foreground: var(--green);
-	--sidebar-border: var(--green);
-	--sidebar-ring: var(--green);
+	--sidebar-accent-foreground: var(--plum);
+	--sidebar-border: color-mix(in oklab, var(--plum) 25%, transparent);
+	--sidebar-ring: var(--magenta);
 }
 
 .dark {
-	/* Brand palette (dark): the green becomes the page, butter carries the light */
-	--cream: oklch(0.947 0.034 110.6);
-	--butter: oklch(0.924 0.074 110.3);
-	--lilac: oklch(0.346 0.052 294.2);
-	--green: oklch(0.264 0.038 169.7);
-	--green-soft: oklch(0.819 0.025 159);
+	/* Brand palette (dark): the plum becomes the page and the peach carries the light */
+	--cream: oklch(0.922 0.030 59.3);
+	--peach: oklch(0.354 0.063 319.9);
+	--blush: oklch(0.314 0.054 318.6);
+	--lilac: oklch(0.398 0.073 306.3);
+	--plum: oklch(0.244 0.051 317.3);
+	--plum-soft: oklch(0.805 0.033 332.2);
+	--magenta: oklch(0.769 0.111 349.0);
+	--magenta-deep: oklch(0.833 0.082 348.9);
+	--gold: oklch(0.753 0.141 83.8);
 
-	--background: var(--green);
+	--background: var(--plum);
 	--foreground: var(--cream);
-	--card: oklch(0.318 0.047 171);
+	--card: oklch(0.280 0.051 320.7);
 	--card-foreground: var(--cream);
-	--popover: oklch(0.318 0.047 171);
+	--popover: var(--plum);
 	--popover-foreground: var(--cream);
-	--primary: var(--butter);
-	--primary-foreground: oklch(0.383 0.064 170.3);
-	--secondary: oklch(0.359 0.054 169.1);
+	--primary: var(--magenta);
+	--primary-foreground: var(--plum);
+	--primary-hover: var(--magenta-deep);
+	--secondary: var(--peach);
 	--secondary-foreground: var(--cream);
 	--accent: var(--lilac);
-	--accent-foreground: oklch(0.942 0.017 308.3);
-	--muted: oklch(0.319 0.046 170.3);
-	--muted-foreground: var(--green-soft);
+	--accent-foreground: oklch(0.931 0.024 325.8);
+	--muted: var(--blush);
+	--muted-foreground: var(--plum-soft);
+	--ink: var(--cream);
+	--ink-foreground: var(--plum);
 	--destructive: oklch(0.704 0.191 22.216);
-	--border: color-mix(in oklab, var(--butter) 45%, transparent);
-	--input: color-mix(in oklab, var(--butter) 45%, transparent);
-	--ring: var(--butter);
-	--chart-1: var(--butter);
-	--chart-2: oklch(0.359 0.054 169.1);
+	--border: color-mix(in oklab, var(--cream) 30%, transparent);
+	--input: color-mix(in oklab, var(--cream) 30%, transparent);
+	--ring: var(--magenta);
+	--chart-1: var(--magenta);
+	--chart-2: var(--peach);
 	--chart-3: var(--lilac);
-	--chart-4: var(--green-soft);
-	--chart-5: oklch(0.319 0.046 170.3);
-	--shadow-note: 0 8px 24px oklch(0 0 0 / 0.35);
+	--chart-4: var(--gold);
+	--chart-5: var(--plum-soft);
 
-	--sidebar: oklch(0.318 0.047 171);
+	--sidebar: oklch(0.280 0.051 320.7);
 	--sidebar-foreground: var(--cream);
-	--sidebar-primary: var(--butter);
-	--sidebar-primary-foreground: oklch(0.383 0.064 170.3);
+	--sidebar-primary: var(--magenta);
+	--sidebar-primary-foreground: var(--plum);
 	--sidebar-accent: var(--lilac);
-	--sidebar-accent-foreground: oklch(0.942 0.017 308.3);
-	--sidebar-border: color-mix(in oklab, var(--butter) 45%, transparent);
-	--sidebar-ring: var(--butter);
+	--sidebar-accent-foreground: oklch(0.931 0.024 325.8);
+	--sidebar-border: color-mix(in oklab, var(--cream) 30%, transparent);
+	--sidebar-ring: var(--magenta);
 }
 
 @theme inline {
-	--font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif;
-	--font-display: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
-	--font-serif: 'Cormorant Garamond Variable', Georgia, 'Times New Roman', serif;
+	--font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
 
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
@@ -132,6 +143,7 @@
 	--color-secondary-foreground: var(--secondary-foreground);
 	--color-secondary: var(--secondary);
 	--color-primary-foreground: var(--primary-foreground);
+	--color-primary-hover: var(--primary-hover);
 	--color-primary: var(--primary);
 	--color-popover-foreground: var(--popover-foreground);
 	--color-popover: var(--popover);
@@ -139,6 +151,9 @@
 	--color-card: var(--card);
 	--color-foreground: var(--foreground);
 	--color-background: var(--background);
+	--color-ink-foreground: var(--ink-foreground);
+	--color-ink: var(--ink);
+	--color-gold: var(--gold);
 
 	--radius-sm: calc(var(--radius) * 0.4);
 	--radius-md: calc(var(--radius) * 0.6);
@@ -146,19 +161,18 @@
 	--radius-xl: var(--radius-block);
 	--radius-2xl: calc(var(--radius-block) * 1.25);
 	--radius-3xl: calc(var(--radius-block) * 1.5);
-	--radius-card: var(--radius);
-	--radius-block: var(--radius-block);
-
-	--shadow-note: var(--shadow-note);
 }
 
-/* Page gutter: 20px on phones, 64px from md up, 1440px max. */
+/* Page gutter: 20px on phones, 40px from md, 64px from lg; content tops out at 1200px. */
 @utility wrap {
 	margin-inline: auto;
 	width: 100%;
-	max-width: 90rem;
+	max-width: 83rem;
 	padding-inline: 1.25rem;
 	@media (width >= 48rem) {
+		padding-inline: 2.5rem;
+	}
+	@media (width >= 64rem) {
 		padding-inline: 4rem;
 	}
 }
@@ -171,6 +185,25 @@
 	}
 }
 
+/* Colour blocks: 24px corners on phones, 28px from md. */
+@utility rounded-block {
+	border-radius: 1.5rem;
+	@media (width >= 48rem) {
+		border-radius: var(--radius-block);
+	}
+}
+
+/* Block padding: 24px on phones, 48px from md, 56px from lg. */
+@utility block-pad {
+	padding: 1.5rem;
+	@media (width >= 48rem) {
+		padding: 3rem;
+	}
+	@media (width >= 64rem) {
+		padding: 3.5rem;
+	}
+}
+
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
@@ -179,7 +212,7 @@
 		@apply font-sans antialiased;
 	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground text-[1.0625rem] leading-[1.55];
 	}
 	::selection {
 		@apply bg-accent text-accent-foreground;
@@ -187,25 +220,42 @@
 }
 
 @layer components {
-	/* Display type: plain Manrope 800, tight tracking, no eyebrows or italics. */
+	/* Display type: Fraunces at display optical size, medium weight, tight tracking, no eyebrows. */
 	.display-1 {
-		@apply font-display text-[3.75rem] leading-[0.95] font-extrabold tracking-[-0.04em] text-balance md:text-[6.5rem];
+		@apply font-display text-[3.25rem] leading-none font-medium tracking-[-0.025em] text-balance md:text-[4.75rem] lg:text-[6rem];
 	}
 	.display-2 {
-		@apply font-display text-[2.375rem] leading-none font-extrabold tracking-[-0.04em] text-balance md:text-[3.5rem];
+		@apply font-display text-[2.25rem] leading-none font-medium tracking-[-0.025em] text-balance md:text-[3.5rem];
 	}
 	.display-3 {
-		@apply font-display text-[1.625rem] leading-[1.1] font-extrabold tracking-[-0.03em] text-balance;
+		@apply font-display text-2xl leading-[1.05] font-medium tracking-[-0.02em] text-balance md:text-[1.875rem];
+	}
+	/* The one italic: a spoken line, set large (the mission in the hero, Mariya's quote). */
+	.statement {
+		@apply font-display text-[1.75rem] leading-[1.1] font-normal tracking-[-0.01em] text-balance italic md:text-[2.5rem];
+	}
+	.statement-sm {
+		@apply font-display text-2xl leading-[1.2] font-normal tracking-[-0.01em] text-balance italic md:text-[1.75rem];
+	}
+	/* A rate or a large number. */
+	.price {
+		@apply font-display text-[3.5rem] leading-none font-medium tracking-[-0.025em] md:text-[5.5rem];
+	}
+	.price-sm {
+		@apply font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] md:text-[3rem];
 	}
 	/* Row title inside hairline lists (services, how it works). */
 	.row-title {
-		@apply font-display text-lg leading-tight font-extrabold tracking-[-0.02em] md:text-3xl md:tracking-[-0.03em];
+		@apply text-lg leading-tight font-semibold md:text-xl;
 	}
 	.lead {
-		@apply text-base leading-normal md:text-lg;
+		@apply text-lg leading-normal md:text-[1.3125rem];
 	}
-	/* Hand-written note on the portrait. */
-	.note {
-		@apply bg-background text-foreground shadow-note rounded-md px-4 py-2.5 font-serif text-xl italic md:px-5 md:py-3 md:text-[1.75rem];
+	.lead-sm {
+		@apply text-[1.0625rem] leading-normal md:text-lg;
+	}
+	/* Text link: semibold with a 2px magenta rule under it. */
+	.text-link {
+		@apply rounded-xs border-b-2 border-primary pb-px font-semibold outline-none hover:border-current focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background;
 	}
 }

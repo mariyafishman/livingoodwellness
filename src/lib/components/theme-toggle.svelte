@@ -29,7 +29,7 @@
   {#each options as { value, label, icon: Icon } (value)}
     <ToggleGroup.Item {value} aria-label={label}>
       <Icon />
-      <span class="max-sm:sr-only">{label}</span>
+      <span class="sr-only">{label}</span>
     </ToggleGroup.Item>
   {/each}
 </ToggleGroup.Root>
