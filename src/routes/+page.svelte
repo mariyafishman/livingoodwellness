@@ -22,8 +22,10 @@
       <Button href="/contact" variant="outline">Contact</Button>
     </div>
   </div>
-  <div class="flex flex-col justify-between gap-10 rounded-block bg-secondary p-6 text-secondary-foreground md:min-h-[32.5rem] md:p-10">
-    <Portrait priority class="self-start" />
+  <div
+    class="flex flex-col items-center justify-between gap-10 rounded-block bg-secondary p-6 text-center text-secondary-foreground md:min-h-[32.5rem] md:p-10"
+  >
+    <Portrait priority />
     <p class="statement max-w-[14ch]">{site.mission}</p>
   </div>
 </section>
