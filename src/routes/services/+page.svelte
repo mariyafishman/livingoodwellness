@@ -47,7 +47,6 @@
     <p class="lead-sm max-w-[26rem] text-muted-foreground">Choose the time that suits you. Every length is the same care.</p>
   </div>
   <Rates />
-  <Button href="/book" class="self-start">Book a session</Button>
 </section>
 
 <!-- Packages and membership -->
