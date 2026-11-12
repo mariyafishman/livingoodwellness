@@ -51,7 +51,6 @@
         <Logo class="size-10 shrink-0" />
         <span>{site.practitioner.title}, {site.practitioner.license}</span>
       </span>
-      <a href="mailto:{site.email}" class={[cardLink, 'self-start xl:self-auto']}>{site.email}</a>
       <ThemeToggle />
       <span>&copy; {currentYear} {site.name}</span>
     </div>
