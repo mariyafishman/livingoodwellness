@@ -17,7 +17,10 @@
   description="Call or text Mariya Fishman at 978-493-6171, or email. Livingood Wellness Center is a home studio at 157 Marlboro Street, Hudson, MA 01749. By appointment only."
 />
 
-<PageIntro title="Contact" lead="A call or a text is the quickest way to reach Mariya. She answers between sessions.">
+<PageIntro
+  title="Contact"
+  lead="A call or a text is the quickest way to reach Mariya. She answers between sessions."
+>
   <div class="flex flex-col gap-3 self-stretch sm:flex-row sm:self-start">
     <Button href={site.phone.tel}>Call {site.phone.display}</Button>
     <Button href={site.phone.sms} variant="outline">Send a text</Button>
@@ -25,27 +28,40 @@
 </PageIntro>
 
 <section class="wrap section-gap grid gap-5 md:grid-cols-2" aria-label="Ways to reach the studio">
-  <div class="flex flex-col items-start gap-4 rounded-block bg-secondary text-secondary-foreground block-pad">
+  <div
+    class="flex flex-col items-start gap-4 rounded-block bg-secondary block-pad text-secondary-foreground"
+  >
     <h2 class="display-3">Phone</h2>
-    <p class="font-display text-[2rem] leading-none font-medium tracking-[-0.025em] md:text-[2.5rem]">
+    <p
+      class="font-display text-[2rem] leading-none font-medium tracking-[-0.025em] md:text-[2.5rem]"
+    >
       <a href={site.phone.tel} class={bigLink}>{site.phone.display}</a>
     </p>
     <p>Call or text. If she is with a client, leave a message and she will get back to you.</p>
   </div>
-  <div class="flex flex-col items-start gap-4 rounded-block bg-accent text-accent-foreground block-pad">
+  <div
+    class="flex flex-col items-start gap-4 rounded-block bg-accent block-pad text-accent-foreground"
+  >
     <h2 class="display-3">Email</h2>
-    <p class="font-display text-lg leading-tight font-medium tracking-[-0.02em] [overflow-wrap:anywhere] sm:text-xl md:text-[1.75rem]">
+    <p
+      class="font-display text-lg leading-tight font-medium tracking-[-0.02em] [overflow-wrap:anywhere] sm:text-xl md:text-[1.75rem]"
+    >
       <a href="mailto:{site.email}" class={bigLink}>{site.email}</a>
     </p>
     <p>Good for questions that can wait a day. For appointments, the booking page is faster.</p>
   </div>
   <div class="flex flex-col items-start gap-4 rounded-block bg-muted block-pad">
     <h2 class="display-3">Studio</h2>
-    <address class="font-display text-xl leading-tight font-medium tracking-[-0.02em] not-italic md:text-[1.75rem]">
-      {site.address.street}<br />{site.address.city}, {site.address.state} {site.address.zip}
+    <address
+      class="font-display text-xl leading-tight font-medium tracking-[-0.02em] not-italic md:text-[1.75rem]"
+    >
+      {site.address.street}<br />{site.address.city}, {site.address.state}
+      {site.address.zip}
     </address>
     <p>{site.address.note}</p>
-    <a href={directionsUrl} target="_blank" rel="noopener" class="text-link text-[0.9375rem]">Get directions</a>
+    <a href={directionsUrl} target="_blank" rel="noopener" class="text-link text-[0.9375rem]"
+      >Get directions</a
+    >
   </div>
   <div class="flex flex-col items-start gap-4 rounded-block border block-pad">
     <h2 class="display-3">Hours</h2>
@@ -59,7 +75,10 @@
   </div>
 </section>
 
-<section class="wrap section-gap grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-16" aria-labelledby="book-title">
+<section
+  class="wrap section-gap grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-16"
+  aria-labelledby="book-title"
+>
   <div class="flex flex-col gap-4">
     <h2 id="book-title" class="display-2">Ready to book?</h2>
     <p class="lead-sm max-w-[24rem] text-muted-foreground">

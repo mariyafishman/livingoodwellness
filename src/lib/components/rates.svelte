@@ -16,7 +16,7 @@
       class={[
         'relative flex flex-col items-start gap-2 py-6 sm:pt-7 sm:pb-3',
         i > 0 && 'border-t sm:border-t-0 sm:border-l sm:pl-8',
-        i < massage.sessions.length - 1 && 'sm:pr-8'
+        i < massage.sessions.length - 1 && 'sm:pr-8',
       ]}
     >
       <dt class="text-muted-foreground">{minutes} minutes</dt>

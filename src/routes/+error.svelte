@@ -9,14 +9,14 @@
   const lead = $derived(
     notFound
       ? 'That page is not here, but the studio still is.'
-      : 'Please try again in a moment, or get in touch with Mariya directly.'
+      : 'Please try again in a moment, or get in touch with Mariya directly.',
   );
 
   const links = [
     { label: 'Services and rates', href: '/services' },
     { label: 'About Mariya', href: '/about' },
     { label: 'Book a session', href: '/book' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Contact', href: '/contact' },
   ];
 </script>
 

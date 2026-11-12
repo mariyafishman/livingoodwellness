@@ -32,12 +32,14 @@
 
 <!-- Services: a lilac block with the list in two columns. -->
 <section class="wrap section-gap" aria-labelledby="services-title">
-  <div class="flex flex-col gap-8 rounded-block bg-accent text-accent-foreground block-pad md:gap-10">
+  <div
+    class="flex flex-col gap-8 rounded-block bg-accent block-pad text-accent-foreground md:gap-10"
+  >
     <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between md:gap-10">
       <h2 id="services-title" class="display-2 max-w-[12ch]">Care for the life you live.</h2>
       <p class="lead-sm max-w-[26rem] text-muted-foreground">
-        For seniors, athletes, children and parents. For chronic pain, post-injury recovery, or simply a little time
-        to relax.
+        For seniors, athletes, children and parents. For chronic pain, post-injury recovery, or
+        simply a little time to relax.
       </p>
     </div>
     <ServiceList />
@@ -49,7 +51,9 @@
 <section class="wrap section-gap flex flex-col gap-8 md:gap-10" aria-labelledby="rates-title">
   <h2 id="rates-title" class="display-2">Sessions and rates</h2>
   <Rates />
-  <div class="grid gap-8 rounded-block bg-secondary text-secondary-foreground block-pad lg:grid-cols-3 lg:gap-x-12 xl:gap-x-16">
+  <div
+    class="grid gap-8 rounded-block bg-secondary block-pad text-secondary-foreground lg:grid-cols-3 lg:gap-x-12 xl:gap-x-16"
+  >
     <div class="flex flex-col items-start gap-2.5">
       <h3 class="display-3">Six-session packages</h3>
       <p>
@@ -78,14 +82,17 @@
     </div>
   </div>
   <p class="max-w-[60rem] text-sm text-muted-foreground">
-    Receipts provided for insurance reimbursement or HSA/FSA. Pay in person (cash, Venmo, card) or online when
-    booking. Mariya also uses and recommends
+    Receipts provided for insurance reimbursement or HSA/FSA. Pay in person (cash, Venmo, card) or
+    online when booking. Mariya also uses and recommends
     <a href="/services#lifewave" class="text-link">{lifewave.name}</a>.
   </p>
 </section>
 
 <!-- Meet Mariya -->
-<section class="wrap section-gap grid items-center gap-10 md:grid-cols-[2fr_3fr] md:gap-12 lg:grid-cols-[440px_1fr] lg:gap-20" aria-labelledby="meet-title">
+<section
+  class="wrap section-gap grid items-center gap-10 md:grid-cols-[2fr_3fr] md:gap-12 lg:grid-cols-[440px_1fr] lg:gap-20"
+  aria-labelledby="meet-title"
+>
   <enhanced:img
     src="#lib/assets/mariya.jpg"
     sizes="(min-width: 48rem) 440px, 90vw"
@@ -96,12 +103,15 @@
   <div class="flex flex-col items-start gap-6">
     <h2 id="meet-title" class="display-2">Meet Mariya</h2>
     <p class="lead-sm max-w-[32rem] md:text-xl">
-      Mariya Fishman has practiced massage therapy for over 30 years. She works with seniors, athletes, children and
-      everyone in between from her home studio in Hudson, MA. Trained at the Muscular Therapy Institute in Cambridge;
-      every year she volunteers on the Pan-Mass Challenge massage team. Sessions in English or Russian.
+      Mariya Fishman has practiced massage therapy for over 30 years. She works with seniors,
+      athletes, children and everyone in between from her home studio in Hudson, MA. Trained at the
+      Muscular Therapy Institute in Cambridge; every year she volunteers on the Pan-Mass Challenge
+      massage team. Sessions in English or Russian.
     </p>
     <blockquote class="max-w-[32rem] rounded-lg bg-accent px-7 py-6 text-accent-foreground">
-      <p class="statement-sm">My husband asked if maybe it was time to retire. I said no. I love my work.</p>
+      <p class="statement-sm">
+        My husband asked if maybe it was time to retire. I said no. I love my work.
+      </p>
     </blockquote>
     <Button href="/about" variant="outline">Read her story</Button>
   </div>

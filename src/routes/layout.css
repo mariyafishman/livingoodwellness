@@ -13,249 +13,249 @@
  * plum card at the foot of every page. See the Design section of AGENTS.md.
  */
 :root {
-	/* Brand palette (light), lifted from the studio's business card, in oklch */
-	--cream: oklch(0.970 0.013 71.3);
-	--peach: oklch(0.922 0.030 59.3);
-	--blush: oklch(0.954 0.014 350.1);
-	--lilac: oklch(0.847 0.047 324.8);
-	--plum: oklch(0.302 0.058 320.3);
-	--plum-soft: oklch(0.439 0.047 319.5);
-	--magenta: oklch(0.484 0.185 357.6);
-	--magenta-deep: oklch(0.394 0.149 357.1);
-	--gold: oklch(0.753 0.141 83.8);
+  /* Brand palette (light), lifted from the studio's business card, in oklch */
+  --cream: oklch(0.97 0.013 71.3);
+  --peach: oklch(0.922 0.03 59.3);
+  --blush: oklch(0.954 0.014 350.1);
+  --lilac: oklch(0.847 0.047 324.8);
+  --plum: oklch(0.302 0.058 320.3);
+  --plum-soft: oklch(0.439 0.047 319.5);
+  --magenta: oklch(0.484 0.185 357.6);
+  --magenta-deep: oklch(0.394 0.149 357.1);
+  --gold: oklch(0.753 0.141 83.8);
 
-	/* Semantic tokens */
-	--background: var(--cream);
-	--foreground: var(--plum);
-	--card: var(--cream);
-	--card-foreground: var(--plum);
-	--popover: var(--cream);
-	--popover-foreground: var(--plum);
-	--primary: var(--magenta);
-	--primary-foreground: oklch(1 0 0);
-	--primary-hover: var(--magenta-deep);
-	--secondary: var(--peach);
-	--secondary-foreground: var(--plum);
-	--accent: var(--lilac);
-	--accent-foreground: var(--plum);
-	--muted: var(--blush);
-	--muted-foreground: var(--plum-soft);
-	--ink: var(--plum);
-	--ink-foreground: var(--peach);
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: color-mix(in oklab, var(--plum) 25%, transparent);
-	--input: color-mix(in oklab, var(--plum) 25%, transparent);
-	--ring: var(--magenta);
-	--chart-1: var(--magenta);
-	--chart-2: var(--peach);
-	--chart-3: var(--lilac);
-	--chart-4: var(--gold);
-	--chart-5: var(--plum-soft);
+  /* Semantic tokens */
+  --background: var(--cream);
+  --foreground: var(--plum);
+  --card: var(--cream);
+  --card-foreground: var(--plum);
+  --popover: var(--cream);
+  --popover-foreground: var(--plum);
+  --primary: var(--magenta);
+  --primary-foreground: oklch(1 0 0);
+  --primary-hover: var(--magenta-deep);
+  --secondary: var(--peach);
+  --secondary-foreground: var(--plum);
+  --accent: var(--lilac);
+  --accent-foreground: var(--plum);
+  --muted: var(--blush);
+  --muted-foreground: var(--plum-soft);
+  --ink: var(--plum);
+  --ink-foreground: var(--peach);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: color-mix(in oklab, var(--plum) 25%, transparent);
+  --input: color-mix(in oklab, var(--plum) 25%, transparent);
+  --ring: var(--magenta);
+  --chart-1: var(--magenta);
+  --chart-2: var(--peach);
+  --chart-3: var(--lilac);
+  --chart-4: var(--gold);
+  --chart-5: var(--plum-soft);
 
-	/* Rhythm */
-	--radius: 1.25rem; /* quote blocks, small cards */
-	--radius-block: 1.75rem; /* colour blocks */
+  /* Rhythm */
+  --radius: 1.25rem; /* quote blocks, small cards */
+  --radius-block: 1.75rem; /* colour blocks */
 
-	--sidebar: var(--cream);
-	--sidebar-foreground: var(--plum);
-	--sidebar-primary: var(--magenta);
-	--sidebar-primary-foreground: oklch(1 0 0);
-	--sidebar-accent: var(--lilac);
-	--sidebar-accent-foreground: var(--plum);
-	--sidebar-border: color-mix(in oklab, var(--plum) 25%, transparent);
-	--sidebar-ring: var(--magenta);
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--plum);
+  --sidebar-primary: var(--magenta);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: var(--lilac);
+  --sidebar-accent-foreground: var(--plum);
+  --sidebar-border: color-mix(in oklab, var(--plum) 25%, transparent);
+  --sidebar-ring: var(--magenta);
 }
 
 .dark {
-	/* Brand palette (dark): the plum becomes the page and the peach carries the light */
-	--cream: oklch(0.922 0.030 59.3);
-	--peach: oklch(0.354 0.063 319.9);
-	--blush: oklch(0.314 0.054 318.6);
-	--lilac: oklch(0.398 0.073 306.3);
-	--plum: oklch(0.244 0.051 317.3);
-	--plum-soft: oklch(0.805 0.033 332.2);
-	--magenta: oklch(0.769 0.111 349.0);
-	--magenta-deep: oklch(0.833 0.082 348.9);
-	--gold: oklch(0.753 0.141 83.8);
+  /* Brand palette (dark): the plum becomes the page and the peach carries the light */
+  --cream: oklch(0.922 0.03 59.3);
+  --peach: oklch(0.354 0.063 319.9);
+  --blush: oklch(0.314 0.054 318.6);
+  --lilac: oklch(0.398 0.073 306.3);
+  --plum: oklch(0.244 0.051 317.3);
+  --plum-soft: oklch(0.805 0.033 332.2);
+  --magenta: oklch(0.769 0.111 349);
+  --magenta-deep: oklch(0.833 0.082 348.9);
+  --gold: oklch(0.753 0.141 83.8);
 
-	--background: var(--plum);
-	--foreground: var(--cream);
-	--card: oklch(0.280 0.051 320.7);
-	--card-foreground: var(--cream);
-	--popover: var(--plum);
-	--popover-foreground: var(--cream);
-	--primary: var(--magenta);
-	--primary-foreground: var(--plum);
-	--primary-hover: var(--magenta-deep);
-	--secondary: var(--peach);
-	--secondary-foreground: var(--cream);
-	--accent: var(--lilac);
-	--accent-foreground: oklch(0.931 0.024 325.8);
-	--muted: var(--blush);
-	--muted-foreground: var(--plum-soft);
-	--ink: var(--cream);
-	--ink-foreground: var(--plum);
-	--destructive: oklch(0.704 0.191 22.216);
-	--border: color-mix(in oklab, var(--cream) 30%, transparent);
-	--input: color-mix(in oklab, var(--cream) 30%, transparent);
-	--ring: var(--magenta);
-	--chart-1: var(--magenta);
-	--chart-2: var(--peach);
-	--chart-3: var(--lilac);
-	--chart-4: var(--gold);
-	--chart-5: var(--plum-soft);
+  --background: var(--plum);
+  --foreground: var(--cream);
+  --card: oklch(0.28 0.051 320.7);
+  --card-foreground: var(--cream);
+  --popover: var(--plum);
+  --popover-foreground: var(--cream);
+  --primary: var(--magenta);
+  --primary-foreground: var(--plum);
+  --primary-hover: var(--magenta-deep);
+  --secondary: var(--peach);
+  --secondary-foreground: var(--cream);
+  --accent: var(--lilac);
+  --accent-foreground: oklch(0.931 0.024 325.8);
+  --muted: var(--blush);
+  --muted-foreground: var(--plum-soft);
+  --ink: var(--cream);
+  --ink-foreground: var(--plum);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: color-mix(in oklab, var(--cream) 30%, transparent);
+  --input: color-mix(in oklab, var(--cream) 30%, transparent);
+  --ring: var(--magenta);
+  --chart-1: var(--magenta);
+  --chart-2: var(--peach);
+  --chart-3: var(--lilac);
+  --chart-4: var(--gold);
+  --chart-5: var(--plum-soft);
 
-	--sidebar: oklch(0.280 0.051 320.7);
-	--sidebar-foreground: var(--cream);
-	--sidebar-primary: var(--magenta);
-	--sidebar-primary-foreground: var(--plum);
-	--sidebar-accent: var(--lilac);
-	--sidebar-accent-foreground: oklch(0.931 0.024 325.8);
-	--sidebar-border: color-mix(in oklab, var(--cream) 30%, transparent);
-	--sidebar-ring: var(--magenta);
+  --sidebar: oklch(0.28 0.051 320.7);
+  --sidebar-foreground: var(--cream);
+  --sidebar-primary: var(--magenta);
+  --sidebar-primary-foreground: var(--plum);
+  --sidebar-accent: var(--lilac);
+  --sidebar-accent-foreground: oklch(0.931 0.024 325.8);
+  --sidebar-border: color-mix(in oklab, var(--cream) 30%, transparent);
+  --sidebar-ring: var(--magenta);
 }
 
 @theme inline {
-	--font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
-	--font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Public Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
 
-	--color-sidebar-ring: var(--sidebar-ring);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar: var(--sidebar);
-	--color-chart-5: var(--chart-5);
-	--color-chart-4: var(--chart-4);
-	--color-chart-3: var(--chart-3);
-	--color-chart-2: var(--chart-2);
-	--color-chart-1: var(--chart-1);
-	--color-ring: var(--ring);
-	--color-input: var(--input);
-	--color-border: var(--border);
-	--color-destructive: var(--destructive);
-	--color-accent-foreground: var(--accent-foreground);
-	--color-accent: var(--accent);
-	--color-muted-foreground: var(--muted-foreground);
-	--color-muted: var(--muted);
-	--color-secondary-foreground: var(--secondary-foreground);
-	--color-secondary: var(--secondary);
-	--color-primary-foreground: var(--primary-foreground);
-	--color-primary-hover: var(--primary-hover);
-	--color-primary: var(--primary);
-	--color-popover-foreground: var(--popover-foreground);
-	--color-popover: var(--popover);
-	--color-card-foreground: var(--card-foreground);
-	--color-card: var(--card);
-	--color-foreground: var(--foreground);
-	--color-background: var(--background);
-	--color-ink-foreground: var(--ink-foreground);
-	--color-ink: var(--ink);
-	--color-gold: var(--gold);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink: var(--ink);
+  --color-gold: var(--gold);
 
-	--radius-sm: calc(var(--radius) * 0.4);
-	--radius-md: calc(var(--radius) * 0.6);
-	--radius-lg: var(--radius);
-	--radius-xl: var(--radius-block);
-	--radius-2xl: calc(var(--radius-block) * 1.25);
-	--radius-3xl: calc(var(--radius-block) * 1.5);
+  --radius-sm: calc(var(--radius) * 0.4);
+  --radius-md: calc(var(--radius) * 0.6);
+  --radius-lg: var(--radius);
+  --radius-xl: var(--radius-block);
+  --radius-2xl: calc(var(--radius-block) * 1.25);
+  --radius-3xl: calc(var(--radius-block) * 1.5);
 }
 
 /* Page gutter: 20px on phones, 40px from md, 64px from lg; content tops out at 1200px. */
 @utility wrap {
-	margin-inline: auto;
-	width: 100%;
-	max-width: 83rem;
-	padding-inline: 1.25rem;
-	@media (width >= 48rem) {
-		padding-inline: 2.5rem;
-	}
-	@media (width >= 64rem) {
-		padding-inline: 4rem;
-	}
+  margin-inline: auto;
+  width: 100%;
+  max-width: 83rem;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 4rem;
+  }
 }
 
 /* Section rhythm: 64px on phones, 112px on desktop. */
 @utility section-gap {
-	margin-top: 4rem;
-	@media (width >= 48rem) {
-		margin-top: 7rem;
-	}
+  margin-top: 4rem;
+  @media (width >= 48rem) {
+    margin-top: 7rem;
+  }
 }
 
 /* Colour blocks: 24px corners on phones, 28px from md. */
 @utility rounded-block {
-	border-radius: 1.5rem;
-	@media (width >= 48rem) {
-		border-radius: var(--radius-block);
-	}
+  border-radius: 1.5rem;
+  @media (width >= 48rem) {
+    border-radius: var(--radius-block);
+  }
 }
 
 /* Block padding: 24px on phones, 48px from md, 56px from lg. */
 @utility block-pad {
-	padding: 1.5rem;
-	@media (width >= 48rem) {
-		padding: 3rem;
-	}
-	@media (width >= 64rem) {
-		padding: 3.5rem;
-	}
+  padding: 1.5rem;
+  @media (width >= 48rem) {
+    padding: 3rem;
+  }
+  @media (width >= 64rem) {
+    padding: 3.5rem;
+  }
 }
 
 @layer base {
-	* {
-		@apply border-border outline-ring/50;
-	}
-	html {
-		@apply font-sans antialiased;
-	}
-	body {
-		@apply bg-background text-foreground text-[1.0625rem] leading-[1.55];
-	}
-	::selection {
-		@apply bg-accent text-accent-foreground;
-	}
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+  }
+  body {
+    @apply bg-background text-[1.0625rem] leading-[1.55] text-foreground;
+  }
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
 }
 
 @layer components {
-	/* Display type: Fraunces at display optical size, medium weight, tight tracking, no eyebrows. */
-	.display-1 {
-		@apply font-display text-[3.25rem] leading-none font-medium tracking-[-0.025em] text-balance md:text-[4.75rem] lg:text-[6rem];
-	}
-	.display-2 {
-		@apply font-display text-[2.25rem] leading-none font-medium tracking-[-0.025em] text-balance md:text-[3.5rem];
-	}
-	.display-3 {
-		@apply font-display text-2xl leading-[1.05] font-medium tracking-[-0.02em] text-balance md:text-[1.875rem];
-	}
-	/* The one italic: a spoken line, set large (the mission in the hero, Mariya's quote). */
-	.statement {
-		@apply font-display text-[1.75rem] leading-[1.1] font-normal tracking-[-0.01em] text-balance italic md:text-[2.5rem];
-	}
-	.statement-sm {
-		@apply font-display text-2xl leading-[1.2] font-normal tracking-[-0.01em] text-balance italic md:text-[1.75rem];
-	}
-	/* A rate or a large number. */
-	.price {
-		@apply font-display text-[3.5rem] leading-none font-medium tracking-[-0.025em] md:text-[5.5rem];
-	}
-	.price-sm {
-		@apply font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] md:text-[3rem];
-	}
-	/* Row title inside hairline lists (services, how it works). */
-	.row-title {
-		@apply text-lg leading-tight font-semibold md:text-xl;
-	}
-	.lead {
-		@apply text-lg leading-normal md:text-[1.3125rem];
-	}
-	.lead-sm {
-		@apply text-[1.0625rem] leading-normal md:text-lg;
-	}
-	/* Text link: semibold with a 2px magenta rule under it. */
-	.text-link {
-		@apply rounded-xs border-b-2 border-primary pb-px font-semibold outline-none hover:border-current focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background;
-	}
+  /* Display type: Fraunces at display optical size, medium weight, tight tracking, no eyebrows. */
+  .display-1 {
+    @apply font-display text-[3.25rem] leading-none font-medium tracking-[-0.025em] text-balance md:text-[4.75rem] lg:text-[6rem];
+  }
+  .display-2 {
+    @apply font-display text-[2.25rem] leading-none font-medium tracking-[-0.025em] text-balance md:text-[3.5rem];
+  }
+  .display-3 {
+    @apply font-display text-2xl leading-[1.05] font-medium tracking-[-0.02em] text-balance md:text-[1.875rem];
+  }
+  /* The one italic: a spoken line, set large (the mission in the hero, Mariya's quote). */
+  .statement {
+    @apply font-display text-[1.75rem] leading-[1.1] font-normal tracking-[-0.01em] text-balance italic md:text-[2.5rem];
+  }
+  .statement-sm {
+    @apply font-display text-2xl leading-[1.2] font-normal tracking-[-0.01em] text-balance italic md:text-[1.75rem];
+  }
+  /* A rate or a large number. */
+  .price {
+    @apply font-display text-[3.5rem] leading-none font-medium tracking-[-0.025em] md:text-[5.5rem];
+  }
+  .price-sm {
+    @apply font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] md:text-[3rem];
+  }
+  /* Row title inside hairline lists (services, how it works). */
+  .row-title {
+    @apply text-lg leading-tight font-semibold md:text-xl;
+  }
+  .lead {
+    @apply text-lg leading-normal md:text-[1.3125rem];
+  }
+  .lead-sm {
+    @apply text-[1.0625rem] leading-normal md:text-lg;
+  }
+  /* Text link: semibold with a 2px magenta rule under it. */
+  .text-link {
+    @apply rounded-xs border-b-2 border-primary pb-px font-semibold outline-none hover:border-current focus-visible:ring-3 focus-visible:ring-ring/60 focus-visible:ring-offset-4 focus-visible:ring-offset-background;
+  }
 }

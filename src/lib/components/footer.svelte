@@ -14,10 +14,14 @@
 </script>
 
 <footer class="wrap section-gap pb-6 md:pb-8">
-  <div class="flex flex-col gap-10 rounded-block bg-ink px-6 pt-10 pb-6 text-ink-foreground md:gap-12 md:px-12 md:pt-14 md:pb-8 lg:px-14 lg:pt-16">
+  <div
+    class="flex flex-col gap-10 rounded-block bg-ink px-6 pt-10 pb-6 text-ink-foreground md:gap-12 md:px-12 md:pt-14 md:pb-8 lg:px-14 lg:pt-16"
+  >
     <div class="grid gap-10 md:grid-cols-2 md:gap-12 xl:grid-cols-[1.6fr_1fr_1.1fr] xl:gap-16">
       <div class="flex flex-col items-start gap-6 md:col-span-2 md:gap-7 xl:col-span-1">
-        <h2 class="font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] text-balance md:max-w-[13ch] md:text-[3.75rem]">
+        <h2
+          class="font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] text-balance md:max-w-[13ch] md:text-[3.75rem]"
+        >
           A quiet home studio in Hudson, MA.
         </h2>
         <Button href="/book" variant="contrast" class="max-sm:w-full">Book a session</Button>
@@ -28,9 +32,17 @@
 
       <div class="flex flex-col gap-2 text-[0.9375rem] leading-normal">
         <h3 class="text-base font-semibold">Studio</h3>
-        <address class="not-italic">{site.address.street}<br />{site.address.city}, {site.address.state} {site.address.zip}</address>
+        <address class="not-italic">
+          {site.address.street}<br />{site.address.city}, {site.address.state}
+          {site.address.zip}
+        </address>
         <p class="text-sm opacity-80">{site.address.note}</p>
-        <a href={directionsUrl} target="_blank" rel="noopener" class={[cardLink, 'self-start text-sm']}>Get directions</a>
+        <a
+          href={directionsUrl}
+          target="_blank"
+          rel="noopener"
+          class={[cardLink, 'self-start text-sm']}>Get directions</a
+        >
       </div>
 
       <div class="flex flex-col gap-2 text-[0.9375rem] leading-normal">

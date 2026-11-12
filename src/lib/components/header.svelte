@@ -9,7 +9,7 @@
   const navLinks = [
     { title: 'Services', href: '/services' },
     { title: 'About', href: '/about' },
-    { title: 'Contact', href: '/contact' }
+    { title: 'Contact', href: '/contact' },
   ];
 
   let mobileMenuOpen = $state(false);
@@ -25,7 +25,10 @@
 <header class="wrap flex min-h-20 items-center justify-between gap-6 py-3 md:min-h-24 md:py-4">
   <a href="/" class={cn('flex items-center gap-3', focusRing)} aria-label="{site.name}, home">
     <Logo class="size-9 md:size-11" />
-    <span class="text-[0.9375rem] leading-none font-semibold tracking-[-0.01em] whitespace-nowrap lg:text-lg">{site.name}</span>
+    <span
+      class="text-[0.9375rem] leading-none font-semibold tracking-[-0.01em] whitespace-nowrap lg:text-lg"
+      >{site.name}</span
+    >
   </a>
 
   <nav aria-label="Main" class="hidden items-center gap-6 text-base font-medium md:flex lg:gap-8">
@@ -33,7 +36,10 @@
       <a
         {href}
         aria-current={isCurrent(href) ? 'page' : undefined}
-        class={cn('decoration-[1.5px] underline-offset-[6px] hover:underline aria-[current=page]:underline', focusRing)}
+        class={cn(
+          'decoration-[1.5px] underline-offset-[6px] hover:underline aria-[current=page]:underline',
+          focusRing,
+        )}
       >
         {title}
       </a>
@@ -53,13 +59,13 @@
           <span
             class={[
               'absolute left-0 block h-0.5 w-5 rounded-full bg-current transition-all duration-150',
-              mobileMenuOpen ? 'top-[9px] -rotate-45' : 'top-1'
+              mobileMenuOpen ? 'top-[9px] -rotate-45' : 'top-1',
             ]}
           ></span>
           <span
             class={[
               'absolute left-0 block h-0.5 w-5 rounded-full bg-current transition-all duration-150',
-              mobileMenuOpen ? 'top-[9px] rotate-45' : 'top-3.5'
+              mobileMenuOpen ? 'top-[9px] rotate-45' : 'top-3.5',
             ]}
           ></span>
         </span>
@@ -79,8 +85,8 @@
                   {href}
                   aria-current={isCurrent(href) ? 'page' : undefined}
                   class={cn(
-                    'font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] aria-[current=page]:underline aria-[current=page]:decoration-primary aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8 active:opacity-60',
-                    focusRing
+                    'font-display text-[2.5rem] leading-none font-medium tracking-[-0.025em] active:opacity-60 aria-[current=page]:underline aria-[current=page]:decoration-primary aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8',
+                    focusRing,
                   )}
                   onclick={() => (mobileMenuOpen = false)}
                 >
@@ -90,8 +96,15 @@
             {/each}
           </ul>
           <div class="mt-auto flex flex-col gap-3">
-            <Button href="/book" size="lg" onclick={() => (mobileMenuOpen = false)}>Book a session</Button>
-            <Button href="/contact" variant="outline" size="lg" onclick={() => (mobileMenuOpen = false)}>Contact</Button>
+            <Button href="/book" size="lg" onclick={() => (mobileMenuOpen = false)}
+              >Book a session</Button
+            >
+            <Button
+              href="/contact"
+              variant="outline"
+              size="lg"
+              onclick={() => (mobileMenuOpen = false)}>Contact</Button
+            >
           </div>
         </nav>
       </Popover.Content>

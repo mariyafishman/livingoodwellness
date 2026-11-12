@@ -22,7 +22,7 @@
 <div
   class={cn(
     'relative aspect-square w-[15rem] max-w-full shrink-0 rounded-full border-[6px] border-gold bg-background md:w-[18.75rem]',
-    className
+    className,
   )}
 >
   <!-- The ring is at most 300px wide; sizes lets the build pick widths for it. -->
