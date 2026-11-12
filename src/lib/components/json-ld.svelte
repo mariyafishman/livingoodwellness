@@ -20,24 +20,24 @@
       addressLocality: site.address.city,
       addressRegion: site.address.state,
       postalCode: site.address.zip,
-      addressCountry: 'US'
+      addressCountry: 'US',
     },
     areaServed: `${site.address.city}, ${site.address.state}`,
     openingHoursSpecification: openingHours.map(({ days, opens, closes }) => ({
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: days,
       opens,
-      closes
+      closes,
     })),
     founder: {
       '@type': 'Person',
       name: site.practitioner.name,
-      jobTitle: site.practitioner.title
+      jobTitle: site.practitioner.title,
     },
     potentialAction: {
       '@type': 'ReserveAction',
-      target: site.bookingUrl
-    }
+      target: site.bookingUrl,
+    },
   };
 
   // `<` is escaped so the JSON can never close the script tag early.

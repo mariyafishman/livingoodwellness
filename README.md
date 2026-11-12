@@ -9,7 +9,7 @@ Website for Livingood Wellness Center.
 - **[Tailwind CSS](https://tailwindcss.com)** (Tailwind v4) - styling
 - **[shadcn-svelte](https://www.shadcn-svelte.com)** - UI components (built on [bits-ui](https://bits-ui.com))
 - **[@sveltejs/enhanced-img](https://svelte.dev/docs/kit/images)** - build-time image optimization (responsive `srcset`, AVIF/WebP)
-- **[Fontsource](https://fontsource.org)** - self-hosted variable fonts (Manrope, DM Sans, Cormorant Garamond)
+- **[Fontsource](https://fontsource.org)** - self-hosted variable fonts (Fraunces, Public Sans)
 - **[mode-watcher](https://github.com/svecosystem/mode-watcher)** - light/dark theme
 - **[Cloudflare Workers](https://developers.cloudflare.com/workers/)** - deployment platform
 

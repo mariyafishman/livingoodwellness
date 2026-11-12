@@ -2,8 +2,8 @@
   import type { Snippet } from 'svelte';
 
   /**
-   * Opening butter band for inner pages. Merges with the header so the page
-   * starts the same way the home hero does.
+   * Opening of an inner page: the title and lead set straight on the paper,
+   * the way the home hero starts, with room for buttons underneath.
    */
   interface Props {
     title: string;
@@ -14,12 +14,10 @@
   let { title, lead, children }: Props = $props();
 </script>
 
-<div class="bg-secondary text-secondary-foreground">
-  <div class="wrap pt-6 pb-12 md:pt-14 md:pb-20">
-    <h1 class="display-1">{title}</h1>
-    {#if lead}
-      <p class="lead mt-5 max-w-[30rem] md:mt-8">{lead}</p>
-    {/if}
-    {@render children?.()}
-  </div>
+<div class="wrap flex flex-col items-start gap-6 pt-6 md:gap-8 md:pt-10">
+  <h1 class="display-1 max-w-[12ch]">{title}</h1>
+  {#if lead}
+    <p class="lead max-w-[30rem]">{lead}</p>
+  {/if}
+  {@render children?.()}
 </div>

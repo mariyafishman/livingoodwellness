@@ -6,6 +6,8 @@
 export const site = {
   name: 'Livingood Wellness Center',
   tagline: 'Find your balance.',
+  /** The line from the studio's business card. */
+  mission: 'We are helping people to be in balance.',
   description:
     'Massage therapy in Hudson, MA. Mariya Fishman, Licensed Massage Therapist, brings over 30 years of experience with seniors, athletes, children and everyone in between.',
   /** Canonical site URL. Used for Open Graph and JSON-LD. */
@@ -14,13 +16,13 @@ export const site = {
     name: 'Mariya Fishman',
     title: 'Licensed Massage Therapist',
     /** Placeholder until the license number is supplied. */
-    license: 'MA License #____'
+    license: 'MA License #____',
   },
   phone: {
     display: '978-493-6171',
     e164: '+19784936171',
     tel: 'tel:+19784936171',
-    sms: 'sms:+19784936171'
+    sms: 'sms:+19784936171',
   },
   email: 'mariyafishmanavatar@gmail.com',
   address: {
@@ -28,9 +30,9 @@ export const site = {
     city: 'Hudson',
     state: 'MA',
     zip: '01749',
-    note: 'Private home with a dedicated studio. By appointment only.'
+    note: 'Private home with a dedicated studio. By appointment only.',
   },
-  bookingUrl: 'https://www.massagebook.com/business/25802828/select-product/services'
+  bookingUrl: 'https://www.massagebook.com/business/25802828/select-product/services',
 } as const;
 
 /** The doctor whose work inspired Mariya's recovery and the studio's name. */
@@ -40,28 +42,28 @@ export const inspiration = {
   socials: [
     { label: 'YouTube', href: 'https://www.youtube.com/@DrLivingood' },
     { label: 'Instagram', href: 'https://www.instagram.com/drlivingood/' },
-    { label: 'Facebook', href: 'https://www.facebook.com/drlivingood' }
-  ]
+    { label: 'Facebook', href: 'https://www.facebook.com/drlivingood' },
+  ],
 } as const;
 
 export const hours = [
   { days: 'Mon, Wed, Fri', time: '9:00 AM – 7:00 PM' },
   { days: 'Tue, Thu', time: '2:00 PM – 7:00 PM' },
   { days: 'Sat', time: 'By appointment' },
-  { days: 'Sun', time: 'Closed' }
+  { days: 'Sun', time: 'Closed' },
 ] as const;
 
 /** schema.org OpeningHoursSpecification input. */
 export const openingHours = [
   { days: ['Monday', 'Wednesday', 'Friday'], opens: '09:00', closes: '19:00' },
-  { days: ['Tuesday', 'Thursday'], opens: '14:00', closes: '19:00' }
+  { days: ['Tuesday', 'Thursday'], opens: '14:00', closes: '19:00' },
 ] as const;
 
 export const massage = {
   sessions: [
     { duration: '60 min', price: '$90' },
     { duration: '90 min', price: '$120' },
-    { duration: '120 min', price: '$160' }
+    { duration: '120 min', price: '$160' },
   ],
   modalities: [
     { name: 'Swedish and relaxation', tagline: 'Time to slow down' },
@@ -69,7 +71,7 @@ export const massage = {
     { name: 'Sports and recovery', tagline: 'For your active life' },
     { name: 'Gentle massage for seniors', tagline: 'Care at your pace' },
     { name: 'Infant-massage instruction', tagline: 'For parents' },
-    { name: 'Lymphatic drainage', tagline: 'Gentle and trained' }
+    { name: 'Lymphatic drainage', tagline: 'Gentle and trained' },
   ],
   audiences: [
     'Seniors',
@@ -77,8 +79,8 @@ export const massage = {
     'Children and parents',
     'Chronic pain',
     'Post-injury recovery',
-    'Relaxation'
-  ]
+    'Relaxation',
+  ],
 } as const;
 
 export const packages = {
@@ -88,14 +90,14 @@ export const packages = {
     { duration: '60 min', price: '$435', savings: 'Save $45' },
     { duration: '75 min', price: '$550', savings: 'Save $50' },
     { duration: '90 min', price: '$660', savings: 'Save $60' },
-    { duration: '120 min', price: '$850', savings: 'Save $80' }
-  ]
+    { duration: '120 min', price: '$850', savings: 'Save $80' },
+  ],
 } as const;
 
 export const membership = {
   price: '$80',
   period: 'month',
-  description: 'One 60-minute massage each month; extra sessions at the member rate.'
+  description: 'One 60-minute massage each month; extra sessions at the member rate.',
 } as const;
 
 export const bemer = {
@@ -104,7 +106,8 @@ export const bemer = {
   duration: '30 min',
   description:
     'A pulsed electromagnetic (PEMF) session that temporarily improves local blood circulation and supports muscle recovery.',
-  disclaimer: 'BEMER is not intended to diagnose, treat, cure or prevent any disease. Individual results vary.'
+  disclaimer:
+    'BEMER is not intended to diagnose, treat, cure or prevent any disease. Individual results vary.',
 } as const;
 
 /** Mariya's personal recommendation. She is an independent LifeWave Brand Partner; orders go through her partner link. */
@@ -114,28 +117,28 @@ export const lifewave = {
   description:
     'Mariya uses LifeWave phototherapy patches herself and recommends them to clients. They are ordered directly from LifeWave through her partner link.',
   disclaimer:
-    'Mariya is an independent LifeWave Brand Partner and may earn a commission on orders placed through this link. LifeWave patches are not intended to diagnose, treat, cure or prevent any disease.'
+    'Mariya is an independent LifeWave Brand Partner and may earn a commission on orders placed through this link. LifeWave patches are not intended to diagnose, treat, cure or prevent any disease.',
 } as const;
 
 /** The booking flow, as explained on the home and book pages. */
 export const howItWorks = [
   {
     title: 'Choose your time',
-    text: 'Pick a service and an appointment on the booking page.'
+    text: 'Pick a service and an appointment on the booking page.',
   },
   {
     title: 'A little about you',
-    text: 'New clients get a short intake form by email before the visit.'
+    text: 'New clients get a short intake form by email before the visit.',
   },
   {
     title: 'Come as you are',
-    text: 'Visit the quiet home studio in Hudson. Pay online or in person with cash, Venmo, or card.'
-  }
+    text: 'Visit the quiet home studio in Hudson. Pay online or in person with cash, Venmo, or card.',
+  },
 ] as const;
 
 export const goodToKnow = [
   'By appointment, in a quiet home studio in Hudson.',
   'Receipts provided for insurance reimbursement or HSA/FSA.',
   'New clients receive a short intake form from MassageBook after booking.',
-  'Pay in person (cash, Venmo, card) or online when booking.'
+  'Pay in person (cash, Venmo, card) or online when booking.',
 ] as const;
